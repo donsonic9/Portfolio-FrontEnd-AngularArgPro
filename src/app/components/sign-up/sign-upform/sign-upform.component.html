@@ -1,0 +1,32 @@
+
+
+<!-- signUp Form -->
+<section class="login row">
+  <div class="container login-principal seccion-glass col-10 col-sm-8 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center">
+    <h1> Sign Up </h1>
+    <p>Enter your credentials to create a new account.</p>
+    <form action="" autocomplete="off">
+      <!-- User name -->
+      <div class="container d-flex flex-column text-start">
+        <label for="username">User Name</label>
+        <input id="username" type="text" placeholder="My_username">
+      </div>
+      <!-- User email -->
+      <div class="container d-flex flex-column text-start">
+        <label for="useremail">Email Address</label>
+        <input id="useremail" type="email" placeholder="myemail@something.com">
+      </div>
+      <!-- Password -->
+      <div class="container d-flex flex-column text-start">
+        <label for="password">New Password</label>
+        <input id="password" type="password" placeholder="your password">
+      </div>
+      <!-- Login button -->
+      <div class="container d-flex flex-column justify-content-center align-items-center">
+        <input type="submit" value="Sign Up">
+      </div>
+    </form>
+    <a routerLink="/login" aria-current="page">Already have an account? <b>Log In</b>.</a>
+  </div>
+</section>
+

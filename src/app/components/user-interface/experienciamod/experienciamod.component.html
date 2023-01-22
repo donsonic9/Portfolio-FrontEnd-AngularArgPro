@@ -1,0 +1,50 @@
+  <!-- Experiencia -->
+  <section class="exp">
+    <div class="container d-flex flex-column seccion-glass">
+
+      
+      <h2 class="exp-title text-center ">Experiencia</h2>
+      
+
+      <!-- Añadir nueva experiencia -->
+      <label class="cv" for="tfexp">Nueva experiencia <i class="fa-solid fa-plus"></i></label>
+      <input name="tfexp" id="tfexp" class="toggle-form-hero" type="checkbox" checked >
+
+      <!-- Formulario de edicion -->
+      <form class="formulario-edicion" id="expe-form">
+        <div class="mod-form-div">
+          <label for="img-profile">Logo de la empresa/ otro logo: </label>
+          <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">Se recomienda que el logo sea cuadrado (ancho = altura)
+        </div>
+        <div class="mod-form-div">
+          <label for="">Titulo del puesto y periodo de tiempo : </label>
+          <input type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
+        </div>
+        <div class="mod-form-div">
+          <label for="text-area-id">Descripcion : </label>
+          <textarea name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
+        </div>
+        <div class="send-button-div">
+          <input type="submit" value="Aceptar">
+        </div>
+      </form>
+
+      <!-- A partir de aca, empieza cada experiencia individual -->
+      <div *ngFor="let experiencia of experienciaList" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+        <!-- div que contiene los iconos para editar y eliminar -->
+        <div class="cont-top">
+          <a class="edit" title="Eliminar">
+            <i class="fa-regular fa-trash-can" ></i>
+          </a>
+        </div>
+
+        <img class="exp-image col-12 " [src]="experiencia.logo" alt="Person icon">
+        <div class="exp-info d-flex flex-column col-12">
+          <h3>{{experiencia.posicionYtiempo}}</h3>
+          <p>{{experiencia.descripcion}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+

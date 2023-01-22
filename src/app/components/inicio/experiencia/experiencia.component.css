@@ -1,0 +1,55 @@
+
+/* Experiencia */
+
+.exp {
+  min-height: 450px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.exp .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-cont {
+  margin: 10px 10px 20px 10px;
+  width: 90%;
+}
+
+.exp-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--almost-white);
+  margin: 40px 0;
+  padding: 20px;
+}
+
+.exp-image {
+  margin: 10px;
+  width: 1.2in;
+  height: 1in;
+}
+
+.exp-info {
+  margin: 10px 0;
+}
+
+.exp-info h3 {
+  padding: 0 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.exp-info h5 {
+  padding: 0 14px;
+}
+
+.exp-info p {
+  padding: 10px;
+  font-style: italic;
+}

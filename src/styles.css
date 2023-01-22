@@ -1,1 +1,91 @@
-/* You can add global styles to this file, and also import other style files */
+
+/* Variables para ajustar el estilo facilemnte */
+
+/* @import url('custom-1.css'); */
+
+:root {
+  /* los colores estan en forma de variable en el import */
+    /* Fall beige/ocre warm colours (back-2)*/
+  --color: #904b19;
+  --light-color: #d56717;
+  --light-color-2: #f5d5a4;
+  --lighter-color: #e3ba7d;
+  --almost-white: #fff2dc;
+  --seccion-clara-back: #f6ead4;
+  --background-img: url("assets/images/back-2-sl.jpg");
+
+  /* neutral standard colors */
+  --darker-color: #1a1a1a;
+  --dark-color: #2d2d2d;
+  --white: #fffdfa;
+  --shadow-1: rgba(0, 0, 0, 0.1);
+  --shadow-2: rgba(0, 0, 0, 0.2);
+  --shadow-3: rgba(0, 0, 0, 0.3);
+  --shadow-4: rgba(0, 0, 0, 0.4);
+  --shadow-6: rgba(0, 0, 0, 0.6);
+}
+
+/* reestablece estilos de navegador y seteamos colores, fondo, y flia de letras */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  background-image: var(--background-img);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+
+  font-family: 'Raleway', sans-serif;
+  transition: all 1s ease; 
+}
+
+
+
+/* Estilos generales */
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.seccion-clara {
+  background-color: var(--seccion-clara-back);
+  color: var(--darker-color);
+}
+
+.seccion-glass {
+  color: var(--almost-white);
+  /* glassmorfism */
+  background: var(--shadow-2);
+  border-radius: 10px 10px;
+  box-shadow: 4px 4px 8px 2px var(--shadow-6); 
+  /* 0 4px 30px rgba(0, 0, 0, 0.1) */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.seccion-glass-h {
+  transition: all 0.3s ease;
+}
+.seccion-glass-h:hover {
+  background: var(--shadow-4);
+  transform: translateY(-2px);
+}
+
+
+
+
+

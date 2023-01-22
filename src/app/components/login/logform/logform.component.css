@@ -1,0 +1,95 @@
+
+
+
+/* Login Form */
+
+.login {
+  min-height: 66vh;
+  max-width: 99.9vw;
+  text-align: center;
+  margin-top: 18vh;
+  margin-left: 0.1vw;
+}
+
+.login-principal {
+  min-height: 62vh;
+  background-color: var(--shadow-4);
+}
+
+.login-principal h1 {
+  font-size: 3rem;
+  margin: 25px 0;
+}
+
+.login.principal p {
+  margin: 0;
+}
+
+.login-principal .container {
+  margin: 20px 0;
+}
+
+.login-principal form {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.login-principal label {
+  margin: 10px 0;
+  color: var(--light-color-2);
+}
+
+.login-principal input[type="email"], input[type="password"] {
+  /* El outline sirve para quitarle el cuadro blanco cuando esta seleccionado */
+  outline: none;
+  border: none;
+  background-color: transparent;
+
+  color: var(--almost-white);
+  border-bottom: 1px solid var(--light-color-2);
+}
+
+input[type="email"]::placeholder {
+  color: #aaa;
+}
+
+input[type="password"]::placeholder {
+  color: #aaa;
+}
+
+input[type="submit"] {
+  outline: none;
+  border: none;
+  
+  background-color: var(--lighter-color);
+  color: var(--darker-color);
+  font-weight: 600;
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+input[type="submit"]:hover {
+  background-color: var(--almost-white);
+  font-weight: 600;
+}
+
+.login-principal a {
+  padding: 10px;
+  margin: 10px;
+  text-decoration: none;
+  color: var(--almost-white);
+}
+
+.login-principal a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive media queries */
+
+@media screen and (max-width: 390px) {
+  .login {
+    margin-top: 16vh;
+  }
+}

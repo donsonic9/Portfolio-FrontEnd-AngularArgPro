@@ -1,0 +1,86 @@
+
+/* Habilidades */
+
+.exp {
+  min-height: 450px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.exp .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.exp-cont {
+  margin: 10px 10px 20px 10px;
+}
+
+.exp-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--almost-white);
+  margin: 40px 0;
+  padding: 20px;
+}
+
+/* Los containers tienen las mismas clases que que usan en 'Experiencia', ya que el estilo es el mimso. */
+
+.hab .exp {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.hab-div-cont h3 {
+  margin: 0 5vw;
+  padding: 10px;
+  font-size: 30px;
+  color: var(--white);
+  background-color: var(--shadow-3);
+}
+
+.icon-container {
+  margin: 10px;
+}
+
+.icon-container:hover {
+  color: var(--white);
+  
+}
+
+/* Iconos de habilidades */
+
+.hab .fa-brands, .hab .fa-solid {
+  font-size: 60px;
+  margin: 10px;
+  padding: 10px;
+}
+
+
+.fa-brands-ts {
+  width: 60px;
+  height: 60px;
+  color: var(--almost-white);
+  /* margin-bottom: 10px; */
+}
+
+.icon-container img {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.icon-container p {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.language-flag {
+  width: 80px;
+  height: 70px;
+}

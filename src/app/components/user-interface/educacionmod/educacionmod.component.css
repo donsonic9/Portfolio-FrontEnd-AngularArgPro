@@ -1,0 +1,296 @@
+
+/* Tanto el título como la descripcion usan estas clases creadas para "Sobre mi" section */
+.sobre-mi-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sobre-mi-description {
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}
+
+/* Educacion */
+
+.edu {
+  min-height: 450px;
+  margin: 20px 0;
+  padding: 40px 0;
+}
+
+
+/* boton de editar */
+
+.cv {
+  text-decoration: none;
+  max-width: 200px;
+  padding: 10px;
+  margin: 10px 0;
+  color: var(--white);
+  background-color: rgb(49, 121, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cv:hover {
+  background-color: rgb(69, 193, 255);
+  color: var(--dark-color);
+}
+
+/* Solo para el boton de editar desc */
+
+.cv.desc {
+  background-color: rgb(17, 187, 25);
+}
+
+.cv.desc:hover {
+  background-color: rgb(195, 253, 200);
+}
+
+/* ----------------------------------- */
+
+.cv i {
+  padding: 0px 10px;
+}
+
+/* con esto ocultamos el checkbox */
+.toggle-form-hero {
+  appearance: none;
+}
+/* con esto ocultamos el formulario cuando se marca el checkbox */
+#tfedu:checked ~ #edu-form {
+  height: 0px;
+  display: none;
+}
+
+/* Boton de editar descripcion, en educacion. */
+#tfeduc:checked ~ #edu-form-desc {
+  height: 0px;
+  display: none;
+}
+
+
+
+.div-title {
+  margin: 30px 10px;
+}
+
+.inst-title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+
+
+.logo-inst-solo {
+  transform: scale(0.6);
+}
+
+
+/* Testing new design */
+
+.certi-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  max-width: 1400px;
+}
+
+/* .certi-item, .certi-header, .certi-body {
+  background-color: var(--light-color-2);
+} */
+
+.certi-header {
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+  color: var(--color);
+}
+
+.certi-item {
+  
+  width: 320px;
+  /* height: 390px; */
+  margin: 10px;
+  border-radius: 10px;
+  background-color: var(--shadow-1);
+  box-shadow: 4px 4px 8px var(--shadow-3);
+  transition: all 0.2s ease;
+}
+
+.certi-item:hover {
+  background-color: var(--light-color-2);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 5px var(--shadow-4);
+}
+
+
+.certi-body {
+  text-align: center;
+  
+  color: var(--dark-color);
+  height: 350px;
+  padding: 10px;
+}
+
+
+.certi-certificate {
+  margin: 1px;
+  width: 1.2in;
+  height: 0.8in;
+  border: 4px outset goldenrod;
+  filter: brightness(70%);
+  transition: all 0.3s ease;
+}
+
+.certi-certificate:hover {
+  transform: translateY(-2px);
+  filter: brightness(100%);
+}
+
+.certi-body h4 {
+  text-align: center;
+  margin: 10px 5px;
+  transform:skewX(-10deg);
+}
+
+.certi-body p {
+  text-align: left;
+  margin: 10px 5px;
+}
+
+
+/* cont-top corresponden a los iconos para editar y eliminar los elementos */
+.cont-top {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
+.cont-top .edit {
+  width: 35px;
+  height: 35px;
+  margin: 0 7px;
+  font-size: 1.1rem;
+  color: var(--dark-color);
+  border: 2px solid var(--dark-color);
+  border-radius: 50%;
+  text-decoration: none;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transform: translate(-10px, 10px);
+  transition: all 0.2s ease; 
+}
+
+.cont-top .edit:hover {
+  transform: translate(-10px, 8px);
+  background-color: var(--dark-color);
+  color: var(--almost-white);
+}
+
+
+
+/* ------------------------------------------------------------------------------------- */
+
+/* Formulario de edicion */
+
+.formulario-edicion {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: var(--shadow-3);
+  border-radius: 5px;
+  width: 80%;
+}
+
+.mod-form-div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 16px 0;
+}
+
+.mod-form-div label {
+  color: var(--almost-white);
+}
+
+.mod-form-div input[type="text"] {
+  margin-top: 5px;
+  border-radius: 5px;
+  
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.send-button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.send-button-div input[type="submit"] {
+  margin: 10px;
+  padding: 8px 38px;
+  border: none;
+  border-radius: 4px;
+  color: var(--almost-white);
+  background-color: var(--light-color);
+  transition: all 0.2s ease;
+}
+
+.send-button-div input[type="submit"]:hover {
+  background-color: var(--almost-white);
+  color: var(--light-color);
+}
+
+
+
+.nuevo-certi-check {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.nuevo-certi-label {
+  color: var(--almost-white);
+}
+
+
+/* --------------------------------------------------------------------------- */
+
+
+
+
+/* Responsive logo de lemon */
+/* resizing logo lemon for screen sizes less than 400px; */
+@media screen and (max-width: 400px) {
+  .logo-inst-lemon {
+    width: 300px;
+    height: 40px;
+  }
+}
+
+/* resizing logo lemon for screen sizes less than 300px; */
+@media screen and (max-width: 300px) {
+  .logo-inst-lemon {
+    width: 250px;
+    height: 30px;
+  }
+}

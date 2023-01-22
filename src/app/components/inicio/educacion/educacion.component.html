@@ -1,0 +1,42 @@
+
+  <!-- Educacion -->
+  <section class="edu seccion-clara d-flex align-items-center justify-content-center">
+    <div class="container row d-flex flex-column align-items-center justify-content-center">
+      <h2 class="sobre-mi-title">Educación</h2>
+      <p class="sobre-mi-description text-center">{{educacionList.descripcion}}</p>
+      <!-- A partir de aca, comienza cada institucion con sus cursos -->
+      
+      <!-- titulo -->
+      <div class="container div-title d-flex flex-row justify-content-center align-items-center">
+        <h3 class="inst-title"> Certificados y títulos :</h3>
+      </div>
+
+      <!-- Accordion -->
+      <div  class="container certi-container " id="accordionFlushExample">
+        <!-- Accordion Item -->
+        
+
+        <div *ngFor="let certificado of certificadoList" class="certi-item">
+          <h3 class="certi-header">
+            
+            {{certificado.institucion}}
+            
+          </h3>
+          <div class="certi-img">
+            <div class="certi-body">
+              <a [href]="certificado.imagen" target="_blank">
+                <img class="certi-certificate" [src]="certificado.imagen" alt="">
+              </a>
+              <h4 class="inst-title"> {{certificado.tituloYtiempo}}</h4>
+              <p>{{certificado.descripcion}}</p>
+              
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>
+

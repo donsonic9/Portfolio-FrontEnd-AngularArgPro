@@ -1,0 +1,55 @@
+
+  <!-- Navbar responsive -->
+  <nav class="navbar fixed-top navbar-expand-md navbar-dark">
+    <div  class="container-fluid">
+      <a class="navbar-brand" href="index.html">
+        <img class="logo-img-navbar" src="assets/images/argentina_programa_logo_2.png" alt="Argentina Programa Logo" title="Argentina Programa Logo">
+      </a>
+      <a class="navbar-brand" id="hero" >
+        <span class="texto-logo-nav">#YoProgramo</span>
+      </a>
+      
+      <input class="navbar-toggler icon-tog" type="checkbox" id="icontog" name="">
+
+      <!-- items del dropdown menu -->
+      <div class="collapse navbar-collapse div-ul-nav d-flex flex-row-reverse" id="navbar-toggler">
+        <ul class="navbar-nav d-flex align-items-center justify-content-center">
+          <li class="nav-item">
+            <a  class="nav-link" aria-current="page" (click)="toSobreMi()">Sobre mi</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="toHabilidades()">Habilidades</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" (click)="toProyectos()">Proyectos</a>
+          </li>
+          <li class="nav-item contact">
+            <a class="nav-link" aria-current="page" (click)="toContacto()">Contacto</a>
+          </li>
+          <li class="nav-item-drop nav-item">
+              <div class="btn-group">
+                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle"></i>
+                </button>
+                <ul class="dropdown-menu dropdown-menu-end seccion-glass">
+                  <!-- Con el routerLink, le decimos que componente cargar -->
+                  <li><a routerLink="/login" aria-current="page" class="dropdown-item seccion-glass-h">Iniciar sesion</a></li>
+                  <li><a routerLink="/signUp" aria-current="page" class="dropdown-item seccion-glass-h">Registrarse</a></li>
+                  <!-- <li  class="dropdown-item seccion-glass-h">Change Theme</li> -->
+                </ul>
+              </div>
+          </li>
+          
+        </ul>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+<!-- Font Awesome for Icons -->
+<script src="https://kit.fontawesome.com/cf8ef6e8a5.js" crossorigin="anonymous"></script>
+
+

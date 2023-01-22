@@ -1,0 +1,106 @@
+/* Estilo del div para que la navbar no se superponga cuando navegamos con los botones de la misma */
+
+.div-id-specific {
+  margin-bottom: 80px;
+  height: 1px;
+}
+
+/* El titulo usa los mismos estilos que "Sobre mi" */
+
+.sobre-mi {
+  min-height: 400px;
+  /* margin-top: 50px; */
+}
+
+.sobre-mi-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color);
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Proyectos */
+
+.proyectos {
+  padding: 40px 0;
+  margin: 40px 0;
+}
+
+.proyectos-cont {
+  padding: 20px;
+  margin: 10px;
+}
+
+.proyectos-cont p, .proyectos-cont h3 {
+  color: var(--dark-color);
+  margin: 10px 0 10px 10px;
+  text-align: left;
+}
+
+.proyectos-cont p {
+  margin-bottom: 40px;
+}
+
+.overlay-relative {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.overlay-relative img {
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* padding: 100px; */
+
+  display: none;
+
+  transition: all 0.3s ease;
+}
+
+.overlay a {
+  font-size: 30px;
+  font-weight: 500;
+  /* padding: 90px 50px 90px 10px; */
+  text-decoration: none;
+  color: var(--light-color-2);
+  /* background-color: var(--shadow-4); */
+
+}
+
+.inner-overlay-icon {
+  font-size: 70px;
+  padding: 10px;
+  margin: 10px;
+  transition: all 0.4s ease;
+  
+}
+
+.inner-overlay-icon:hover {
+  color: var(--white);
+  text-shadow: 0px 0px 30px var(--almost-white), 0px 0px 40px var(--lighter-color);
+  
+}
+
+.overlay-relative:hover img {
+  filter: brightness(30%);
+  transform: scale(1.2);
+  transition: all 0.3s ease;
+}
+
+.overlay-relative:hover .overlay {
+  display: flex;
+  flex-direction: row;
+}

@@ -1,0 +1,31 @@
+
+  <!-- Footer/ Contacto -->
+  <footer id="contacto-id" class="contacto seccion-glass hero d-flex flex-column align-items-center justify-content-center">
+    <p class="contacto-lema ">{{footerList.fraseDescriptiva}}</p>
+    <p class="contacto-preg">{{footerList.fraseDeContacto}}</p>
+    <div class="iconos-contacto">
+      <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+        <a [href]="footerList.facebookURL" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-facebook"></i>
+        </a>
+        <a [href]="footerList.githubURL" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-github"></i>
+        </a>
+        <a [href]="footerList.linkedinURL" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-linkedin"></i>
+        </a>
+        <a [href]="footerList.instagramURL" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-instagram"></i>
+        </a>
+        <a [href]="mailtoString" target="_blank" rel="noopener noreferrer">
+          <i class="bi bi-envelope"></i>
+        </a>
+      </div>
+    </div>
+    <!-- Boton para volver al inicio de la página -->
+    <div class="boton-up iconos-redes-sociales d-flex flex-row-reverse">
+      <a aria-current="page" (click)="toUpp()" title="Click para volver al inicio"><i class="bi bi-arrow-up-circle"></i></a>
+    </div>
+    <div class="derechos-de-autor">Creado por Alexander Repollo 2022 &#169;</div>
+  </footer>
+

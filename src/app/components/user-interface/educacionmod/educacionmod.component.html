@@ -1,0 +1,115 @@
+
+  <!-- Educacion -->
+  <section class="edu seccion-clara d-flex align-items-center justify-content-center">
+    <div class="container row d-flex flex-column align-items-center justify-content-center">
+      <h2 class="sobre-mi-title">Educación</h2>
+
+      <!-- Boton de "Editar Descripcion" -->
+      <label class="cv desc" for="tfeduc">Editar descripcion <i class="fa-solid fa-pen"></i></label>
+      <input name="tfeduc" id="tfeduc" class="toggle-form-hero" type="checkbox" checked >
+
+      <!-- Formulario de edicion -->
+      <form class="formulario-edicion" id="edu-form-desc">
+        <div class="mod-form-div">
+          <label for="desc-edu-id">Descripcion : </label>
+          <textarea name="desc-edu-id" id="desc-edu-id" cols="30" rows="5" placeholder="Resumida historia sobre tus estudios" ></textarea>
+        </div>
+        <div class="send-button-div">
+          <input type="submit" value="Aceptar">
+        </div>
+      </form>
+
+      <p class="sobre-mi-description text-center">{{educacionList.descripcion}}</p>
+
+      <!-- Boton de "Nuevo Certificado" -->
+      <label class="cv" for="tfedu">Nuevo certificado <i class="fa-solid fa-plus"></i></label>
+      <input name="tfedu" id="tfedu" class="toggle-form-hero" type="checkbox" checked >
+      <!-- A partir de aca, comienza cada institucion con sus cursos -->
+
+      <!-- Formulario de edicion -->
+      <form class="formulario-edicion" id="edu-form">
+        <div class="mod-form-div">
+          <label for="inst-name-id">Nombre de la institución : </label>
+          <input type="text" name="inst-name-id" id="inst-name-id" placeholder="Universidad de Buenos Aires">
+        </div>
+        <div class="new-certificate" >
+          <div class="mod-form-div">
+            <label for="certi-id">Titulo del Certificado y periodo de tiempo : </label>
+            <input type="text" name="certi-id" id="certi-id" placeholder="JavaScript Basics - Noviembre 2021">
+          </div>
+          <div class="mod-form-div">
+            <label for="img-certi">Imagen del certificado (opcional) : </label>
+            <input type="text" id="img-certi" name="img-certi" placeholder="https://myimage.com/certificado.image">
+          </div>
+          <div class="mod-form-div">
+            <label for="desc-certi-id">Descripcion del certificado : </label>
+            <textarea name="desc-certi-id" id="desc-certi-id" cols="30" rows="5" placeholder="Aqui puedes comentar los contenidos del curso o la carrera, conceptos vistos, etc." ></textarea>
+          </div>
+        </div>
+        <div class="send-button-div">
+          <input type="submit" value="Aceptar">
+        </div>
+      </form>
+      
+      <!-- titulo -->
+      <div class="container div-title d-flex flex-row justify-content-center align-items-center">
+        <h3 class="inst-title"> Certificados y títulos :</h3>
+      </div>
+
+      <!-- Accordion -->
+      <div class="container certi-container" id="accordionFlushExample">
+        <!-- Accordion Item -->
+        <!-- <div class="accordion-item">
+          <h2 class="accordion-header" id="flush-headingOne">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+              {{certificado.tituloYtiempo}}
+            </button>
+          </h2>
+          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+            <div class="accordion-body">
+              
+              <div class="cont-top">
+                <a class="edit" title="Eliminar">
+                  <i class="fa-regular fa-trash-can" ></i>
+                </a>
+              </div>
+              <h3 class="inst-title"> {{certificado.institucion}}</h3>
+              <a [href]="certificado.imagen" target="_blank">
+                <img class="accordion-certificate" [src]="certificado.imagen" alt="">
+              </a>
+              <p>{{certificado.descripcion}}</p>
+              
+            </div>
+          </div>
+        </div> -->
+
+        <div *ngFor="let certificado of certificadoList" class="certi-item">
+          <div class="cont-top">
+            <a class="edit" title="Eliminar">
+              <i class="fa-regular fa-trash-can" ></i>
+            </a>
+          </div>
+          <h3 class="certi-header">
+            
+            {{certificado.institucion}}
+            
+          </h3>
+          <div class="certi-img">
+            <div class="certi-body">
+              <a [href]="certificado.imagen" target="_blank">
+                <img class="certi-certificate" [src]="certificado.imagen" alt="">
+              </a>
+              <h4 class="inst-title"> {{certificado.tituloYtiempo}}</h4>
+              <p>{{certificado.descripcion}}</p>
+              
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+

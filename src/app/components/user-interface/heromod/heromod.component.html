@@ -1,0 +1,35 @@
+  <!-- Div para volver arriba con el boton del footer -->
+  <div id="upp"></div>
+
+  <!-- Hero section -->
+  <section class="hero d-flex align-items-sm-stretch">
+    
+    <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+      <!-- div que contiene los iconos para editar y eliminar -->
+      
+      <label class="cv" for="tfhero">Editar Informacion <i class="fa-solid fa-pen"></i></label>
+      <input name="tfhero" id="tfhero" class="toggle-form-hero" type="checkbox" checked >
+      <!-- Formulario de edicion -->
+      <form class="formulario-edicion" id="hero-form">
+        <div class="mod-form-div">
+          <label for="img-profile">Imagen de perfil (URL) : </label>
+          <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
+        </div>
+        <div class="mod-form-div">
+          <label for="">Saludo principal : </label>
+          <input type="text" placeholder="Hola! Soy *nombre de usuario*">
+        </div>
+        <div class="mod-form-div">
+          <label for="">Descripcion : </label>
+          <input type="text" placeholder="Desarrollador en Python">
+        </div>
+        <div class="send-button-div">
+          <input type="submit" value="Aceptar">
+        </div>
+      </form>
+
+      <img class="hero-image-profile" [src]="miPortfolio.hero.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
+      <h1>{{miPortfolio.hero.saludoPrincipal}}</h1>
+      <h2>{{miPortfolio.hero.descripcion}}</h2>
+    </div>
+  </section>

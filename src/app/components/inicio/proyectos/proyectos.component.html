@@ -1,0 +1,30 @@
+
+<!-- El único proposito de este div, es redirigir al usuario cuando hace click en la navbar, para evitar que la navbar se sobreponga al contenido cuando se redirige. -->
+<div id="proyectos-id" class="div-id-specific"></div>
+<!-- Proyectos -->
+<section class="proyectos seccion-clara sobre-mi">
+  <div class="container d-flex flex-column text-center">
+    <h2 class="sobre-mi-title">Proyectos</h2>
+    <div class="proyectos-cont container row d-flex flex-row">
+
+      <!-- Proyecto Individual -->
+      <div *ngFor="let proyecto of proyectosList" class="proy col-12 col-md-6 col-lg-4">
+        <div class="overlay-relative ">
+          <img class="img-proyecto" [src]="proyecto.imagen" alt="Proyecto">
+          <div class="overlay">
+            <a [href]="proyecto.paginaURL" target="_blank">
+              <i class="inner-overlay-icon bi bi-laptop-fill"></i>
+            </a>
+            <a [href]="proyecto.githubURL" target="_blank" rel="noopener noreferrer">
+              <i class="inner-overlay-icon bi bi-github"></i>
+            </a>
+          </div>
+        </div>
+        <h3>{{proyecto.nombre}}</h3>
+        <p>{{proyecto.descripcion}}</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+

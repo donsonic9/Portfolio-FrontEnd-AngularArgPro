@@ -1,0 +1,54 @@
+
+  <!-- Habilidades -->
+  <section class="hab" id="habilidadesid">
+    <div class="exp container seccion-glass d-flex flex-column">
+      <!-- Habilidades Tecnincas -->
+      <h2 class="exp-title text-center ">Habilidades Técnicas</h2>
+      <div class="hab-div-cont container-fluid d-flex flex-column ">
+
+        <h3>Nivel Alto</h3>
+        <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
+          <div *ngFor="let habilidad of nivelAltoList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
+            <img [src]="habilidad.logoURL" alt="">
+            <p>{{habilidad.nombre}}</p>
+          </div>
+        </div>
+
+        <h3>Nivel Medio</h3>
+        <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
+          <div *ngFor="let habilidad of nivelMedioList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
+            <img [src]="habilidad.logoURL" alt="">
+            <p>{{habilidad.nombre}}</p>
+          </div>
+          
+        </div>
+
+        <h3>Nivel Basic</h3>
+        <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
+          <div *ngFor="let habilidad of nivelBasicList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
+            <img [src]="habilidad.logoURL" alt="">
+            <p>{{habilidad.nombre}}</p>
+          </div>
+          
+        </div>
+      </div>
+      <!-- Habilidades Blandas -->
+      <!-- <h2 class="exp-title text-center ">Habilidades Blandas</h2>
+      <div class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+      </div> -->
+      <!-- Idiomas & conociemintos extra -->
+      <h2 class="exp-title text-center ">Idiomas</h2>
+      <div class="hab-div-cont container-fluid d-flex flex-column ">
+        <h3>Idiomas</h3>
+        <div class="exp-cont row d-flex justify-content-center align-items-center text-center">
+
+          <div *ngFor="let habilidad of idiomasList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
+            <img class="language-flag" [src]="habilidad.logoURL" alt="Spain flag">
+            <p>{{habilidad.nombre}}</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+

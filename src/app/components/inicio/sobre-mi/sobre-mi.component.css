@@ -1,0 +1,35 @@
+
+/* Sobre mi */
+
+.div-id-specific {
+  margin-bottom: 80px;
+  height: 1px;
+}
+
+.sobre-mi {
+  min-height: 400px;
+  /* margin-top: 50px; */
+}
+
+.sobre-mi-cont {
+  margin: 60px 0;
+}
+
+.sobre-mi-image {
+  max-height: 500px;
+  margin: 20px 0;
+}
+
+.sobre-mi-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sobre-mi-description {
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}

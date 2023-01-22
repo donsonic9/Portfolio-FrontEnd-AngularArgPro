@@ -1,0 +1,154 @@
+
+/* Tanto el título como la descripcion usan estas clases creadas para "Sobre mi" section */
+.sobre-mi-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--color);
+  margin: 20px 0;
+  text-align: center;
+}
+
+.sobre-mi-description {
+  color: var(--dark-color);
+  font-size: 1.1rem;
+  padding-bottom: 20px;
+}
+
+/* Educacion */
+
+.edu {
+  min-height: 450px;
+  margin: 20px 0;
+  padding: 40px 0;
+}
+
+.edu .cv {
+  text-decoration: none;
+  max-width: 200px;
+  padding: 10px;
+  color: var(--white);
+  background-color: rgb(49, 121, 255);
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.edu .cv:hover {
+  background-color: rgb(69, 193, 255);
+}
+
+.div-title {
+  margin: 30px 10px;
+}
+
+.inst-title {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+
+
+
+.logo-inst-solo {
+  transform: scale(0.6);
+}
+
+
+
+
+
+/* Testing new design */
+
+.certi-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+  max-width: 1400px;
+}
+
+/* .certi-item, .certi-header, .certi-body {
+  background-color: var(--light-color-2);
+} */
+
+.certi-header {
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 5px;
+  color: var(--color);
+}
+
+.certi-item {
+  
+  width: 320px;
+  /* height: 390px; */
+  margin: 10px;
+  border-radius: 10px;
+  background-color: var(--shadow-1);
+  box-shadow: 4px 4px 8px var(--shadow-3);
+  transition: all 0.2s ease;
+}
+
+.certi-item:hover {
+  background-color: var(--light-color-2);
+  transform: translateY(-2px);
+  box-shadow: 4px 4px 5px var(--shadow-4);
+}
+
+
+.certi-body {
+  text-align: center;
+  
+  color: var(--dark-color);
+  height: 350px;
+  padding: 10px;
+}
+
+
+.certi-certificate {
+  margin: 1px;
+  width: 1.2in;
+  height: 0.8in;
+  border: 4px outset goldenrod;
+  filter: brightness(70%);
+  transition: all 0.3s ease;
+}
+
+.certi-certificate:hover {
+  transform: translateY(-2px);
+  filter: brightness(100%);
+}
+
+.certi-body h4 {
+  text-align: center;
+  margin: 10px 5px;
+  transform:skewX(-10deg);
+}
+
+.certi-body p {
+  text-align: left;
+  margin: 10px 5px;
+}
+
+
+
+
+
+/* Responsive logo de lemon */
+/* resizing logo lemon for screen sizes less than 400px; */
+@media screen and (max-width: 400px) {
+  .logo-inst-lemon {
+    width: 300px;
+    height: 40px;
+  }
+}
+
+/* resizing logo lemon for screen sizes less than 300px; */
+@media screen and (max-width: 300px) {
+  .logo-inst-lemon {
+    width: 250px;
+    height: 30px;
+  }
+}

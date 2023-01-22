@@ -1,0 +1,62 @@
+
+/* Upp div */
+#upp {
+  height: 1px;
+  background-color: transparent;
+}
+
+
+
+/* Hero section */
+
+.hero {
+  min-height: 450px;
+  
+  text-align: center;
+  margin-top: 90px;
+}
+
+.hero-principal {
+  color: var(--almost-white);
+  padding: 3rem 3.1rem;
+  max-width: 70%;
+  margin: 0 auto;
+  margin-bottom: 30vh;
+  margin-top: 10vh;
+  /* glassmorfism */
+  background: var(--shadow-2);
+  border-radius: 10px 10px;
+  box-shadow: 4px 4px 8px 2px var(--shadow-6), 0 4px 30px var(--shadow-1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  transition: all 0.3s ease;
+}
+
+.hero-principal:hover {
+  background: var(--shadow-3);
+  box-shadow: 2px 6px 8px 2px var(--shadow-6), 0 4px 30px var(--shadow-1);
+  transform: translateY(-2px);
+
+}
+
+.hero-image-profile {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  margin: 20px 20px 40px 20px;
+}
+
+
+
+
+/* resizing logo navbar & profile image for screen size less than 311px */
+@media screen and (max-width: 311px) {
+
+  .hero-image-profile {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 10px;
+  }
+}

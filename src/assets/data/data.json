@@ -1,0 +1,188 @@
+
+{
+  "user": {
+    "userName": "donsonic9",
+    "email": "donsonic9@gmail.com",
+    "password": "2H.asd102938"
+  },
+  "hero": {
+    "imagenPerfil": "./assets/images/profile-picture-3.jpg",
+    "saludoPrincipal": "Hola! soy Alexander Repollo!",
+    "descripcion": "Estudiante de desarrollo web, te invito a conocerme!"
+  },
+  "sobreMi": {
+    "imagenSecundaria": "./assets/images/profile-picture-4.jpg",
+    "descripcion": "Soy Alex, estudiante de desarrollo web full stack! Comence a estudiar en Junio 2022, y aún sigo aprendiendo. Creo que todos los días se aprende algo nuevo!. Tengo un gran interes por la programación, el desarrollo web, motorsport, y el mundo crypto. También me gusta la música, la naturaleza, y la fotografía. Considero que soy una persona resolutiva, responsable, y proactiva, aunque también ambicioso, sociable, y detallista. Y si, también me encanta el café!"
+  },
+  "experiencia": [
+    {
+      "logo": "./assets/images/person-icon-white.png",
+      "posicionYtiempo": "Ayudante de distribuidor de imprenta (2014 - 2015)",
+      "descripcion": "Me desenvolvi como distribuidor y despachante de documentación, revistas, y otros, para un tercero. Pertenecientes a la empresa denominada 'Fibertel - Cablevisión'."
+    },
+    {
+      "logo": "./assets/images/kitchen-icon-white.png",
+      "posicionYtiempo": "Personal en catering 'Camper' (2017 - 2018)",
+      "descripcion": "Personal de salon, ayudante de cocina, bachero, y despachante."
+    },
+    {
+      "logo": "./assets/images/transparent-png-online-white.png",
+      "posicionYtiempo": "Vendedor e-commerce (2018 - 2021)",
+      "descripcion": "Emprendimiento propio de venta al público de diversos artículos, a traves de internet."
+    }
+  ],
+  "educacion": {
+    "descripcion": "Estudiante autodidacta. Comence a estudiar desarrollo web en Junio 2022, a día de hoy, sigo estudiando.",
+    "certificado": [{
+        "idDropdown": "one",
+        "institucion": "Argentina programa",
+        "tituloYtiempo": "#Seprogramar - Junio 2022",
+        "descripcion": "Primera etapa de 'Argentina programa'. Contenidos: introducción a la lógica de programación con Gobestones, introducción a las funciones con JavaScript, e introducción a POO con Ruby.",
+        "imagen": "./assets/images/certificates/certificate-ar.jpg"
+      },
+      {
+        "idDropdown": "two",
+        "institucion": "Grasshopper",
+        "tituloYtiempo": "Fundamentos de la programacion - Octubre 2022",
+        "descripcion": "Fundamentos de la programación con JavaScript, se ven nociones básicas como creación de variables, estructuras de control (if, else if, else), 'for' loops, y objects.",
+        "imagen": "./assets/images/certificates/GrasshopperFundamentosdelacodificaciónCertificate.png"
+      },
+      {
+        "institucion": "Grasshopper",
+        "tituloYtiempo": "Fundamentos de la programacion II - Octubre 2022",
+        "descripcion": "Contenidos: métodos de strings, y arreglos. Opciones alternativas como el operador ternario, y conceptos como recursividad y llamadas.",
+        "imagen": "./assets/images/certificates/GrasshopperFundamentosdecodificaciónIICertificate.png"
+      },
+      {
+        "institucion": "Lemon Cash",
+        "tituloYtiempo": "Curso Crypto, NFT, y Web 3.0 - Octubre 2022",
+        "descripcion": "Temas vistos : criptomonedas, stablecoins, Defi, contratos inteligentes, Web 3.0, NFTs, Blockchain, entre otros.",
+        "imagen": "./assets/images/certificates/curso_crypto_lemon_certificate-298324044.jpg"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "Python for Beginners - Junio 2022",
+        "descripcion": "Contenido: Basic concepts, strings, variables, control flow, lists, y functions.",
+        "imagen": "./assets/images/certificates/python_for_begginers_certificate_sl.png"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "HTML - Julio 2022",
+        "descripcion": "Contenido: ¿Qué es HTML?, elementos en HTML, Attributos, HTML page structure, HTML5, entre otros.",
+        "imagen": "./assets/images/certificates/html_certificate_sl.jpg"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "CSS - Septiembre 2022",
+        "descripcion": "Contenido: The Basics, Working with text, Properties, Positioning and layout, CSS3 basics, gradients and backgrounds, transitions and transforms, CSS filters.",
+        "imagen": "./assets/images/certificates/css_certificate-sl.jpg"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "Coding for Marketers - Septiembre 2022",
+        "descripcion": "Contenido: Content on the web, Formatting content, Tweaking a Web page, What is SEO, and Improving SEO.",
+        "imagen": "./assets/images/certificates/coding_for_marketers_certificate_sl.jpg"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "Web Development Fundamentals - Septiembre 2022",
+        "descripcion": "Contenido: Basic HTML, Basic CSS, Styling with CSS, y Basic JavaScript.",
+        "imagen": "./assets/images/certificates/web_dev_fundamentals_sl.png"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "Responsive Web Design - Octubre 2022",
+        "descripcion": "Contenido: The HTML structure, working with HTML & CSS, Making it responsive using media queries, Adding JavaScript & JQuery.",
+        "imagen": "./assets/images/certificates/responsive_web_design-sl.jpg"
+      },
+      {
+        "institucion": "Sololearn",
+        "tituloYtiempo": "JavaScript - Noviembre 2022",
+        "descripcion": "Contenido: Basic concepts, conditionals & loops, functions, objects, core objects, DOM & Events, ECMAScript 6.",
+        "imagen": "./assets/images/certificates/javascript_certificate_sl.png"
+      }
+    ]
+  },
+  "habilidadesTecnicas": {
+    "nivelAlto": [{
+        "logoURL": "https://www.ujudebug.com/wp-content/uploads/2022/07/html-logo-transparent.png",
+        "nombre": "HTML 5"
+      },
+      {
+        "logoURL": "https://www.ujudebug.com/wp-content/uploads/2022/07/css-logo-transparent.png",
+        "nombre": "CSS 3"
+      }
+    ],
+    "nivelMedio": [{
+        "logoURL": "https://logodownload.org/wp-content/uploads/2022/04/javascript-logo-1.png",
+        "nombre": "JavaScript"
+      },
+      {
+        "logoURL": "https://cdn.freebiesupply.com/logos/large/2x/python-5-logo-png-transparent.png",
+        "nombre": "Python"
+      },
+      {
+        "logoURL": "https://img.icons8.com/fluency/240/paint-3d.png",
+        "nombre": "Paint 3D"
+      }
+    ],
+    "nivelBasic": [{
+        "logoURL": "https://logospng.org/download/bootstrap/bootstrap-256.png",
+        "nombre": "Bootstrap 5"
+      },
+      {
+        "logoURL": "https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png",
+        "nombre": "Git"
+      },
+      {
+        "logoURL": "https://cdn-icons-png.flaticon.com/512/25/25231.png",
+        "nombre": "Github"
+      },
+      {
+        "logoURL": "https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg",
+        "nombre": "Angular"
+      },
+      {
+        "logoURL": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Typescript_logo_2020.svg",
+        "nombre": "TypeScript"
+      }
+    ],
+    "idiomas": [{
+        "logoURL": "https://icons.iconarchive.com/icons/wikipedia/flags/256/ES-Spain-Flag-icon.png",
+        "nombre": "Español"
+      },
+      {
+        "logoURL": "https://icons.iconarchive.com/icons/wikipedia/flags/256/GB-United-Kingdom-Flag-icon.png",
+        "nombre": "Ingles"
+      }
+    ]
+  },
+  "proyectos": {
+    "proyecto": [
+      {
+        "nombre": "Portfolio Web AR Programa de Alexander Repollo",
+        "descripcion": "Aplicación Web que incluye Portfolio Web de Alexander Repollo, y la opción de crearse un usuario para crear tu propio portfolio, a partir del mio. Proyecto realizado integramente por mi (Alexander Repollo) durante la 2da etapa de Argentina Programa denominada #YoProgramo.",
+        "imagen": "./assets/images/proyectos/ARprograma-portfolio-app-web.png",
+        "paginaURL": "index.html",
+        "githubURL": "https://github.com/donsonic9/donsonic9.github.io"
+      },
+      {
+        "nombre": "Proyecto de curso Codo a Codo",
+        "descripcion": "Aplicación web para el curso 'Codo a Codo' de un 3ro. Este proyecto no es mio, pero di mi colaboración para ayudar a resolver problemas de posicionamiento de elementos, mejorar el diseño adaptativo, entre otros..",
+        "imagen": "./assets/images/proyectos/mari-proy-codo-a-codo.png",
+        "paginaURL": "https://mccprofesional.github.io/JavaScriptIntegrador/",
+        "githubURL": "https://github.com/mccprofesional/JavaScriptIntegrador"
+      }
+    ]
+  },
+  "footer": {
+    "fraseDescriptiva": "Los detalles marcan la diferencia...",
+    "fraseDeContacto": "¿Qué estas esperando? Contactame! y hagamos realidad ese proyecto que tanto soñas!",
+    "facebookURL": "https://www.facebook.com/Drifting.y.HeavyMetal/",
+    "githubURL": "https://github.com/donsonic9",
+    "linkedinURL": "https://www.linkedin.com/in/alexander-repollo-5b47841ba/",
+    "instagramURL": "https://www.instagram.com/donsonic9/",
+    "email": "donsonic9@gmail.com"
+  }
+
+}

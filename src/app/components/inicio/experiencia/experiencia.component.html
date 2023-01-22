@@ -1,0 +1,19 @@
+  <!-- Experiencia -->
+  <section class="exp">
+    <div class="container d-flex flex-column seccion-glass">
+      <h2 class="exp-title text-center ">Experiencia</h2>
+      <div class="container">
+        <!-- A partir de aca, empieza cada experiencia individual -->
+
+        <div *ngFor="let experiencia of experienciaList" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+          <img class="exp-image col-12 " [src]="experiencia.logo" alt="Person icon">
+          <div class="exp-info d-flex flex-column col-12">
+            <h3> {{experiencia.posicionYtiempo}}</h3>
+            <p> {{experiencia.descripcion}}</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
