@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 // importamos el modulo Routes
 import { RouterModule, Routes } from '@angular/router';
-// Cargamos los componentes correspondientes a lñas vistas
+// Cargamos los componentes correspondientes a las vistas
 import { InicioComponent } from '../components/inicio/inicio.component';
 import { LoginComponent } from '../components/login/login.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
