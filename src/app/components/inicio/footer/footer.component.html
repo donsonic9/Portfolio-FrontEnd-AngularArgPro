@@ -1,23 +1,23 @@
 
   <!-- Footer/ Contacto -->
   <footer id="contacto-id" class="contacto seccion-glass hero d-flex flex-column align-items-center justify-content-center">
-    <p class="contacto-lema ">{{footerList.fraseDescriptiva}}</p>
-    <p class="contacto-preg">{{footerList.fraseDeContacto}}</p>
+    <p class="contacto-lema " *ngIf="miPortfolio">{{miPortfolio.fraseDescriptiva}}</p>
+    <p class="contacto-preg" *ngIf="miPortfolio">{{miPortfolio.fraseDeContacto}}</p>
     <div class="iconos-contacto">
       <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-        <a [href]="footerList.facebookURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miPortfolio" [href]="miPortfolio.facebookURL" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-facebook"></i>
         </a>
-        <a [href]="footerList.githubURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miPortfolio" [href]="miPortfolio.githubURL" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-github"></i>
         </a>
-        <a [href]="footerList.linkedinURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miPortfolio" [href]="miPortfolio.linkedinURL" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a [href]="footerList.instagramURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miPortfolio" [href]="miPortfolio.instagramURL" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-instagram"></i>
         </a>
-        <a [href]="mailtoString" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miPortfolio" [href]="mailtoString" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope"></i>
         </a>
       </div>

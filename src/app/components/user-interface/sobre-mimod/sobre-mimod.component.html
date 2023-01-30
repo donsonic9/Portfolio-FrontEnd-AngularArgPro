@@ -22,10 +22,6 @@
       <label for="img-profile">Imagen Secundaria (URL) : </label>
       <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
     </div>
-    <!-- <div class="mod-form-div">
-      <label for="">Saludo principal : </label>
-      <input type="text" placeholder="Hola! Soy *nombre de usuario*">
-    </div> -->
     <div class="mod-form-div">
       <label for="text-area-idd">Descripcion : </label>
         <textarea name="text-area-idd" id="text-area-idd" cols="30" rows="5" placeholder="Cuenta un poco sobre ti, aficiones, pequeña historia, etc." ></textarea>
@@ -34,14 +30,17 @@
       <input type="submit" value="Aceptar">
     </div>
   </form>
-  
+
   <div class="sobre-mi-cont container row d-flex flex-row align-items-stretch justify-content-between">
-    <img class="sobre-mi-image img-fluid col-12 col-lg-4" [src]="miPortfolio.sobreMi.imagenSecundaria" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
+    <img class="sobre-mi-image img-fluid col-12 col-lg-4" *ngIf="miPortfolio" [src]="miPortfolio.imagenSecundaria" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
     <div class="container col-12 col-md-8 d-flex flex-column justify-content-center align-items-center">
       <h2 class="sobre-mi-title">Conoce un poco sobre mi!.</h2>
-      <p class="sobre-mi-description text-center">{{miPortfolio.sobreMi.descripcion}}<i class="bi bi-cup-hot"></i></p>
+      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.descripcion}}<i class="bi bi-cup-hot"></i></p>
     </div>
   </div>
+
+  
+  
 </section>
 
 

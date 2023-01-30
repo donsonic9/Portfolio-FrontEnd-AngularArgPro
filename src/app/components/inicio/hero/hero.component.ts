@@ -10,12 +10,14 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 export class HeroComponent {
   // definimos una variable para conectar el sv con el html, mediante data binding.
   miPortfolio: any;
+  
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerMisDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosHero().subscribe(data => {
       // console.log(data);
       this.miPortfolio = data;
+      
     })
   }
 }

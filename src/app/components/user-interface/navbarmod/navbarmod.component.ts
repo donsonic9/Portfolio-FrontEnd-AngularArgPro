@@ -14,7 +14,7 @@ export class NavbarmodComponent {
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosHero().subscribe(data => {
       // console.log(data);
       this.miPortfolio = data;
     })
@@ -37,4 +37,6 @@ export class NavbarmodComponent {
   toContacto() {
     document.getElementById("contacto-id")?.scrollIntoView({behavior: 'smooth'});
   }
+
+
 }

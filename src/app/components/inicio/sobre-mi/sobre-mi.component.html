@@ -5,10 +5,10 @@
 <!-- Sobre mi -->
 <section class="sobre-mi seccion-clara d-flex align-items-center justify-content-center">
   <div class="sobre-mi-cont container row d-flex flex-row align-items-stretch justify-content-between">
-    <img class="sobre-mi-image img-fluid col-12 col-lg-4" [src]="miPortfolio.sobreMi.imagenSecundaria" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
+    <img class="sobre-mi-image img-fluid col-12 col-lg-4" *ngIf="miPortfolio" [src]="miPortfolio.imagenSecundaria" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
     <div class="container col-12 col-md-8 d-flex flex-column justify-content-center align-items-center">
       <h2 class="sobre-mi-title">Conoce un poco sobre mi!.</h2>
-      <p class="sobre-mi-description text-center">{{miPortfolio.sobreMi.descripcion}}<i class="bi bi-cup-hot"></i></p>
+      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.descripcion}}<i class="bi bi-cup-hot"></i></p>
     </div>
   </div>
 </section>

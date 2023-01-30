@@ -12,7 +12,7 @@ export class FooterComponent {
 
   // definimos una variable para conectar el sv con el html, mediante data binding.
   miPortfolio: any;
-  footerList: any;
+  // footerList: any;
   // reemplazamos el 'mailto: pepito@chang.com' con esta concatenacion, para poder editar el mail.
   mailtoSt:any = "mailto: ";
   mailtoString: any;
@@ -20,10 +20,10 @@ export class FooterComponent {
   constructor(private datosPortfolio:DataPortfolioService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerMisDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosFooter().subscribe(data => {
       this.miPortfolio = data;
-      this.footerList = data.footer;
-      this.mailtoString = this.mailtoSt + data.footer.email; 
+      // this.footerList = data.footer;
+      this.mailtoString = this.mailtoSt + data.email; 
     })
   }
 

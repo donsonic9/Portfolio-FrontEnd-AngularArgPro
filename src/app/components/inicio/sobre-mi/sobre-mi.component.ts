@@ -13,7 +13,7 @@ export class SobreMiComponent {
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerMisDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosSobreMi().subscribe(data => {
       // console.log(data);
       this.miPortfolio = data;
     })

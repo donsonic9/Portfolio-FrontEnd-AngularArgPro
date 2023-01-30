@@ -10,7 +10,7 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 export class HabilidadesComponent {
   // definimos una variable para conectar el sv con el html, mediante data binding.
   miPortfolio: any;
-  habilidadesList: any;
+  // habilidadesList: any;
   nivelAltoList: any;
   nivelMedioList: any;
   nivelBasicList: any;
@@ -18,14 +18,14 @@ export class HabilidadesComponent {
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerMisDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosHabTec().subscribe(data => {
       // console.log(data);
       this.miPortfolio = data;
-      this.habilidadesList = data.habilidadesTecnicas;
-      this.nivelAltoList = data.habilidadesTecnicas.nivelAlto;
-      this.nivelMedioList = data.habilidadesTecnicas.nivelMedio;
-      this.nivelBasicList = data.habilidadesTecnicas.nivelBasic;
-      this.idiomasList = data.habilidadesTecnicas.idiomas;
+      // this.habilidadesList = data.habilidadesTecnicas;
+      this.nivelAltoList = data.nivelAlto;
+      this.nivelMedioList = data.nivelMedio;
+      this.nivelBasicList = data.nivelBasic;
+      this.idiomasList = data.idiomas;
     })
   }
 }

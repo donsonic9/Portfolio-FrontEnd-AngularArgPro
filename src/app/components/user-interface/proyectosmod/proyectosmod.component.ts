@@ -15,10 +15,10 @@ export class ProyectosmodComponent {
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
+    this.datosPortfolio.obtenerDatosProyectos().subscribe(data => {
       // console.log(data);
       this.miPortfolio = data;
-      this.proyectosList = data.proyectos.proyecto;
+      this.proyectosList = data.proyecto;
       
     })
   }

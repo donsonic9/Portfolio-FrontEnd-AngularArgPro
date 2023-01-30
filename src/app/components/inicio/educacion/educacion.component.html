@@ -3,7 +3,7 @@
   <section class="edu seccion-clara d-flex align-items-center justify-content-center">
     <div class="container row d-flex flex-column align-items-center justify-content-center">
       <h2 class="sobre-mi-title">Educación</h2>
-      <p class="sobre-mi-description text-center">{{educacionList.descripcion}}</p>
+      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.descripcion}}</p>
       <!-- A partir de aca, comienza cada institucion con sus cursos -->
       
       <!-- titulo -->
@@ -17,7 +17,7 @@
         
 
         <div *ngFor="let certificado of certificadoList" class="certi-item">
-          <h3 class="certi-header">
+          <h3 class="certi-header" >
             
             {{certificado.institucion}}
             

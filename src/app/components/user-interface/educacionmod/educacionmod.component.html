@@ -19,7 +19,7 @@
         </div>
       </form>
 
-      <p class="sobre-mi-description text-center">{{educacionList.descripcion}}</p>
+      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.descripcion}}</p>
 
       <!-- Boton de "Nuevo Certificado" -->
       <label class="cv" for="tfedu">Nuevo certificado <i class="fa-solid fa-plus"></i></label>
@@ -59,29 +59,7 @@
       <!-- Accordion -->
       <div class="container certi-container" id="accordionFlushExample">
         <!-- Accordion Item -->
-        <!-- <div class="accordion-item">
-          <h2 class="accordion-header" id="flush-headingOne">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-              {{certificado.tituloYtiempo}}
-            </button>
-          </h2>
-          <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-            <div class="accordion-body">
-              
-              <div class="cont-top">
-                <a class="edit" title="Eliminar">
-                  <i class="fa-regular fa-trash-can" ></i>
-                </a>
-              </div>
-              <h3 class="inst-title"> {{certificado.institucion}}</h3>
-              <a [href]="certificado.imagen" target="_blank">
-                <img class="accordion-certificate" [src]="certificado.imagen" alt="">
-              </a>
-              <p>{{certificado.descripcion}}</p>
-              
-            </div>
-          </div>
-        </div> -->
+        
 
         <div *ngFor="let certificado of certificadoList" class="certi-item">
           <div class="cont-top">

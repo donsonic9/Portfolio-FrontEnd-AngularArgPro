@@ -14,7 +14,7 @@ export class SobreMimodComponent {
   constructor(private datosPortfolio: DataPortfolioService) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data =>{
+    this.datosPortfolio.obtenerDatosSobreMi().subscribe(data =>{
       this.miPortfolio = data;
     })
   }

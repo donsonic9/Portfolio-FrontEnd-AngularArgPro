@@ -13,9 +13,9 @@ export class HeromodComponent {
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatos().subscribe(data => {
-      // console.log(data);
+    this.datosPortfolio.obtenerDatosHero().subscribe(data => {
       this.miPortfolio = data;
+      
     })
   }
 

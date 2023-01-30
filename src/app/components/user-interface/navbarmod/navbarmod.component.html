@@ -30,19 +30,19 @@
               <div class="btn-group">
                 <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   <!-- La idea es que esta foto sea la misma que la de perfil y que cambie dinamicamente segun quiera el usuario. -->
-                  <img class="hero-image-profile-small" [src]="miPortfolio.hero.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
+                  <img class="hero-image-profile-small" *ngIf="miPortfolio" [src]="miPortfolio.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end seccion-glass">
                   <!-- Con el routerLink, le decimos que componente cargar -->
                   <li>
-                    <a routerLink="/login" aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-gear"></i>Configuracion</a>
-                  </li>
-                  <li>
-                    <a routerLink="/signUp" aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-arrow-right-to-bracket"></i>Cerrar sesion</a>
+                    <a routerLink="/login" aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-pen"></i>Modo Edicion</a>
                   </li>
                   <!-- Se supone que cuando se hace click en este boton, se muestra el portfolio original, pero con los datos del usuario. -->
                   <li>
-                    <a routerLink="/signUp" aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-check"></i>Presentacion</a>
+                    <a aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-check"></i>Presentacion</a>
+                  </li>
+                  <li>
+                    <a routerLink="/signUp" aria-current="page" class="dropdown-item seccion-glass-h"><i class="fa-solid fa-arrow-right-to-bracket"></i>Cerrar sesion</a>
                   </li>
                   
                 </ul>

@@ -10,16 +10,16 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 export class EducacionmodComponent {
    // definimos una variable para conectar el sv con el html, mediante data binding.
    miPortfolio: any;
-   educacionList: any;
+  //  educacionList: any;
    certificadoList: any;
    constructor(private datosPortfolio:DataPortfolioService) { }
  
    ngOnInit(): void {
-     this.datosPortfolio.obtenerDatos().subscribe(data => {
+     this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {
        // console.log(data);
        this.miPortfolio = data;
-       this.educacionList = data.educacion;
-       this.certificadoList = data.educacion.certificado;
+      //  this.educacionList = data.educacion;
+       this.certificadoList = data.certificado;
      })
    }
 }
