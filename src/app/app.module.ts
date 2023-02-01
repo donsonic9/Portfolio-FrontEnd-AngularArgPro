@@ -41,6 +41,8 @@ import { FootermodComponent } from './components/user-interface/footermod/footer
 
 // Para habilitar las llamadas al servidor:
 import { HttpClientModule } from '@angular/common/http';
+// Para usar Formularios reactivos de Angular:
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -74,7 +76,9 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule, //Para que funcione el routing
-    HttpClientModule  //Para habilitar las llamadas al servidor
+    HttpClientModule,  //Para habilitar las llamadas al servidor
+    FormsModule,
+    ReactiveFormsModule   //Para usar formularios reactivos de Angular
   ],
   providers: [],
   bootstrap: [AppComponent]

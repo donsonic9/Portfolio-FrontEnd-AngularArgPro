@@ -86,6 +86,19 @@ input[type="submit"]:hover {
   text-decoration: underline;
 }
 
+
+/* Para cuando los campos tienen errores */
+
+.error {
+  padding: 5px 0;
+  font-weight: bold;
+  color: rgb(211, 0, 0);
+  background-color: rgb(255, 210, 210);
+  /* border: 1px solid #333; */
+  border-radius: 5px;
+}
+
+
 /* Responsive media queries */
 
 @media screen and (max-width: 390px) {

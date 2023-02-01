@@ -173,7 +173,7 @@ textarea {
   justify-content: center;
 }
 
-.send-button-div input[type="submit"] {
+.send-button-div button[type="submit"] {
   margin: 10px;
   padding: 8px 38px;
   border: none;
@@ -183,9 +183,15 @@ textarea {
   transition: all 0.2s ease;
 }
 
-.send-button-div input[type="submit"]:hover {
+.send-button-div button[type="submit"]:hover {
   background-color: var(--almost-white);
   color: var(--light-color);
 }
 
 /* --------------------------------------------------------------------------- */
+
+.dangermsg {
+  color: red;
+  background-color: rgb(252, 188, 188);
+  border: 1px solid rgb(29, 29, 29);
+}

@@ -12,21 +12,30 @@
       
 
       <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="expe-form">
+      <form class="formulario-edicion" id="expe-form" [formGroup]="form" (submit)="enviarData()">
         <div class="mod-form-div">
           <label for="img-profile">Logo de la empresa/ otro logo: </label>
-          <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">Se recomienda que el logo sea cuadrado (ancho = altura)
+          <input formControlName="logo" type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">Se recomienda que el logo sea cuadrado (ancho = altura)
+        </div>
+        <div *ngIf="Logo?.errors && Logo?.touched" >
+          <p *ngIf="Logo?.hasError('required')" class="dangermsg">Debe incluir la URL de la imagen</p>
         </div>
         <div class="mod-form-div">
           <label for="">Titulo del puesto y periodo de tiempo : </label>
-          <input type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
+          <input formControlName="posicionYtiempo" type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
+        </div>
+        <div *ngIf="posYtiempo?.errors && posYtiempo?.touched" >
+          <p *ngIf="posYtiempo?.hasError('required')" class="dangermsg">Debe incluir titulo del cargo.</p>
         </div>
         <div class="mod-form-div">
           <label for="text-area-id">Descripcion : </label>
-          <textarea name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
+          <textarea formControlName="descripcion" name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
+        </div>
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
+          <p *ngIf="Descripcion?.hasError('required')" class="dangermsg">Debe incluir una descripcion.</p>
         </div>
         <div class="send-button-div">
-          <input type="submit" value="Aceptar">
+          <button type="submit">Aceptar</button>
         </div>
       </form>
 
@@ -34,8 +43,8 @@
       <div *ngFor="let experiencia of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
         <!-- div que contiene los iconos para editar y eliminar -->
         <div class="cont-top">
-          <a class="edit" title="Eliminar">
-            <i class="fa-regular fa-trash-can" ></i>
+          <a class="edit" title="Eliminar" (click)="deleteExpe()" >
+            <i class="fa-regular fa-trash-can"></i>
           </a>
         </div>
 

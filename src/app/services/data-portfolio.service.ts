@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { ExpeInterface } from '../components/user-interface/experienciamod/ExpeInterface';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -8,6 +9,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class DataPortfolioService {
+
+  // API URL:
+  private urlAPI = 'http://localhost:5000/experiencia'; 
 
   constructor(private http:HttpClient) { }
 
@@ -24,7 +28,7 @@ export class DataPortfolioService {
   }
 
   obtenerDatosExperiencia(): Observable<any> {
-    return this.http.get('http://localhost:5000/experiencia')
+    return this.http.get(this.urlAPI)
   }
 
   obtenerDatosEducacion(): Observable<any> {
@@ -44,5 +48,9 @@ export class DataPortfolioService {
   }
 
   // para postear nueva informacion
+
+  public post(url:string, body:any) {
+    return this.http.post(url, body);
+  }
 
 }

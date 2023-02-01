@@ -4,22 +4,42 @@
   <div class="container login-principal seccion-glass col-10 col-sm-8 col-md-6 col-lg-4 d-flex flex-column justify-content-center align-items-center" id="herolo">
     <h1> Log In </h1>
     <p>Enter your credentials to access your account.</p>
-    <form action="" autocomplete="off">
+
+    <form [formGroup]="form" autocomplete="off" (ngSubmit)="onEnviar($event)">
       <!-- User email -->
       <div class="container d-flex flex-column text-start">
         <label for="useremail">Email Address</label>
-        <input id="useremail" type="email" placeholder="myemail@something.com">
+        <input id="useremail" type="email" placeholder="myemail@something.com" formControlName="email">
       </div>
+      <div *ngIf="Mail?.errors && Mail?.touched" >
+        <p *ngIf="Mail?.hasError('required')" class="error" >
+          El email es requerido.
+        </p>
+        <p *ngIf="Mail?.hasError('email')" class="error">
+          El formato del email es invalido.
+        </p>
+      </div>
+
       <!-- Password -->
       <div class="container d-flex flex-column text-start">
         <label for="password">Password</label>
-        <input id="password" type="password" placeholder="your password">
+        <input id="password" type="password" placeholder="your password" formControlName="password">
       </div>
+      <div *ngIf="Password?.errors && Password?.touched" >
+        <p *ngIf="Password?.hasError('required')" class="error" >
+          La contraseña es requerida.
+        </p>
+        <p *ngIf="Password?.errors?.['minlength']" class="error">
+          La contraseña debe tener al menos 8 caracteres.
+        </p>
+      </div>
+
       <!-- Login button -->
-      <div class="container d-flex flex-column justify-content-center align-items-center">
+      <div *ngIf="Password?.valid && Mail?.valid" class="container d-flex flex-column justify-content-center align-items-center">
         <input type="submit" value="Log In">
       </div>
     </form>
+
     <a routerLink="/signUp" aria-current="page">Don't have an account? <b>Sign Up</b>.</a>
   </div>
 </section>
