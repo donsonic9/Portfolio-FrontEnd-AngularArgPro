@@ -3,7 +3,7 @@
   <section class="edu seccion-clara d-flex align-items-center justify-content-center">
     <div class="container row d-flex flex-column align-items-center justify-content-center">
       <h2 class="sobre-mi-title">Educación</h2>
-      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.descripcion}}</p>
+      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{educacionList.descripcion}}</p>
       <!-- A partir de aca, comienza cada institucion con sus cursos -->
       
       <!-- titulo -->
@@ -39,4 +39,30 @@
 
     </div>
   </section>
+
+
+
+
+
+
+
+
+<!-- <div id="educacion"></div>
+
+<section class="edu-sec d-flex flex-column justify-content-center">
+  <h2 class="edu-title text-center">Educación</h2><br />
+  <div class="card-container container-fluid row d-flex justify-content-around align-items-center"> -->
+    <!--1ºDiploma  -->
+    <!-- <div *ngFor="let educacion of certificadoList" class="card-1 col-12 col-sm-6 col-md-4">
+      <div class="card">
+        <img class="card-image" *ngIf="miPortfolio" [src]="educacion.imagen" alt="certificadoSeProgramar" />
+        <div class="card-body text-center">
+          <p class="card-text" *ngIf="miPortfolio">{{educacion.institucion}}</p>
+        </div>
+        <a routerLink="https://seprogramarsso.inti.gob.ar/auth/realms/master/protocol/saml/clients/mumuki?SAMLRequest=fZFNb8IwDIb%2FSm85tQkhGiOiSGhckNgFth12mdxiICIfXZxM%2B%2FlrYUhMm3a0%2Ffrxa3tG4GynFzkd%2FQbfM1IqFkQYkwn%2BIXjKDuMW44dp8XmzrtkxpY4054RdDIcIDmJlfDLVITQVRA49iQ9Q3oK1DbQnVix7qvEwIP8EEIXfjIhgHXEHlDDyXptCG%2Bw32hr0qS9ml0%2BGFatlzd4awLHYqaaUU7gvFYh92aidKlG1uJ8obKbTSS8lyrjylMCnmkkhZTmSpbh7EmMtpB6pV1a8YKSzV1kJVnw660kPc2uWo9cByJD24JB0avV28bjWvVDD9Wy3Ld3%2FPde12Hw2qPXZXZxf9prx29wl%2Bvmq%2BRc%3D&SigAlg=http%3A%2F%2Fwww.w3.org%2F2001%2F04%2Fxmldsig-more%23rsa-sha256&Signature=OUWkbXFXKkBXZsyek84eOzp2jW0dsQOZ35Ucj4Ai4Cs5B6FBxQtze6ctiJy8P8kIa%2B2%2FRpMVpEKjVRLF60ljNJQBP4MNG99HqkFxwXM5OA9twFGVWXlurDv3oPwjl3DmeI20n8lOa4ggCyZ3u17exQy1OtJE6%2F%2FOgYV%2FDZgzsEVXVTgnNuifipPSOSQVJGb3uw6LAydCa5Plv1jsCt36a4UQ%2BfdLbJZ6Su9Bqt%2BLUO9UlyZILFayCnebQqRRlK8%2BpAExJ2PVs0voMyKUO2PKDN7pgAQUhkVvWBW6D4oFTX0En5t0FZC20qfcm1yWcoit2jRqMz77K3S%2BrBvlVKxzUw%3D%3D"
+          class="card-link btn btn-primary" arial-current="page" target="_blank">Ver</a>
+      </div>
+    </div>
+  </div>
+</section> -->
 

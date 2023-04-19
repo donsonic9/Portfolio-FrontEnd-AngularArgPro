@@ -11,7 +11,7 @@ export class FootermodComponent {
 
   // definimos una variable para conectar el sv con el html, mediante data binding.
   miPortfolio: any;
-  // footerList: any;
+  footerList: any;
   // reemplazamos el 'mailto: pepito@chang.com' con esta concatenacion, para poder editar el mail.
   mailtoSt:any = "mailto: ";
   mailtoString: any;
@@ -20,8 +20,8 @@ export class FootermodComponent {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosFooter().subscribe(data => {
-      this.miPortfolio = data;
-      // this.footerList = data.footer;
+      this.miPortfolio = data.footer;
+      this.footerList = data;
       this.mailtoString = this.mailtoSt + data.email;
     })
   }
@@ -30,5 +30,9 @@ export class FootermodComponent {
   toUpp() {
     document.getElementById("upp")?.scrollIntoView({behavior: 'smooth'});
   }
+
+  // toInicio(){
+  //   document.getElementById("inicio")?.scrollIntoView({behavior:"smooth"});
+  //  }
 
 }

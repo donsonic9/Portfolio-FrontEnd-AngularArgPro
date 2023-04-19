@@ -1,7 +1,7 @@
 /* Navbar */
 
 .navbar {
-  /* From https://css.glass */
+  
   background: var(--shadow-2);
   border-radius: 0px 0px 5px 5px;
   box-shadow: 2px 0px 4px 3px var(--shadow-1);
@@ -239,3 +239,16 @@
     font-size: 0rem;
   }
 }
+
+
+
+
+
+
+
+/* Descomentar codigo cuando termines de trabajar */
+
+
+
+
+

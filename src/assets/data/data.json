@@ -36,15 +36,14 @@
   ],
   "educacion": {
     "descripcion": "Estudiante autodidacta. Comence a estudiar desarrollo web en Junio 2022, a día de hoy, sigo estudiando.",
-    "certificado": [{
-        "idDropdown": "one",
+    "certificado": [
+      {
         "institucion": "Argentina programa",
         "tituloYtiempo": "#Seprogramar - Junio 2022",
         "descripcion": "Primera etapa de 'Argentina programa'. Contenidos: introducción a la lógica de programación con Gobestones, introducción a las funciones con JavaScript, e introducción a POO con Ruby.",
         "imagen": "./assets/images/certificates/certificate-ar.jpg"
       },
       {
-        "idDropdown": "two",
         "institucion": "Grasshopper",
         "tituloYtiempo": "Fundamentos de la programacion - Octubre 2022",
         "descripcion": "Fundamentos de la programación con JavaScript, se ven nociones básicas como creación de variables, estructuras de control (if, else if, else), 'for' loops, y objects.",

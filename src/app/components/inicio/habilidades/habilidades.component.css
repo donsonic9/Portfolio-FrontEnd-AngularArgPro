@@ -65,7 +65,6 @@
   width: 60px;
   height: 60px;
   color: var(--almost-white);
-  /* margin-bottom: 10px; */
 }
 
 .icon-container img {
@@ -84,3 +83,5 @@
   width: 80px;
   height: 70px;
 }
+
+

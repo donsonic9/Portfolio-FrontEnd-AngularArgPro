@@ -22,10 +22,10 @@ export class HabilidadesComponent {
       // console.log(data);
       this.miPortfolio = data;
       // this.habilidadesList = data.habilidadesTecnicas;
-      this.nivelAltoList = data.nivelAlto;
-      this.nivelMedioList = data.nivelMedio;
-      this.nivelBasicList = data.nivelBasic;
-      this.idiomasList = data.idiomas;
+      this.nivelAltoList = data.habilidadesTecnicas.nivelAlto;
+      this.nivelMedioList = data.habilidadesTecnicas.nivelMedio;
+      this.nivelBasicList = data.habilidadesTecnicas.nivelBasic;
+      this.idiomasList = data.habilidadesTecnicas.idiomas;
     })
   }
 }

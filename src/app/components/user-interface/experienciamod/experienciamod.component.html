@@ -40,7 +40,7 @@
       </form>
 
       <!-- A partir de aca, empieza cada experiencia individual -->
-      <div *ngFor="let experiencia of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+      <div *ngFor="let experiencia of experienciaList" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
         <!-- div que contiene los iconos para editar y eliminar -->
         <div class="cont-top">
           <a class="edit" title="Eliminar" (click)="deleteExpe()" >

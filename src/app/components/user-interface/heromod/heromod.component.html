@@ -28,8 +28,8 @@
         </div>
       </form>
 
-      <img class="hero-image-profile" *ngIf="miPortfolio" [src]="miPortfolio.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
-      <h1 *ngIf="miPortfolio">{{miPortfolio.saludoPrincipal}}</h1>
-      <h2 *ngIf="miPortfolio">{{miPortfolio.descripcion}}</h2>
+      <img class="hero-image-profile" *ngIf="miPortfolio" [src]="miPortfolio.hero.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
+      <h1 *ngIf="miPortfolio">{{miPortfolio.hero.saludoPrincipal}}</h1>
+      <h2 *ngIf="miPortfolio">{{miPortfolio.hero.descripcion}}</h2>
     </div>
   </section>

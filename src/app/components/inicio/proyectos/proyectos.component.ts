@@ -16,9 +16,8 @@ export class ProyectosComponent {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosProyectos().subscribe(data => {
-      // console.log(data);
       this.miPortfolio = data;
-      this.proyectosList = data.proyecto;
+      this.proyectosList = data.proyectos.proyecto;
       
     })
   }

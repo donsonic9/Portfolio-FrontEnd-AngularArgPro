@@ -1,0 +1,149 @@
+{
+  "banner": {
+      "nombre": "Florencia Fuentes",
+      "descripcion": "Desarollador full stack jr"
+  },
+  "acercaDeMi": {
+      "imagenPerfil": "./assets/img/FB_IMG_1428285724958.jpg",
+      "sobremi": "Una de mis grandes pasiones es el desarrollo de paginas web.Siempre me gusto este hermoso mundo de la programación.Empece leyendo pdf,paginas, viendo videos y haciendo a la par para poder entender y practicar,de esto hace ya 2 años. Otra de mis pasiones es el Taekwondo. Hace 12 años que practico este arte marcial tan maravilloso. Di clases para la escuela que pertenezco y hoy en dia estoy preparandome para rendir el examen para IIIdan."
+  },
+  "experiencia": [
+      {
+          "id": "0",
+          "puestoYperiodo": "Encargada de ventas en kiosco de stella (2006-2010)",
+          "descripcion": "Armado de stock y reposición de mercaderia.Venta de celulares.Carga virtual.Carga de sube.Cobranza de pago facil"
+      },
+      {
+          "id": "1",
+          "puestoYperiodo": "Cajera en supermercado UNO (2010-2015)",
+          "descripcion": "Cajera y cobranza de rapi pago.Reposición de mercadera.Control de vencimientos.Sector de fiambreria.Descarga de mercaderia y control de pedidos"
+      },
+      {
+          "id": "2",
+          "puestoYperiodo": "Instructora de Taekwondo (2017-∞)",
+          "descripcion": "Comencé a entrenar taekwondo en 2011. En ese instante, las ganas que desde muy chica me acompañaron por empezar un arte marcial, se habían transformado en lo que serían mis primeros pasos en este hermoso camino. <br> En el año 2017 luego de seis años de mucho crecimiento tanto personal, como técnico, me presente a el tan ansiado examen para I Dan.<br>El año 2018 culminé con éxito el Curso de formación Integral y comencé a dar clases a mi primer grupo de alumnos. Actualmente formo parte del grupo de instructores EITB-AMASTKD coordinando actividades que requieren una mayor responsabilidad dentro de mi escuela."
+      }
+  ],
+  "educacion": {
+      "certificado": [
+          {
+              "idC": "1",
+              "institucion": "Argentina programa",
+              "titulo": "#SeProgramar-junio de 2022",
+              "imagen": "./assets/img/cursos/SeProgramar.png"
+          },
+          {
+              "idC": "2",
+              "institucion": "Plataforma5",
+              "titulo": "curso introductorio de progrmacion,con conocimientos en HTML,CSS y JAVASCRIPT-Agosto 2022",
+              "imagen": "./assets/img/cursos/Plataforma5.jpg"
+          },
+          {
+              "idC": "3",
+              "institucion": "Municipalidad de San Carlos de Bariloche",
+              "titulo": "Avalado por el Ministerio de Desarrollo Productivo de la Nacioncurso y la Municipalidad de San Carlos de Bariloche.Curso introductorio de progrmacion,con conocimientos en HTML,CSS y JAVASCRIPT-Agosto 2022",
+              "imagen": "./assets/img/cursos/MuniPlataforma5.jpg"
+          },
+          {
+              "idC": "4",
+              "institucion": "Grasshopper",
+              "titulo": "fundamentos de la codificacion",
+              "imagen": "./assets/img/cursos/Grasshopper.jpg"
+          },
+          {
+              "idC": "5",
+              "institucion": "Google Activate",
+              "titulo": "digitaliza paso a paso tu negocio con google My Business y YouTube-Noviembre 2021",
+              "imagen": "./assets/img/cursos/Digitaliza.jpg"
+          },
+          {
+              "idC": "6",
+              "institucion": "Google Activate",
+              "titulo": "ciberseguridad en el teletrabajo-Noviembre 2021",
+              "imagen": "./assets/img/cursos/CiberSeguridad.jpg"
+          },
+          {
+              "idC": "7",
+              "institucion": "Accenture",
+              "titulo": "autoconfianza-autonocimiento-junior,intermedio,avanzado y Master- Octubre 2022",
+              "imagen": "./assets/img/cursos/Accenture.jpg"
+          }
+      ]
+  },
+  "habilidadesTecnicas": {
+      "habilidad": [
+          {
+              "nombre": "pseint",
+              "porcentaje": "95%"
+          },
+          {
+              "nombre": "html",
+              "porcentaje": "85%"
+          },
+          {
+              "nombre": "css",
+              "porcentaje": "85%"
+          },
+          {
+              "nombre": "bootstrap",
+              "porcentaje": "80%"
+          },
+          {
+              "nombre": "javascript",
+              "porcentaje": "30%"
+          },
+          {
+              "nombre": "typescript",
+              "porcentaje": "10%"
+          },
+          {
+              "nombre": "python",
+              "porcentaje": "30%"
+          },
+          {
+              "nombre": "git",
+              "porcentaje": "10%"
+          },
+          {
+              "nombre": "github",
+              "porcentaje": "10%"
+          }
+      ]
+  },
+  "proyectos": {
+      "proyecto": [
+          {
+              "nombre": "color game",
+              "descripcion": "Un juego divertido donde el usuario deberá adivinar un color a partir de su código RGB",
+              "paginaURL": "https://graceful-malasada-201f0b.netlify.app/"
+          },
+          {
+              "nombre": "to do list",
+              "descripcion": "Una lista ordenada de tareas para realizar,utilizando la manipulación del DOM",
+              "paginaURL": "https://silly-gecko-9fd65b.netlify.app/"
+          },
+          {
+              "nombre": "weather channel",
+              "descripcion": "Sitio para mostrar las condiciones climaticas de cada ciudad,utilizando API,jQuery,AJAX y JSON",
+              "paginaURL": "https://superlative-queijadas-b0b14b.netlify.app/"
+          },
+          {
+              "nombre": "plataforma5",
+              "descripcion": "Implementando los conocimientos en html,css,bootstrap y javascript",
+              "paginaURL": "https://gorgeous-seahorse-4ac653.netlify.app/#porfolio"
+          },
+          {
+              "nombre": "yoProgramo",
+              "descripcion": "Portfolio web personal.Cuenta con arquitectura web distribuida.Front End(Angular),Back End(Sprint Boot) y Bases de datos(MySQL)",
+              "paginaURL": "index.html"
+          }
+      ]
+  },
+  "footer": {
+      "frase": "¡Para contactarte conmigo podes seguirme en las redes!",
+      "githubURL": "https://github.com/FlorFuentes",
+      "telegramURL": "https://t.me/Flor_Fuentes_12",
+      "linkedinURL": "https://www.linkedin.com/in/florencia-fuentes-52b841263/",
+      "txtCopyright": "Copyright © Creada por Florencia Fuentes 05/2023"
+  }
+}

@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Cargamos los componentes correspondientes a las vistas
 import { InicioComponent } from '../components/inicio/inicio.component';
 import { LoginComponent } from '../components/login/login.component';
-import { SignUpComponent } from '../components/sign-up/sign-up.component';
+//import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { UserInterfaceComponent } from '../components/user-interface/user-interface.component';
 
 // array que contiene las rutas
@@ -14,9 +14,9 @@ const routes: Routes = [
   {path: "", redirectTo: '/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signUp', component: SignUpComponent},
   {path: 'userInterface', component: UserInterfaceComponent}
 ];
+//{path: 'signUp', component: SignUpComponent} path eliminado, posible futura implementacion.
 
 
 
