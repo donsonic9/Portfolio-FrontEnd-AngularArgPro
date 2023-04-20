@@ -10,7 +10,7 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 export class NavbarmodComponent {
 
   // definimos una variable para conectar el sv con el html, mediante data binding.
-  miPortfolio: any;
+  miPortfolio: any[] = [];
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {

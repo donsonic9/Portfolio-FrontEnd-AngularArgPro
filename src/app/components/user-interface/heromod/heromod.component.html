@@ -4,7 +4,7 @@
   <!-- Hero section -->
   <section class="hero d-flex align-items-sm-stretch">
     
-    <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-principal d-flex flex-column justify-content-center align-items-center" >
       <!-- div que contiene los iconos para editar y eliminar -->
       
       <label class="cv" for="tfhero">Editar Informacion <i class="fa-solid fa-pen"></i></label>
@@ -28,8 +28,11 @@
         </div>
       </form>
 
-      <img class="hero-image-profile" *ngIf="miPortfolio" [src]="miPortfolio.hero.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
-      <h1 *ngIf="miPortfolio">{{miPortfolio.hero.saludoPrincipal}}</h1>
-      <h2 *ngIf="miPortfolio">{{miPortfolio.hero.descripcion}}</h2>
+      <div *ngFor="let her of miPortfolio">
+        <img class="hero-image-profile" *ngIf="miPortfolio" [src]="her.img_profile" alt="Imagen de perfil" title="Imagen de perfil">
+        <h1 *ngIf="miPortfolio">{{her.saludo}}</h1>
+        <h2 *ngIf="miPortfolio">{{her.profesion}}</h2>
+      </div>
+      
     </div>
   </section>

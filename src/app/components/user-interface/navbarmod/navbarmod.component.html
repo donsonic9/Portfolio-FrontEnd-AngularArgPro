@@ -28,9 +28,9 @@
           </li>
           <li class="nav-item-drop nav-item">
               <div class="btn-group">
-                <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                <button *ngFor="let nav of miPortfolio" type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                   <!-- La idea es que esta foto sea la misma que la de perfil y que cambie dinamicamente segun quiera el usuario. -->
-                  <img class="hero-image-profile-small" *ngIf="miPortfolio" [src]="miPortfolio.hero.imagenPerfil" alt="Imagen de perfil" title="Imagen de perfil">
+                  <img class="hero-image-profile-small" *ngIf="miPortfolio" [src]="nav.img_profile" alt="Imagen de perfil" title="Imagen de perfil">
                 </button>
                 <ul class="dropdown-menu dropdown-menu-end seccion-glass">
                   <!-- Con el routerLink, le decimos que componente cargar -->

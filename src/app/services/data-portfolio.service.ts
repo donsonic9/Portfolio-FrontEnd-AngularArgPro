@@ -19,8 +19,8 @@ export class DataPortfolioService {
 
   // Recordar que, como ahora con la API, cada componente necesita su ruta especifica del localhost, si en algun momento lo usamos sin el server, hay que especificar en los databinding del componente la ruta, como se hizo antes. Es decir, si ahora tenemos en la funcion del 'get', el localhost:5000/hero, si le sacamos el 'hero', hay que especificarlo en el componente como 'miPortfolio.hero.algo'.
 
-
-  obtenerDatosHero(): Observable<Hero[]> {
+  /* ------------------------ Read, Update, HERO --------------------------------------------- */
+  public obtenerDatosHero(): Observable<Hero[]> {
     //return this.http.get(this.json) //para cuando no tenemos API, cargamos JSON local en Angular.
     // return this.http.get('http://localhost:5000/hero') //ese es el puerto que configuramos en el package.json para usarlo con una API (json-server)
     return this.http.get<Hero[]>(this.bakcendDS9 + "/hero/ver") 
@@ -28,35 +28,38 @@ export class DataPortfolioService {
     //con Spring Boot, Hibernate, JPA; y ahora si tenemos backend.
   }
 
+  // public modificarDatosHero(her : Hero): Observable<Hero[]> {
+  //   return this.http.put<Hero[]>(this.bakcendDS9 + "/hero/editar", her)
+  // }
+
   obtenerDatosSobreMi(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get('http://localhost:5000/sobreMi')
+    
   }
 
   obtenerDatosExperiencia(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get(this.urlAPI)
+    
   }
 
   obtenerDatosEducacion(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get('http://localhost:5000/educacion')
+    
   }
 
   obtenerDatosHabTec(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get('http://localhost:5000/habilidadesTecnicas')
+    
   }
 
   obtenerDatosProyectos(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get('./assets/data/dataflor.json')
-    // return this.http.get('http://localhost:5000/proyectos')
+    
   }
 
   obtenerDatosFooter(): Observable<any> {
     return this.http.get(this.json)
-    // return this.http.get('http://localhost:5000/footer')
+    
   }
 
 }

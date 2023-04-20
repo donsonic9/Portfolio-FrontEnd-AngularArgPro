@@ -15,9 +15,8 @@ export class HeroComponent {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosHero().subscribe(data => {
-      // console.log(data);
       this.miPortfolio = data;
-      
     })
   }
+
 }
