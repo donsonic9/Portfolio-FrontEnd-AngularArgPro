@@ -1,7 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { EXPE } from './mock-expe';
-import { ExpeInterface } from './ExpeInterface';
-
 import { subscribeOn } from 'rxjs';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 // formularios de angular
@@ -76,6 +73,10 @@ export class ExperienciamodComponent {
 
     }
 
+  }
+
+  editarExpe() {
+    alert("Modificando experiencia");
   }
 
 }

@@ -4,31 +4,12 @@
   <!-- Hero section -->
   <section class="hero d-flex align-items-sm-stretch">
     
-    <div class="hero-principal d-flex flex-column justify-content-center align-items-center" >
+    <div class="hero-principal d-flex flex-column justify-content-center align-items-center" *ngFor="let her of miPortfolio">
       <!-- div que contiene los iconos para editar y eliminar -->
       
-      <label class="cv" for="tfhero">Editar Informacion <i class="fa-solid fa-pen"></i></label>
-      <input name="tfhero" id="tfhero" class="toggle-form-hero" type="checkbox" checked >
-      <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="hero-form">
-        <div class="mod-form-div">
-          <label for="img-profile">Imagen de perfil (URL) : </label>
-          <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
-        </div>
-        <div class="mod-form-div">
-          <label for="">Saludo principal : </label>
-          <input type="text" placeholder="Hola! Soy *nombre de usuario*">
-        </div>
-        <div class="mod-form-div">
-          <label for="">Descripcion : </label>
-          <input type="text" placeholder="Desarrollador en Python">
-        </div>
-        <div class="send-button-div">
-          <input type="submit" value="Aceptar">
-        </div>
-      </form>
+      <label class="cv" for="tfhero" routerLink="/hero/editar/{{her.id}}">Editar Informacion <i class="fa-solid fa-pen"></i></label>
 
-      <div *ngFor="let her of miPortfolio">
+      <div>
         <img class="hero-image-profile" *ngIf="miPortfolio" [src]="her.img_profile" alt="Imagen de perfil" title="Imagen de perfil">
         <h1 *ngIf="miPortfolio">{{her.saludo}}</h1>
         <h2 *ngIf="miPortfolio">{{her.profesion}}</h2>

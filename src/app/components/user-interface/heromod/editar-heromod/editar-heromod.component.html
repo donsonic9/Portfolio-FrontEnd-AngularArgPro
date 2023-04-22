@@ -1,0 +1,21 @@
+<div class="container d-flex align-items-center">
+  <!-- Formulario de edicion -->
+  <!-- Formulario Original -->
+  <form [formGroup]="formHero" (ngSubmit)="onSubmitHero()" class="formulario-edicion" id="hero-form">
+    <div class="mod-form-div">
+      <label for="img-profile">Imagen de perfil (URL) : </label>
+      <input type="text" id="img_profile" formControlName="img_profile" placeholder="https://myimage.com/profile.image" >
+    </div>
+    <div class="mod-form-div">
+      <label for="saludo">Saludo principal : </label>
+      <input type="text" id="saludo" formControlName="saludo" placeholder="Hola! Soy *nombre de usuario*" >
+    </div>
+    <div class="mod-form-div">
+      <label for="profesion">Descripcion (profesion) : </label>
+      <input type="text" id="profesion" formControlName="profesion" placeholder="Desarrollador en Python" >
+    </div>
+    <div class="send-button-div">
+      <input type="submit" value="Aceptar" >
+    </div>
+  </form>
+</div>
