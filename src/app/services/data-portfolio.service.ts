@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Hero } from '../models/hero';
+import { SobreMi } from '../models/sobremi';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -46,12 +47,22 @@ export class DataPortfolioService {
 
   
 
+  //-------------------------------------- SOBRE MI ------------------------------------------------
 
-
-  obtenerDatosSobreMi(): Observable<any> {
-    return this.http.get(this.json)
+  public obtenerDatosSobreMi(): Observable<SobreMi[]> {
+    return this.http.get<SobreMi[]>("/sobremi/ver")
     
   }
+
+  public editarSobreMi(sobremi: SobreMi): Observable<SobreMi> {
+    console.log("SobreMi ya dentro de data-portfolio.service.ts");
+    console.log(sobremi);
+    
+    return this.http.put<SobreMi>(`/sobremi/editar/`, sobremi, this.httpOptions);
+  }
+
+  //---------------------------------------- EXPERIENCIA -----------------------------------------
+
 
   obtenerDatosExperiencia(): Observable<any> {
     return this.http.get(this.json)

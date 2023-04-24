@@ -49,7 +49,7 @@ export class EditarHeromodComponent {
     this.datosPortfolio.editarHero(hero).subscribe( () => {
       console.log("datos enviados al servicio");
     });
-
+    alert("Formulario enviado correctamente! Click en 'Aceptar' para volver al inicio.");
     this.router.navigate(['userInterface']);
   }
 

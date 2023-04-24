@@ -4,43 +4,20 @@
 
 <!-- Sobre mi -->
 <section class="sobre-mi seccion-clara d-flex align-items-center justify-content-center">
-  <!-- div que contiene los iconos para editar y eliminar -->
-  <!-- <div class="cont-top">
-    <a class="edit" title="Editar" data-bs-toggle="collapse" href="#sobre-mi-form" role="button" aria-expanded="false" aria-controls="sobre-mi-form">
-      <i class="fa-solid fa-pen"></i>
-    </a>
     
-  </div> -->
+  <div *ngFor="let sob of miPortfolio" class=" d-flex flex-column align-items-center justify-content-center">
+    <!-- Boton de editar informacion -->
+    <label class="cv" for="tfsobremi" routerLink="/sobremi/editar/{{sob.id}}">Editar Informacion <i class="fa-solid fa-pen"></i></label>
+    
+    <div class="sobre-mi-cont container row d-flex flex-row align-items-stretch justify-content-between">
+      <img class="sobre-mi-image img-fluid col-12 col-lg-4" *ngIf="miPortfolio" [src]="sob.second_img" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
+      <div class="container col-12 col-md-8 d-flex flex-column justify-content-center align-items-center">
+        <h2 class="sobre-mi-title">Conoce un poco sobre mi!.</h2>
+        <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{sob.description}}<i class="bi bi-cup-hot"></i></p>
+      </div>
+    </div>
 
-  <!-- Boton de editar informacion -->
-  <label class="cv" for="tfsobremi">Editar Informacion <i class="fa-solid fa-pen"></i></label>
-  <input name="tfsobremi" id="tfsobremi" class="toggle-form-hero" type="checkbox" checked >
-
-  <!-- Formulario de edicion -->
-  <form class="formulario-edicion" id="sobre-mi-form">
-    <div class="mod-form-div">
-      <label for="img-profile">Imagen Secundaria (URL) : </label>
-      <input type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
-    </div>
-    <div class="mod-form-div">
-      <label for="text-area-idd">Descripcion : </label>
-        <textarea name="text-area-idd" id="text-area-idd" cols="30" rows="5" placeholder="Cuenta un poco sobre ti, aficiones, pequeña historia, etc." ></textarea>
-    </div>
-    <div class="send-button-div">
-      <input type="submit" value="Aceptar">
-    </div>
-  </form>
-
-  <div class="sobre-mi-cont container row d-flex flex-row align-items-stretch justify-content-between">
-    <img class="sobre-mi-image img-fluid col-12 col-lg-4" *ngIf="miPortfolio" [src]="miPortfolio.sobreMi.imagenSecundaria" alt="Foto de Alexander en seccion 'Sobre mi'." title="Foto de Alexander">
-    <div class="container col-12 col-md-8 d-flex flex-column justify-content-center align-items-center">
-      <h2 class="sobre-mi-title">Conoce un poco sobre mi!.</h2>
-      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{miPortfolio.sobreMi.descripcion}}<i class="bi bi-cup-hot"></i></p>
-    </div>
   </div>
-
-  
-  
 </section>
 
 

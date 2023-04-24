@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { SobreMi } from 'src/app/models/sobremi';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
@@ -9,13 +9,14 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 })
 export class SobreMimodComponent {
 
-  miPortfolio: any;
+  miPortfolio: SobreMi[] = [];
 
   constructor(private datosPortfolio: DataPortfolioService) {}
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSobreMi().subscribe(data =>{
       this.miPortfolio = data;
+      console.log(data);
     })
   }
 

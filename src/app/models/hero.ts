@@ -5,8 +5,4 @@ export class Hero {
   public saludo!: String;
   public profesion!: String;
 
-  
-
-
-
 }

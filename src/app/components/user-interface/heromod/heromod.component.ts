@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-//import { subscribeOn } from 'rxjs';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Hero } from 'src/app/models/hero';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
@@ -17,8 +15,7 @@ export class HeromodComponent {
   //miHero: Hero;
   
 
-  constructor(private fb:FormBuilder, 
-              private datosPortfolio:DataPortfolioService) { 
+  constructor(private datosPortfolio:DataPortfolioService) { 
 
   }
 

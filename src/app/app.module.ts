@@ -44,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
 // Para usar Formularios reactivos de Angular:
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarHeromodComponent } from './components/user-interface/heromod/editar-heromod/editar-heromod.component';
+import { EditarSobreMimodComponent } from './components/user-interface/sobre-mimod/editar-sobre-mimod/editar-sobre-mimod.component';
 
 
 
@@ -73,7 +74,8 @@ import { EditarHeromodComponent } from './components/user-interface/heromod/edit
     HabilidadesmodComponent,
     ProyectosmodComponent,
     FootermodComponent,
-    EditarHeromodComponent
+    EditarHeromodComponent,
+    EditarSobreMimodComponent
   ],
   imports: [
     BrowserModule,
