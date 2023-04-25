@@ -12,7 +12,7 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 export class EditarHeromodComponent implements OnInit {
 
   formHero: FormGroup;
-  initialHero!: Hero;
+  // initialHero!: Hero;
   miPortfolio: Hero[] = [];
   
   constructor(private fb:FormBuilder, 

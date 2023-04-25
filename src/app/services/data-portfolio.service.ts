@@ -61,9 +61,12 @@ export class DataPortfolioService {
     return this.http.put<Experiencia>(`/experiencia/editar/`, expe, this.httpOptions);
   }
 
+  public borrarExperiencia(id: number): Observable<any> {
+    return this.http.delete<any>("/experiencia/borrar" + id.toString());
+  }
 
 
-
+  //---------------------------------------- EDUCACION ------------------------------------------
 
   obtenerDatosEducacion(): Observable<any> {
     return this.http.get(this.json)

@@ -10,7 +10,7 @@
       <div *ngFor="let exp of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
         <!-- div que contiene los iconos para editar y eliminar -->
         <div class="cont-top">
-          <a class="edit" title="Eliminar">
+          <a class="edit" title="Eliminar" (click)="onDelete(exp.id)">
             <i class="fa-regular fa-trash-can"></i>
           </a>
           <a class="edit" title="Editar" routerLink="/experiencia/editar/{{exp.id}}">

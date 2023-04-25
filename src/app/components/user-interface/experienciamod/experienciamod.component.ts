@@ -1,9 +1,8 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { Component } from '@angular/core';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 // formularios de angular
-import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { Experiencia } from 'src/app/models/experiencia';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-experienciamod',
@@ -15,13 +14,25 @@ export class ExperienciamodComponent {
   
   miPortfolio: Experiencia[]= [];
   
-  constructor(private datosPortfolio:DataPortfolioService) { }
+  constructor(private datosPortfolio:DataPortfolioService, private router: Router) { }
 
   // lee los datos de la base de datos, usando el servicio.
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosExperiencia().subscribe(data => {
       this.miPortfolio = data;
     })    
+  }
+
+  onDelete(id: any) {
+    //alert(id)
+    let elim = confirm("Desea eliminar este elemento?");
+    if (elim == true) {
+      this.datosPortfolio.borrarExperiencia(id).subscribe( () => {
+        // console.log("se borro?");
+      })
+      alert("Elemento eliminado correctamente!");
+      this.router.navigate(['userInterface']);
+    }
   }
 
 }
