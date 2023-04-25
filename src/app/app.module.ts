@@ -45,6 +45,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarHeromodComponent } from './components/user-interface/heromod/editar-heromod/editar-heromod.component';
 import { EditarSobreMimodComponent } from './components/user-interface/sobre-mimod/editar-sobre-mimod/editar-sobre-mimod.component';
+import { EditarExperienciaComponent } from './components/user-interface/experienciamod/editar-experiencia/editar-experiencia.component';
+import { CrearExperienciaComponent } from './components/user-interface/experienciamod/crear-experiencia/crear-experiencia.component';
 
 
 
@@ -75,7 +77,9 @@ import { EditarSobreMimodComponent } from './components/user-interface/sobre-mim
     ProyectosmodComponent,
     FootermodComponent,
     EditarHeromodComponent,
-    EditarSobreMimodComponent
+    EditarSobreMimodComponent,
+    EditarExperienciaComponent,
+    CrearExperienciaComponent
   ],
   imports: [
     BrowserModule,

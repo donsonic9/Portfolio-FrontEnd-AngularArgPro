@@ -1,61 +1,29 @@
   <!-- Experiencia -->
   <section class="exp">
     <div class="container d-flex flex-column seccion-glass">
-
-      
       <h2 class="exp-title text-center ">Experiencia </h2>
       
-
       <!-- Añadir nueva experiencia -->
-      <label class="cv" for="tfexp">Nueva experiencia <i class="fa-solid fa-plus"></i></label>
-      <input name="tfexp" id="tfexp" class="toggle-form-hero" type="checkbox" checked >
-      
-
-      <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="expe-form" [formGroup]="form" (submit)="enviarData()">
-        <div class="mod-form-div">
-          <label for="img-profile">Logo de la empresa/ otro logo: </label>
-          <input formControlName="logo" type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">Se recomienda que el logo sea cuadrado (ancho = altura)
-        </div>
-        <div *ngIf="Logo?.errors && Logo?.touched" >
-          <p *ngIf="Logo?.hasError('required')" class="dangermsg">Debe incluir la URL de la imagen</p>
-        </div>
-        <div class="mod-form-div">
-          <label for="">Titulo del puesto y periodo de tiempo : </label>
-          <input formControlName="posicionYtiempo" type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
-        </div>
-        <div *ngIf="posYtiempo?.errors && posYtiempo?.touched" >
-          <p *ngIf="posYtiempo?.hasError('required')" class="dangermsg">Debe incluir titulo del cargo.</p>
-        </div>
-        <div class="mod-form-div">
-          <label for="text-area-id">Descripcion : </label>
-          <textarea formControlName="descripcion" name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
-        </div>
-        <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
-          <p *ngIf="Descripcion?.hasError('required')" class="dangermsg">Debe incluir una descripcion.</p>
-        </div>
-        <div class="send-button-div">
-          <button type="submit">Aceptar</button>
-        </div>
-      </form>
+      <label class="cv" for="tfexp" routerLink="/experiencia/crear">Nueva experiencia <i class="fa-solid fa-plus"></i></label>
 
       <!-- A partir de aca, empieza cada experiencia individual -->
-      <div *ngFor="let experiencia of experienciaList" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+      <div *ngFor="let exp of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
         <!-- div que contiene los iconos para editar y eliminar -->
         <div class="cont-top">
-          <a class="edit" title="Eliminar" (click)="deleteExpe()" >
+          <a class="edit" title="Eliminar">
             <i class="fa-regular fa-trash-can"></i>
           </a>
-          <a class="edit" title="Editar" (click)="editarExpe()" >
+          <a class="edit" title="Editar" routerLink="/experiencia/editar/{{exp.id}}">
             <i class="fa-solid fa-pen"></i>
           </a>
         </div>
 
-        <img class="exp-image col-12 " [src]="experiencia.logo" alt="Person icon">
+        <img class="exp-image col-12 " [src]="exp.logo_url" alt="Person icon">
         <div class="exp-info d-flex flex-column col-12">
-          <h3>{{experiencia.posicionYtiempo}}</h3>
-          <p>{{experiencia.descripcion}}</p>
+          <h3>{{exp.posicionYTiempo}}</h3>
+          <p>{{exp.description}}</p>
         </div>
+
       </div>
     </div>
   </section>

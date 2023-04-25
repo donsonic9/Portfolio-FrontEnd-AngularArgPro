@@ -5,11 +5,11 @@
       <div class="container">
         <!-- A partir de aca, empieza cada experiencia individual -->
 
-        <div *ngFor="let experiencia of experienciaList" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
-          <img class="exp-image col-12 " *ngIf="miPortfolio" [src]="experiencia.logo" alt="Person icon">
+        <div *ngFor="let exp of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">
+          <img class="exp-image col-12 " *ngIf="miPortfolio" [src]="exp.logo_url" alt="Person icon">
           <div class="exp-info d-flex flex-column col-12">
-            <h3 *ngIf="miPortfolio"> {{experiencia.posicionYtiempo}}</h3>
-            <p *ngIf="miPortfolio"> {{experiencia.descripcion}}</p>
+            <h3 *ngIf="miPortfolio"> {{exp.posicionYTiempo}}</h3>
+            <p *ngIf="miPortfolio"> {{exp.description}}</p>
           </div>
         </div>
 

@@ -135,58 +135,7 @@
 
 /* ------------------------------------------------------------------------------------- */
 
-/* Formulario de edicion */
 
-.formulario-edicion {
-  padding: 20px;
-  margin-bottom: 10px;
-  background-color: var(--shadow-3);
-  border-radius: 5px;
-  width: 80%;
-}
-
-.mod-form-div {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  margin: 16px 0;
-}
-
-.mod-form-div label {
-  color: var(--almost-white);
-}
-
-.mod-form-div input[type="text"] {
-  margin-top: 5px;
-  border-radius: 5px;
-  
-  border: none;
-  outline: none;
-}
-
-textarea {
-  resize: none;
-}
-
-.send-button-div {
-  display: flex;
-  justify-content: center;
-}
-
-.send-button-div button[type="submit"] {
-  margin: 10px;
-  padding: 8px 38px;
-  border: none;
-  border-radius: 4px;
-  color: var(--almost-white);
-  background-color: var(--light-color);
-  transition: all 0.2s ease;
-}
-
-.send-button-div button[type="submit"]:hover {
-  background-color: var(--almost-white);
-  color: var(--light-color);
-}
 
 /* --------------------------------------------------------------------------- */
 

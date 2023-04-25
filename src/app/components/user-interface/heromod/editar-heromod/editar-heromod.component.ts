@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero';
@@ -9,13 +9,12 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
   templateUrl: './editar-heromod.component.html',
   styleUrls: ['./editar-heromod.component.css']
 })
-export class EditarHeromodComponent {
-
-  // hero: Hero;
+export class EditarHeromodComponent implements OnInit {
 
   formHero: FormGroup;
+  initialHero!: Hero;
+  miPortfolio: Hero[] = [];
   
-
   constructor(private fb:FormBuilder, 
               private datosPortfolio:DataPortfolioService,
               private activatedRoute:ActivatedRoute,
@@ -31,8 +30,20 @@ export class EditarHeromodComponent {
 
 
   ngOnInit(): void {
-    const id = this.activatedRoute.snapshot.params['id'];
-    console.log(id);
+    // Fetch the hero to edit from the database using the id parameter from the route
+    const heroId = this.activatedRoute.snapshot.params['id'];
+
+    this.datosPortfolio.obtenerDatosHero().subscribe(data => {
+      this.miPortfolio = data;
+      //once acces to data, it finds the element with same id to patch form fields with its info.
+      const element = this.miPortfolio.find(item => item.id === parseInt(heroId));
+      this.formHero.patchValue({
+        id: element?.id,
+        img_profile: element?.img_profile,
+        saludo: element?.saludo,
+        profesion: element?.profesion
+      });
+    });
   }
 
   onSubmitHero() {
@@ -43,11 +54,11 @@ export class EditarHeromodComponent {
       saludo: this.formHero.value.saludo,
       profesion: this.formHero.value.profesion,
     };
-    console.log("hero en heromod.component.ts antes de llamar al servicio");
-    console.log(hero);
+    // console.log("hero en heromod.component.ts antes de llamar al servicio");
+    // console.log(hero);
 
     this.datosPortfolio.editarHero(hero).subscribe( () => {
-      console.log("datos enviados al servicio");
+      // console.log("datos enviados al servicio");
     });
     alert("Formulario enviado correctamente! Click en 'Aceptar' para volver al inicio.");
     this.router.navigate(['userInterface']);
