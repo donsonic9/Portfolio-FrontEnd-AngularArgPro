@@ -9,7 +9,7 @@
         <h3>Nivel Alto</h3>
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelAltoList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
           </div>
         </div>
@@ -17,7 +17,7 @@
         <h3>Nivel Medio</h3>
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelMedioList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
           </div>
           
@@ -26,7 +26,7 @@
         <h3>Nivel Basic</h3>
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelBasicList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
           </div>
           
@@ -39,7 +39,7 @@
         <div class="exp-cont row d-flex justify-content-center align-items-center text-center">
 
           <div *ngFor="let habilidad of idiomasList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
-            <img class="language-flag" [src]="habilidad.logoURL" alt="Spain flag">
+            <img class="language-flag" [src]="habilidad.logo_url" alt="Spain flag">
             <p>{{habilidad.nombre}}</p>
           </div>
 

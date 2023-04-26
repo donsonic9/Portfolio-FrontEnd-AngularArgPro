@@ -50,6 +50,8 @@ import { CrearExperienciaComponent } from './components/user-interface/experienc
 import { EditarEducacionmodComponent } from './components/user-interface/educacionmod/editar-educacionmod/editar-educacionmod.component';
 import { CrearEducacionmodComponent } from './components/user-interface/educacionmod/crear-educacionmod/crear-educacionmod.component';
 import { EditarDescripcioneducacionComponent } from './components/user-interface/educacionmod/editar-descripcioneducacion/editar-descripcioneducacion.component';
+import { EditarHabilidadesmodComponent } from './components/user-interface/habilidadesmod/editar-habilidadesmod/editar-habilidadesmod.component';
+import { CrearHabilidadesmodComponent } from './components/user-interface/habilidadesmod/crear-habilidadesmod/crear-habilidadesmod.component';
 
 
 
@@ -85,7 +87,9 @@ import { EditarDescripcioneducacionComponent } from './components/user-interface
     CrearExperienciaComponent,
     EditarEducacionmodComponent,
     CrearEducacionmodComponent,
-    EditarDescripcioneducacionComponent
+    EditarDescripcioneducacionComponent,
+    EditarHabilidadesmodComponent,
+    CrearHabilidadesmodComponent
   ],
   imports: [
     BrowserModule,

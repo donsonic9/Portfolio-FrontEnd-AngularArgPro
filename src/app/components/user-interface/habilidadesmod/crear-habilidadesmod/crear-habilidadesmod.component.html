@@ -1,0 +1,24 @@
+
+<!-- Formulario de edicion -->
+<form class="formulario-edicion" id="hab-form" [formGroup]="formHabTec" (ngSubmit)="onSubmitHabTec()">
+  <div class="mod-form-div">
+    <label for="img-logo-tecnologia">Logo (URL): </label>
+    <input type="text" formControlName="logo_url" id="img-logo-tecnologia" name="img-logo-tecnologia" placeholder="https://myimage.com/html.image">Se recomienda que el logo sea cuadrado (ancho = altura)
+  </div>
+  <div class="mod-form-div">
+    <label for="">Nombre de habilidad : </label>
+    <input type="text" formControlName="nombre" placeholder="TypeScript">
+  </div>
+  <div class="mod-form-div">
+    <label for="select-id">Nivel/Idioma : </label>
+    <select name="select-id" formControlName="nivel_o_idioma" id="select-id">
+      <option value="alto">Nivel Alto</option>
+      <option value="medio">Nivel Medio</option>
+      <option value="basic">Nivel Basic</option>
+      <option value="idioma">Idioma</option>
+    </select>
+  </div>
+  <div class="send-button-div">
+    <input type="submit" value="Aceptar">
+  </div>
+</form>

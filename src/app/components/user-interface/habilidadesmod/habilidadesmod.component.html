@@ -6,32 +6,9 @@
       <h2 class="exp-title text-center ">Habilidades Técnicas</h2>
 
       <!-- Boton de "Nueva Habilidad" -->
-      <label class="cv" for="tfhab">Nueva habilidad <i class="fa-solid fa-plus"></i></label>
-      <input name="tfhab" id="tfhab" class="toggle-form-hero" type="checkbox" checked >
+      <label class="cv" for="tfhab" routerLink="/habilidadtecnica/crear/">Nueva habilidad <i class="fa-solid fa-plus"></i></label>
 
-      <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="hab-form">
-        <div class="mod-form-div">
-          <label for="img-logo-tecnologia">Logo (URL): </label>
-          <input type="text" id="img-logo-tecnologia" name="img-logo-tecnologia" placeholder="https://myimage.com/html.image">Se recomienda que el logo sea cuadrado (ancho = altura)
-        </div>
-        <div class="mod-form-div">
-          <label for="">Nombre de habilidad : </label>
-          <input type="text" placeholder="TypeScript">
-        </div>
-        <div class="mod-form-div">
-          <label for="select-id">Nivel/Idioma : </label>
-          <select name="select-id" id="select-id">
-            <option value="alto">Nivel Alto</option>
-            <option value="medio">Nivel Medio</option>
-            <option value="basic">Nivel Basic</option>
-            <option value="idioma">Idioma</option>
-          </select>
-        </div>
-        <div class="send-button-div">
-          <input type="submit" value="Aceptar">
-        </div>
-      </form>
+      
 
       <div class="hab-div-cont container-fluid d-flex flex-column ">
 
@@ -39,14 +16,14 @@
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelAltoList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
             
-            <img [src]="habilidad.logoURL" alt="HTML5 Logo">
+            <img [src]="habilidad.logo_url" alt="HTML5 Logo">
             <p>{{habilidad.nombre}}</p>
             <!-- div que contiene los iconos para editar y eliminar -->
             <div class="cont-top">
-              <a class="edit" title="Eliminar">
-                <i class="fa-regular fa-trash-can" ></i>
+              <a class="edit" title="Eliminar" (click)="onDelete(habilidad.id)">
+                <i class="fa-regular fa-trash-can"></i>
               </a>
-              <a class="edit" title="Editar">
+              <a class="edit" title="Editar" routerLink="/habilidadtecnica/editar/{{habilidad.id}}">
                 <i class="fa-solid fa-pen" ></i>
               </a>
             </div>
@@ -58,14 +35,14 @@
         <h3>Nivel Medio</h3>
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelMedioList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
             <!-- div que contiene los iconos para editar y eliminar -->
             <div class="cont-top">
-              <a class="edit" title="Eliminar">
-                <i class="fa-regular fa-trash-can" ></i>
+              <a class="edit" title="Eliminar" (click)="onDelete(habilidad.id)">
+                <i class="fa-regular fa-trash-can"></i>
               </a>
-              <a class="edit" title="Editar">
+              <a class="edit" title="Editar" routerLink="/habilidadtecnica/editar/{{habilidad.id}}">
                 <i class="fa-solid fa-pen" ></i>
               </a>
             </div>
@@ -78,14 +55,14 @@
         <div class="exp-cont row d-flex justify-content-center align-items-baseline text-center">
           <div *ngFor="let habilidad of nivelBasicList" class="icon-container col-12 col-sm-6 col-md-3 seccion-glass-h">
 
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
             <!-- div que contiene los iconos para editar y eliminar -->
             <div class="cont-top">
-              <a class="edit" title="Eliminar">
+              <a class="edit" title="Eliminar" (click)="onDelete(habilidad.id)">
                 <i class="fa-regular fa-trash-can" ></i>
               </a>
-              <a class="edit" title="Editar">
+              <a class="edit" title="Editar" routerLink="/habilidadtecnica/editar/{{habilidad.id}}">
                 <i class="fa-solid fa-pen" ></i>
               </a>
             </div>
@@ -106,14 +83,14 @@
         <div class="exp-cont row d-flex justify-content-center align-items-center text-center">
 
           <div *ngFor="let habilidad of idiomasList" class="icon-container col-12 col-sm-6 col-md-2 seccion-glass-h">
-            <img [src]="habilidad.logoURL" alt="">
+            <img [src]="habilidad.logo_url" alt="">
             <p>{{habilidad.nombre}}</p>
             <!-- div que contiene los iconos para editar y eliminar -->
             <div class="cont-top">
-              <a class="edit" title="Eliminar">
+              <a class="edit" title="Eliminar" (click)="onDelete(habilidad.id)">
                 <i class="fa-regular fa-trash-can" ></i>
               </a>
-              <a class="edit" title="Editar">
+              <a class="edit" title="Editar" routerLink="/habilidadtecnica/editar/{{habilidad.id}}">
                 <i class="fa-solid fa-pen" ></i>
               </a>
             </div>

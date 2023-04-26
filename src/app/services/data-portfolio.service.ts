@@ -6,6 +6,7 @@ import { SobreMi } from '../models/sobremi';
 import { Experiencia } from '../models/experiencia';
 import { Educacion } from '../models/educacion';
 import { DescripcionEducacion } from '../models/descripcioneducacion';
+import { HabTec } from '../models/habilidadtecnica';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -102,10 +103,23 @@ export class DataPortfolioService {
   //---------------------------------------- HABILIDADES TECNICAS --------------------------------
 
 
-  obtenerDatosHabTec(): Observable<any> {
-    return this.http.get(this.json)
-    
+  public obtenerDatosHabTec(): Observable<HabTec[]> {
+    return this.http.get<HabTec[]>("/habilidadtecnica/ver")
   }
+
+  public crearHabTec(hab: HabTec): Observable<HabTec> {
+    return this.http.post<HabTec>(`/habilidadtecnica/crear/`, hab, this.httpOptions);
+  }
+
+  public editarHabTec(hab: HabTec): Observable<HabTec> {
+    return this.http.put<HabTec>(`/habilidadtecnica/editar/`, hab, this.httpOptions);
+  }
+
+  public borrarHabTec(id: number): Observable<any> {
+    return this.http.delete<any>("/habilidadtecnica/borrar" + id.toString());
+  }
+
+  //--------------------------------------- PROYECTOS --------------------------------------------
 
   obtenerDatosProyectos(): Observable<any> {
     return this.http.get(this.json)
