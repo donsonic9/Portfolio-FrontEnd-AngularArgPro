@@ -4,84 +4,49 @@
     <div class="container row d-flex flex-column align-items-center justify-content-center">
       <h2 class="sobre-mi-title">Educación</h2>
 
-      <!-- Boton de "Editar Descripcion" -->
-      <label class="cv desc" for="tfeduc">Editar descripcion <i class="fa-solid fa-pen"></i></label>
-      <input name="tfeduc" id="tfeduc" class="toggle-form-hero" type="checkbox" checked >
 
-      <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="edu-form-desc">
-        <div class="mod-form-div">
-          <label for="desc-edu-id">Descripcion : </label>
-          <textarea name="desc-edu-id" id="desc-edu-id" cols="30" rows="5" placeholder="Resumida historia sobre tus estudios" ></textarea>
-        </div>
-        <div class="send-button-div">
-          <input type="submit" value="Aceptar">
-        </div>
-      </form>
+      <div *ngFor="let descedu of miDescEdu" class="d-flex flex-column justify-content-center">
+        <!-- Boton de "Editar Descripcion" -->
+        <label class="cv desc" for="tfeduc" routerLink="/descripcioneducacion/editar/{{descedu.id}}">Editar descripcion <i class="fa-solid fa-pen"></i></label>
+        <p class="sobre-mi-description text-center" *ngIf="miDescEdu">{{descedu.description}}</p>
+      </div>
 
-      <p class="sobre-mi-description text-center" *ngIf="miPortfolio">{{educacionList.descripcion}}</p>
 
       <!-- Boton de "Nuevo Certificado" -->
-      <label class="cv" for="tfedu">Nuevo certificado <i class="fa-solid fa-plus"></i></label>
-      <input name="tfedu" id="tfedu" class="toggle-form-hero" type="checkbox" checked >
-      <!-- A partir de aca, comienza cada institucion con sus cursos -->
+      <label class="cv" for="tfedu" routerLink="/educacion/crear">Nuevo certificado <i class="fa-solid fa-plus"></i></label>
 
-      <!-- Formulario de edicion -->
-      <form class="formulario-edicion" id="edu-form">
-        <div class="mod-form-div">
-          <label for="inst-name-id">Nombre de la institución : </label>
-          <input type="text" name="inst-name-id" id="inst-name-id" placeholder="Universidad de Buenos Aires">
-        </div>
-        <div class="new-certificate" >
-          <div class="mod-form-div">
-            <label for="certi-id">Titulo del Certificado y periodo de tiempo : </label>
-            <input type="text" name="certi-id" id="certi-id" placeholder="JavaScript Basics - Noviembre 2021">
-          </div>
-          <div class="mod-form-div">
-            <label for="img-certi">Imagen del certificado (opcional) : </label>
-            <input type="text" id="img-certi" name="img-certi" placeholder="https://myimage.com/certificado.image">
-          </div>
-          <div class="mod-form-div">
-            <label for="desc-certi-id">Descripcion del certificado : </label>
-            <textarea name="desc-certi-id" id="desc-certi-id" cols="30" rows="5" placeholder="Aqui puedes comentar los contenidos del curso o la carrera, conceptos vistos, etc." ></textarea>
-          </div>
-        </div>
-        <div class="send-button-div">
-          <input type="submit" value="Aceptar">
-        </div>
-      </form>
       
       <!-- titulo -->
       <div class="container div-title d-flex flex-row justify-content-center align-items-center">
         <h3 class="inst-title"> Certificados y títulos :</h3>
       </div>
 
+
       <!-- Accordion -->
       <div class="container certi-container" id="accordionFlushExample">
         <!-- Accordion Item -->
-        
-
-        <div *ngFor="let certificado of certificadoList" class="certi-item">
+      
+        <div *ngFor="let edu of miPortfolio" class="certi-item">
           <div class="cont-top">
-            <a class="edit" title="Eliminar">
+            <a class="edit" title="Eliminar" (click)="onDelete(edu.id)">
               <i class="fa-regular fa-trash-can" ></i>
             </a>
-            <a class="edit" title="Editar">
+            <a class="edit" title="Editar" routerLink="/educacion/editar/{{edu.id}}">
               <i class="fa-solid fa-pen" ></i>
             </a>
           </div>
           <h3 class="certi-header">
             
-            {{certificado.institucion}}
+            {{edu.institucion}}
             
           </h3>
           <div class="certi-img">
             <div class="certi-body">
-              <a [href]="certificado.imagen" target="_blank">
-                <img class="certi-certificate" [src]="certificado.imagen" alt="">
+              <a [href]="edu.img_url" target="_blank">
+                <img class="certi-certificate" [src]="edu.img_url">
               </a>
-              <h4 class="inst-title"> {{certificado.tituloYtiempo}}</h4>
-              <p>{{certificado.descripcion}}</p>
+              <h4 class="inst-title"> {{edu.tituloYTiempo}}</h4>
+              <p>{{edu.description}}</p>
               
             </div>
             

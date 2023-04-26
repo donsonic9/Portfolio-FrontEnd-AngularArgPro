@@ -4,6 +4,8 @@ import { Observable } from 'rxjs';
 import { Hero } from '../models/hero';
 import { SobreMi } from '../models/sobremi';
 import { Experiencia } from '../models/experiencia';
+import { Educacion } from '../models/educacion';
+import { DescripcionEducacion } from '../models/descripcioneducacion';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -68,10 +70,37 @@ export class DataPortfolioService {
 
   //---------------------------------------- EDUCACION ------------------------------------------
 
-  obtenerDatosEducacion(): Observable<any> {
-    return this.http.get(this.json)
-    
+
+  public obtenerDatosEducacion(): Observable<Educacion[]> {
+    return this.http.get<Educacion[]>("/educacion/ver")
   }
+
+  public crearEducacion(edu: Educacion): Observable<Educacion> {
+    return this.http.post<Educacion>(`/educacion/crear/`, edu, this.httpOptions);
+  }
+
+  public editarEducacion(edu: Educacion): Observable<Educacion> {
+    return this.http.put<Educacion>(`/educacion/editar/`, edu, this.httpOptions);
+  }
+
+  public borrarEducacion(id: number): Observable<any> {
+    return this.http.delete<any>("/educacion/borrar" + id.toString());
+  }
+
+
+  //                                      Descripcion Educacion
+
+  public obtenerDatosDescripcionEducacion(): Observable<DescripcionEducacion[]> {
+    return this.http.get<DescripcionEducacion[]>("/descripcioneducacion/ver")
+  }
+
+  public editarDescripcionEducacion(descedu: DescripcionEducacion): Observable<DescripcionEducacion> {
+    return this.http.put<DescripcionEducacion>(`/descripcioneducacion/editar/`, descedu, this.httpOptions);
+  }
+
+
+  //---------------------------------------- HABILIDADES TECNICAS --------------------------------
+
 
   obtenerDatosHabTec(): Observable<any> {
     return this.http.get(this.json)

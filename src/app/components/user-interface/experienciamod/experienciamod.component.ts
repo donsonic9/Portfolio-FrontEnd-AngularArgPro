@@ -28,10 +28,9 @@ export class ExperienciamodComponent {
     let elim = confirm("Desea eliminar este elemento?");
     if (elim == true) {
       this.datosPortfolio.borrarExperiencia(id).subscribe( () => {
-        // console.log("se borro?");
+        alert("Elemento eliminado correctamente!");
+        location.reload();
       })
-      alert("Elemento eliminado correctamente!");
-      this.router.navigate(['userInterface']);
     }
   }
 

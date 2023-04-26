@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { Router } from '@angular/router';
+import { DescripcionEducacion } from 'src/app/models/descripcioneducacion';
+import { Educacion } from 'src/app/models/educacion';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
@@ -8,18 +10,30 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
   styleUrls: ['./educacionmod.component.css']
 })
 export class EducacionmodComponent {
-   // definimos una variable para conectar el sv con el html, mediante data binding.
-   miPortfolio: any;
-   educacionList: any;
-   certificadoList: any;
-   constructor(private datosPortfolio:DataPortfolioService) { }
+   
+   miPortfolio: Educacion[]= [];
+   miDescEdu: DescripcionEducacion[] = [];
+
+   constructor(private datosPortfolio:DataPortfolioService, private router: Router) { }
  
    ngOnInit(): void {
-     this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {
-       // console.log(data);
-       this.miPortfolio = data;
-       this.educacionList = data.educacion;
-       this.certificadoList = data.educacion.certificado;
-     })
-   }
+    this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {
+      this.miPortfolio = data;
+    })
+    this.datosPortfolio.obtenerDatosDescripcionEducacion().subscribe(desc => {
+      this.miDescEdu = desc;
+    })
+  }
+
+  onDelete(id: any) {
+    //alert(id)
+    let elim = confirm("Desea eliminar este elemento?");
+    if (elim == true) {
+      this.datosPortfolio.borrarEducacion(id).subscribe( () => {
+        alert("Elemento eliminado correctamente!");
+        location.reload();
+      })
+    }
+  }
+
 }

@@ -47,6 +47,9 @@ import { EditarHeromodComponent } from './components/user-interface/heromod/edit
 import { EditarSobreMimodComponent } from './components/user-interface/sobre-mimod/editar-sobre-mimod/editar-sobre-mimod.component';
 import { EditarExperienciaComponent } from './components/user-interface/experienciamod/editar-experiencia/editar-experiencia.component';
 import { CrearExperienciaComponent } from './components/user-interface/experienciamod/crear-experiencia/crear-experiencia.component';
+import { EditarEducacionmodComponent } from './components/user-interface/educacionmod/editar-educacionmod/editar-educacionmod.component';
+import { CrearEducacionmodComponent } from './components/user-interface/educacionmod/crear-educacionmod/crear-educacionmod.component';
+import { EditarDescripcioneducacionComponent } from './components/user-interface/educacionmod/editar-descripcioneducacion/editar-descripcioneducacion.component';
 
 
 
@@ -79,7 +82,10 @@ import { CrearExperienciaComponent } from './components/user-interface/experienc
     EditarHeromodComponent,
     EditarSobreMimodComponent,
     EditarExperienciaComponent,
-    CrearExperienciaComponent
+    CrearExperienciaComponent,
+    EditarEducacionmodComponent,
+    CrearEducacionmodComponent,
+    EditarDescripcioneducacionComponent
   ],
   imports: [
     BrowserModule,

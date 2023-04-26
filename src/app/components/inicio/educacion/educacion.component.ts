@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { DescripcionEducacion } from 'src/app/models/descripcioneducacion';
+import { Educacion } from 'src/app/models/educacion';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
@@ -8,18 +9,18 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
   styleUrls: ['./educacion.component.css']
 })
 export class EducacionComponent {
-   // definimos una variable para conectar el sv con el html, mediante data binding.
-   miPortfolio: any;
-   educacionList: any;
-   certificadoList: any;
-   constructor(private datosPortfolio:DataPortfolioService) { }
+   
+  miPortfolio: Educacion[]= [];
+  miDescEdu: DescripcionEducacion[] = [];
+
+  constructor(private datosPortfolio:DataPortfolioService) { }
  
-   ngOnInit(): void {
-     this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {
-       // console.log(data);
-       this.miPortfolio = data;
-       this.educacionList = data.educacion;
-       this.certificadoList = data.educacion.certificado;
-     })
-   }
+  ngOnInit(): void {
+    this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {
+      this.miPortfolio = data;
+    });
+    this.datosPortfolio.obtenerDatosDescripcionEducacion().subscribe(desc => {
+      this.miDescEdu = desc;
+    })
+  }
 }

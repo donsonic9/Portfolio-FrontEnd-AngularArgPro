@@ -1,0 +1,12 @@
+<p>editar-descripcioneducacion works!</p>
+
+<!-- Formulario de edicion -->
+<form class="formulario-edicion" id="edu-form-desc" [formGroup]="formDescEdu" (ngSubmit)="onSubmitDescEdu()">
+  <div class="mod-form-div">
+    <label for="desc-edu-id">Descripcion : </label>
+    <textarea name="desc-edu-id" formControlName="description" id="desc-edu-id" cols="30" rows="5" placeholder="Resumida historia sobre tus estudios" ></textarea>
+  </div>
+  <div class="send-button-div">
+    <input type="submit" value="Aceptar">
+  </div>
+</form>

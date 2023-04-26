@@ -12,6 +12,9 @@ import { EditarHeromodComponent } from '../components/user-interface/heromod/edi
 import { EditarSobreMimodComponent } from '../components/user-interface/sobre-mimod/editar-sobre-mimod/editar-sobre-mimod.component';
 import { CrearExperienciaComponent } from '../components/user-interface/experienciamod/crear-experiencia/crear-experiencia.component';
 import { EditarExperienciaComponent } from '../components/user-interface/experienciamod/editar-experiencia/editar-experiencia.component';
+import { CrearEducacionmodComponent } from '../components/user-interface/educacionmod/crear-educacionmod/crear-educacionmod.component';
+import { EditarEducacionmodComponent } from '../components/user-interface/educacionmod/editar-educacionmod/editar-educacionmod.component';
+import { EditarDescripcioneducacionComponent } from '../components/user-interface/educacionmod/editar-descripcioneducacion/editar-descripcioneducacion.component';
 
 // array que contiene las rutas
 const routes: Routes = [
@@ -23,7 +26,10 @@ const routes: Routes = [
   {path: 'hero/editar/:id', component: EditarHeromodComponent},
   {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent},
   {path: 'experiencia/crear', component: CrearExperienciaComponent},
-  {path: 'experiencia/editar/:id', component: EditarExperienciaComponent}
+  {path: 'experiencia/editar/:id', component: EditarExperienciaComponent},
+  {path: 'educacion/crear', component: CrearEducacionmodComponent},
+  {path: 'educacion/editar/:id', component: EditarEducacionmodComponent},
+  {path: 'descripcioneducacion/editar/:id', component: EditarDescripcioneducacionComponent},
 ];
 //{path: 'signUp', component: SignUpComponent} path eliminado, posible futura implementacion.
 
