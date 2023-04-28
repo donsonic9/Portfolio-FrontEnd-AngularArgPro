@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
-import { AnonymousSubject } from 'rxjs/internal/Subject';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Contacto } from 'src/app/models/contacto';
+import { FraseContacto } from 'src/app/models/frasecontacto';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
@@ -8,23 +9,21 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-export class FooterComponent {
+export class FooterComponent implements OnInit{
 
   // definimos una variable para conectar el sv con el html, mediante data binding.
-  miPortfolio: any;
-  footerList: any;
-  // reemplazamos el 'mailto: pepito@chang.com' con esta concatenacion, para poder editar el mail.
-  mailtoSt:any = "mailto: ";
-  mailtoString: any;
+  miPortfolio: FraseContacto[] = [];
+  miContacto: Contacto[] = [];
 
-  constructor(private datosPortfolio:DataPortfolioService) {}
+  constructor(private datosPortfolio:DataPortfolioService, private activatedRoute:ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.datosPortfolio.obtenerDatosFooter().subscribe(data => {
-      this.miPortfolio = data.footer;
-      this.footerList = data;
-      this.mailtoString = this.mailtoSt + data.email; 
-    })
+    this.datosPortfolio.obtenerDatosFraseContacto().subscribe(data => {
+      this.miPortfolio = data;
+    });
+    this.datosPortfolio.obtenerDatosContacto().subscribe(contacto => {
+      this.miContacto = contacto;
+    });
   }
 
   // funcion para smooth scrolling en el boton de subir

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { subscribeOn } from 'rxjs';
+import { Proyectos } from 'src/app/models/proyectos';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
@@ -9,17 +9,24 @@ import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 })
 export class ProyectosmodComponent {
   // definimos una variable para conectar el sv con el html, mediante data binding.
-  miPortfolio: any;
-  proyectosList: any;
+  miPortfolio: Proyectos[] = [];
   
   constructor(private datosPortfolio:DataPortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosProyectos().subscribe(data => {
-      // console.log(data);
       this.miPortfolio = data;
-      this.proyectosList = data.proyectos.proyecto;
-      
-    })
+    });
+  }
+
+  onDelete(id: any) {
+    //alert(id)
+    let elim = confirm("Desea eliminar este elemento?");
+    if (elim == true) {
+      this.datosPortfolio.borrarProyectos(id).subscribe( () => {
+        alert("Elemento eliminado correctamente!");
+        location.reload();
+      })
+    }
   }
 }

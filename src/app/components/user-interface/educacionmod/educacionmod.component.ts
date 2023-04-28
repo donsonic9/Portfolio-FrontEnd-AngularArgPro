@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { DescripcionEducacion } from 'src/app/models/descripcioneducacion';
 import { Educacion } from 'src/app/models/educacion';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -14,7 +13,7 @@ export class EducacionmodComponent {
    miPortfolio: Educacion[]= [];
    miDescEdu: DescripcionEducacion[] = [];
 
-   constructor(private datosPortfolio:DataPortfolioService, private router: Router) { }
+   constructor(private datosPortfolio:DataPortfolioService) { }
  
    ngOnInit(): void {
     this.datosPortfolio.obtenerDatosEducacion().subscribe(data => {

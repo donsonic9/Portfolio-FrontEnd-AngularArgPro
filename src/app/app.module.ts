@@ -52,6 +52,10 @@ import { CrearEducacionmodComponent } from './components/user-interface/educacio
 import { EditarDescripcioneducacionComponent } from './components/user-interface/educacionmod/editar-descripcioneducacion/editar-descripcioneducacion.component';
 import { EditarHabilidadesmodComponent } from './components/user-interface/habilidadesmod/editar-habilidadesmod/editar-habilidadesmod.component';
 import { CrearHabilidadesmodComponent } from './components/user-interface/habilidadesmod/crear-habilidadesmod/crear-habilidadesmod.component';
+import { EditarProyectosmodComponent } from './components/user-interface/proyectosmod/editar-proyectosmod/editar-proyectosmod.component';
+import { CrearProyectosmodComponent } from './components/user-interface/proyectosmod/crear-proyectosmod/crear-proyectosmod.component';
+import { EditarFrasecontactoComponent } from './components/user-interface/footermod/editar-frasecontacto/editar-frasecontacto.component';
+import { EditarContactoComponent } from './components/user-interface/footermod/editar-contacto/editar-contacto.component';
 
 
 
@@ -89,7 +93,11 @@ import { CrearHabilidadesmodComponent } from './components/user-interface/habili
     CrearEducacionmodComponent,
     EditarDescripcioneducacionComponent,
     EditarHabilidadesmodComponent,
-    CrearHabilidadesmodComponent
+    CrearHabilidadesmodComponent,
+    EditarProyectosmodComponent,
+    CrearProyectosmodComponent,
+    EditarFrasecontactoComponent,
+    EditarContactoComponent
   ],
   imports: [
     BrowserModule,

@@ -7,6 +7,9 @@ import { Experiencia } from '../models/experiencia';
 import { Educacion } from '../models/educacion';
 import { DescripcionEducacion } from '../models/descripcioneducacion';
 import { HabTec } from '../models/habilidadtecnica';
+import { Proyectos } from '../models/proyectos';
+import { FraseContacto } from '../models/frasecontacto';
+import { Contacto } from '../models/contacto';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -26,7 +29,7 @@ export class DataPortfolioService {
 
   constructor(private http:HttpClient) { }
 
-  /* ------------------------ Read, Update, HERO --------------------------------------------- */
+  /* --------------------------------------- HERO --------------------------------------------- */
   public obtenerDatosHero(): Observable<Hero[]> {
     //return this.http.get(this.json) //para cuando no tenemos API, cargamos JSON local en Angular.
     // return this.http.get('http://localhost:5000/hero') //ese es el puerto que configuramos en el package.json para usarlo con una API (json-server)
@@ -121,14 +124,45 @@ export class DataPortfolioService {
 
   //--------------------------------------- PROYECTOS --------------------------------------------
 
-  obtenerDatosProyectos(): Observable<any> {
-    return this.http.get(this.json)
-    
+
+  public obtenerDatosProyectos(): Observable<Proyectos[]> {
+    return this.http.get<Proyectos[]>("/proyectos/ver")
   }
 
-  obtenerDatosFooter(): Observable<any> {
-    return this.http.get(this.json)
-    
+  public crearProyectos(proy: Proyectos): Observable<Proyectos> {
+    return this.http.post<Proyectos>(`/proyectos/crear/`, proy, this.httpOptions);
   }
 
+  public editarProyectos(proy: Proyectos): Observable<Proyectos> {
+    return this.http.put<Proyectos>(`/proyectos/editar/`, proy, this.httpOptions);
+  }
+
+  public borrarProyectos(id: number): Observable<any> {
+    return this.http.delete<any>("/proyectos/borrar" + id.toString());
+  }
+
+
+  //------------------------------------- CONTACTO ----------------------------------------------
+
+  //                                    Frase Contacto
+  
+  public obtenerDatosFraseContacto(): Observable<FraseContacto[]> {
+    return this.http.get<FraseContacto[]>("/frasecontacto/ver")
+  }
+
+  public editarFraseContacto(fracon: FraseContacto): Observable<FraseContacto> {
+    return this.http.put<FraseContacto>(`/frasecontacto/editar/`, fracon, this.httpOptions);
+  }
+  
+  //                                       Contacto                                               
+  
+  public obtenerDatosContacto(): Observable<Contacto[]> {
+    return this.http.get<Contacto[]>("/contacto/ver")
+  }
+
+  public editarContacto(con: Contacto): Observable<Contacto> {
+    return this.http.put<Contacto>(`/contacto/editar/`, con, this.httpOptions);
+  }
+
+  //-----------------------------------------------------------------------------------------------
 }

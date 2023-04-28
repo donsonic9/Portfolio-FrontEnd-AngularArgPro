@@ -2,75 +2,31 @@
   <!-- Footer/ Contacto -->
   <footer id="contacto-id" class="contacto seccion-glass hero d-flex flex-column align-items-center justify-content-center">
 
-    <!-- Boton de "Nueva Habilidad" -->
-    <label class="cv" for="tffooter">Editar <i class="fa-solid fa-pen"></i></label>
-    <input name="tffooter" id="tffooter" class="toggle-form-hero" type="checkbox" checked >
+    <div *ngFor="let fracon of miPortfolio">
+      <!-- Boton de "Editar FraseContacto" -->
+      <label class="cv" for="tffooter" routerLink="/frasecontacto/editar/{{fracon.id}}">Editar <i class="fa-solid fa-pen"></i></label>
+      <p class="contacto-lema " *ngIf="miPortfolio">{{fracon.frase_descriptiva}}</p>
+      <p class="contacto-preg" *ngIf="miPortfolio">{{fracon.frase_contacto}}</p>
+    </div>
 
-    <!-- Formulario de edicion -->
-    <form class="formulario-edicion" id="footer-form">
-      <div class="mod-form-div">
-        <label for="frase-footer">Frase descriptiva (opcional) : </label>
-        <input type="text" name="frase-footer" id="frase-footer" placeholder="Cambiaste un Ferrari por un Twingo...">
-      </div>
-      <div class="mod-form-div">
-        <label for="frase-contacto">Frase de Contacto : </label>
-        <input type="text" name="frase-contacto" id="frase-contacto" placeholder="Hagamos realidad ese proyecto que tanto deseas!">
-      </div>
-      <div class="send-button-div">
-        <input type="submit" value="Aceptar">
-      </div>
-    </form>
+    <div class="iconos-contacto" *ngFor="let cont of miContacto">
+      <!-- Boton de "Editar Contacto" -->
+      <label class="cv" for="tfcontact" routerLink="/contacto/editar/{{cont.id}}">Editar <i class="fa-solid fa-pen"></i></label>
 
-    <p class="contacto-lema " *ngIf="miPortfolio">{{miPortfolio.fraseDescriptiva}}</p>
-    <p class="contacto-preg" *ngIf="miPortfolio">{{miPortfolio.fraseDeContacto}}</p>
-
-    <!-- Boton de "Nueva Habilidad" -->
-    <label class="cv" for="tfcontact">Editar <i class="fa-solid fa-pen"></i></label>
-    <input name="tfcontact" id="tfcontact" class="toggle-form-hero" type="checkbox" checked >
-
-    <!-- Formulario de edicion -->
-    <form class="formulario-edicion" id="contact-form">
-      <div class="mod-form-div">
-        <label for="url-fb">Facebook (URL) : </label>
-        <input type="text" name="url-fb" id="url-fb" placeholder="https://www.facebook.com/tuperfil">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-gh">Github (URL) : </label>
-        <input type="text" name="url-gh" id="url-gh" placeholder="https://www.github.com/tuperfil">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-li">Linkedin (URL) : </label>
-        <input type="text" name="url-li" id="url-li" placeholder="https://www.linkedin.com/tuperfil">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-ig">Instagram (URL): </label>
-        <input type="text" name="url-ig" id="url-ig" placeholder="https://www.instagram.com/tuperfil">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-em">E-mail : </label>
-        <input type="email" name="url-em" id="url-em" placeholder="pepito.97@tudominio.com">
-      </div>
-      <div class="send-button-div">
-        <input type="submit" value="Aceptar">
-      </div>
-    </form>
-
-    <div class="iconos-contacto">
       <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-        
-        <a *ngIf="miPortfolio" [href]="miPortfolio.facebookURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_facebook" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-facebook"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.githubURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_github" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-github"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.linkedinURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_linkedin" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.instagramURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_instagram" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-instagram"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="mailtoString" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="'mailto:' + cont.email" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope"></i>
         </a>
       </div>

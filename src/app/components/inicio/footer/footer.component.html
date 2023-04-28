@@ -1,26 +1,32 @@
 
   <!-- Footer/ Contacto -->
   <footer id="contacto-id" class="contacto seccion-glass hero d-flex flex-column align-items-center justify-content-center">
-    <p class="contacto-lema " *ngIf="miPortfolio">{{miPortfolio.fraseDescriptiva}}</p>
-    <p class="contacto-preg" *ngIf="miPortfolio">{{miPortfolio.fraseDeContacto}}</p>
-    <div class="iconos-contacto">
+    <div *ngFor="let fracon of miPortfolio">
+      
+      <p class="contacto-lema " *ngIf="miPortfolio">{{fracon.frase_descriptiva}}</p>
+      <p class="contacto-preg" *ngIf="miPortfolio">{{fracon.frase_contacto}}</p>
+
+    </div>
+    <div class="iconos-contacto" *ngFor="let cont of miContacto">
+
       <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
-        <a *ngIf="miPortfolio" [href]="miPortfolio.facebookURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_facebook" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-facebook"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.githubURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_github" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-github"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.linkedinURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_linkedin" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-linkedin"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="miPortfolio.instagramURL" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="cont.url_instagram" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-instagram"></i>
         </a>
-        <a *ngIf="miPortfolio" [href]="mailtoString" target="_blank" rel="noopener noreferrer">
+        <a *ngIf="miContacto" [href]="'mailto:' + cont.email" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-envelope"></i>
         </a>
       </div>
+
     </div>
     <!-- Boton para volver al inicio de la página -->
     <div class="boton-up iconos-redes-sociales d-flex flex-row-reverse">

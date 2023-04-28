@@ -1,0 +1,27 @@
+<!-- Formulario de edicion -->
+<form class="formulario-edicion" id="proy-form" [formGroup]="formProy" (ngSubmit)="onSubmitProy()">
+  <div class="mod-form-div">
+    <label for="img-proy">Imagen del proyecto (URL): </label>
+    <input type="text" formControlName="url_imagen" id="img-proy" name="img-proy" placeholder="https://myimage.com/html.image">Se recomienda que la imagen sea rectangular, puede ser una screenshot
+  </div>
+  <div class="mod-form-div">
+    <label for="titulo-proy">Título del proyecto : </label>
+    <input type="text" formControlName="nombre" name="titulo-ptoy" id="titulo-proy" placeholder="Página de ventas online en...">
+  </div>
+  <div class="mod-form-div">
+    <label for="url-proy">URL del proyecto : </label>
+    <input type="url" formControlName="url_website" name="url-proy" id="url-proy" placeholder="https://proyecto.com">
+  </div>
+  <div class="mod-form-div">
+    <label for="url-github-proy">URL repositorio Github : </label>
+    <input type="url" formControlName="url_github" name="url-github-proy" id="url-github-proy" placeholder="https://github.com/...">
+  </div>
+  <div class="mod-form-div">
+    <label for="desc-proy-id">Descripcion del proyecto : </label>
+    <textarea name="desc-proy-id" formControlName="descripcion" id="desc-proy-id" cols="30" rows="5" placeholder="Aqui puedes comentar de que se trata el proyecto, y como fue tu participacion en el mimso." ></textarea>
+  </div>
+  <div class="send-button-div">
+    <input type="submit" value="Aceptar">
+  </div>
+</form>
+

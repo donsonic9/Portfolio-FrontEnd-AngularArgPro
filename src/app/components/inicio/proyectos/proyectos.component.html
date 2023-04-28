@@ -8,14 +8,14 @@
     <div class="proyectos-cont container row d-flex flex-row">
 
       <!-- Proyecto Individual -->
-      <div *ngFor="let proyecto of proyectosList" class="proy col-12 col-md-6 col-lg-4">
+      <div *ngFor="let proyecto of miPortfolio" class="proy col-12 col-md-6 col-lg-4">
         <div class="overlay-relative ">
-          <img class="img-proyecto" [src]="proyecto.imagen" alt="Proyecto">
+          <img class="img-proyecto" [src]="proyecto.url_imagen" alt="Proyecto">
           <div class="overlay">
-            <a [href]="proyecto.paginaURL" target="_blank">
+            <a [href]="proyecto.url_website" target="_blank">
               <i class="inner-overlay-icon bi bi-laptop-fill"></i>
             </a>
-            <a [href]="proyecto.githubURL" target="_blank" rel="noopener noreferrer">
+            <a [href]="proyecto.url_github" target="_blank" rel="noopener noreferrer">
               <i class="inner-overlay-icon bi bi-github"></i>
             </a>
           </div>

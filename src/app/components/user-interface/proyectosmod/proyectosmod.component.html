@@ -7,56 +7,28 @@
     <h2 class="sobre-mi-title">Proyectos</h2>
 
     <!-- Boton de "Nueva Habilidad" -->
-    <label class="cv" for="tfproy">Nuevo proyecto <i class="fa-solid fa-plus"></i></label>
-    <input name="tfproy" id="tfproy" class="toggle-form-hero" type="checkbox" checked >
-
-    <!-- Formulario de edicion -->
-    <form class="formulario-edicion" id="proy-form">
-      <div class="mod-form-div">
-        <label for="img-proy">Imagen del proyecto (URL): </label>
-        <input type="text" id="img-proy" name="img-proy" placeholder="https://myimage.com/html.image">Se recomienda que la imagen sea rectangular, puede ser una screenshot
-      </div>
-      <div class="mod-form-div">
-        <label for="titulo-proy">Título del proyecto : </label>
-        <input type="text" name="titulo-ptoy" id="titulo-proy" placeholder="Página de ventas online en...">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-proy">URL del proyecto (opcional) : </label>
-        <input type="url" name="url-proy" id="url-proy" placeholder="https://proyecto.com">
-      </div>
-      <div class="mod-form-div">
-        <label for="url-github-proy">URL repositorio Github (opcional) : </label>
-        <input type="url" name="url-github-proy" id="url-github-proy" placeholder="https://github.com/...">
-      </div>
-      <div class="mod-form-div">
-        <label for="desc-proy-id">Descripcion del proyecto : </label>
-        <textarea name="desc-proy-id" id="desc-proy-id" cols="30" rows="5" placeholder="Aqui puedes comentar de que se trata el proyecto, y como fue tu participacion en el mimso." ></textarea>
-      </div>
-      <div class="send-button-div">
-        <input type="submit" value="Aceptar">
-      </div>
-    </form>
+    <label class="cv" for="tfproy" routerLink="/proyectos/crear">Nuevo proyecto <i class="fa-solid fa-plus"></i></label>
 
     <div class="proyectos-cont container row d-flex flex-row">
       <!-- Proyecto Individual -->
-      <div *ngFor="let proyecto of proyectosList" class="proy col-12 col-md-6 col-lg-4">
+      <div *ngFor="let proyecto of miPortfolio" class="proy col-12 col-md-6 col-lg-4">
         <!-- div que contiene los iconos para editar y eliminar -->
         <div class="cont-top">
-          <a class="edit" title="Eliminar">
+          <a class="edit" title="Eliminar" (click)="onDelete(proyecto.id)">
             <i class="fa-regular fa-trash-can" ></i>
           </a>
-          <a class="edit" title="Editar">
+          <a class="edit" title="Editar" routerLink="/proyectos/editar/{{proyecto.id}}">
             <i class="fa-solid fa-pen" ></i>
           </a>
         </div>
 
         <div class="overlay-relative ">
-          <img class="img-proyecto" [src]="proyecto.imagen" alt="Proyecto">
+          <img class="img-proyecto" [src]="proyecto.url_imagen" alt="Proyecto">
           <div class="overlay">
-            <a [href]="proyecto.paginaURL" target="_blank">
+            <a [href]="proyecto.url_website" target="_blank">
               <i class="inner-overlay-icon bi bi-laptop-fill"></i>
             </a>
-            <a [href]="proyecto.githubURL" target="_blank" rel="noopener noreferrer">
+            <a [href]="proyecto.url_github" target="_blank" rel="noopener noreferrer">
               <i class="inner-overlay-icon bi bi-github"></i>
             </a>
           </div>

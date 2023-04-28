@@ -1,0 +1,15 @@
+
+<!-- Formulario de edicion -->
+<form class="formulario-edicion" id="footer-form" [formGroup]="formFraCon" (ngSubmit)="onSubmitFraCon()">
+  <div class="mod-form-div">
+    <label for="frase-footer">Frase descriptiva : </label>
+    <input type="text" formControlName="frase_descriptiva" name="frase-footer" id="frase-footer" placeholder="Cambiaste un Ferrari por un Twingo...">
+  </div>
+  <div class="mod-form-div">
+    <label for="frase-contacto">Frase de Contacto : </label>
+    <input type="text" formControlName="frase_contacto" name="frase-contacto" id="frase-contacto" placeholder="Hagamos realidad ese proyecto que tanto deseas!">
+  </div>
+  <div class="send-button-div">
+    <input type="submit" value="Aceptar">
+  </div>
+</form>
