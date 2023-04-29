@@ -17,7 +17,6 @@ export class SobreMiComponent {
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatosSobreMi().subscribe(data => {
-      // console.log(data);
       this.miPortfolio = data;
     })
   }

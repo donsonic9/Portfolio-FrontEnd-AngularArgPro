@@ -10,6 +10,7 @@ import { HabTec } from '../models/habilidadtecnica';
 import { Proyectos } from '../models/proyectos';
 import { FraseContacto } from '../models/frasecontacto';
 import { Contacto } from '../models/contacto';
+import { User } from '../models/user';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -164,5 +165,10 @@ export class DataPortfolioService {
     return this.http.put<Contacto>(this.bakcendDS9 +`/contacto/editar/`, con, this.httpOptions);
   }
 
-  //-----------------------------------------------------------------------------------------------
+  //-----------------------------------------  USER  ---------------------------------------------
+
+  public obtenerDatosUser(): Observable<User[]> {
+    return this.http.get<User[]>(this.bakcendDS9 +"/user/ver")
+  }
+
 }

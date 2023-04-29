@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { User } from 'src/app/models/user';
+import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
 
 @Component({
   selector: 'app-logform',
@@ -12,7 +15,9 @@ export class LogformComponent implements OnInit {
 
   form: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  miPortfolio: User[] = [];
+
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     // Creamos el grupo de controles para el formulario de login
     this.form = this.formBuilder.group({
       password: ['', [Validators.required, Validators.minLength(8)]],
@@ -20,7 +25,8 @@ export class LogformComponent implements OnInit {
     })
   }
 
-  ngOnInit() { }
+  ngOnInit(): void {
+  }
 
   // creamos los metodos para usarlos en el html:
   get Password() {
@@ -47,6 +53,7 @@ export class LogformComponent implements OnInit {
     if (this.form.valid) {
       // Aquí deberiamos llamar a nuestro servicio para enviar el formulario
       alert("Formulario enviado correctamente!");
+      this.router.navigate(['userInterface']);
     } else {
       // Corremos todas las validaciones para que se ejecuten los mensajes de error en el template     
       this.form.markAllAsTouched();
