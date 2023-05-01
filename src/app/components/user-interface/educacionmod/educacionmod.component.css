@@ -46,6 +46,7 @@
 
 .cv.desc {
   background-color: rgb(17, 187, 25);
+  margin: 20px auto;
 }
 
 .cv.desc:hover {

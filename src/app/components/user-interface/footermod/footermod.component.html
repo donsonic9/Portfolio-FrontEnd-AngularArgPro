@@ -2,14 +2,14 @@
   <!-- Footer/ Contacto -->
   <footer id="contacto-id" class="contacto seccion-glass hero d-flex flex-column align-items-center justify-content-center">
 
-    <div *ngFor="let fracon of miPortfolio">
+    <div *ngFor="let fracon of miPortfolio" class="container d-flex flex-column justify-content-center">
       <!-- Boton de "Editar FraseContacto" -->
       <label class="cv" for="tffooter" routerLink="/frasecontacto/editar/{{fracon.id}}">Editar <i class="fa-solid fa-pen"></i></label>
       <p class="contacto-lema " *ngIf="miPortfolio">{{fracon.frase_descriptiva}}</p>
       <p class="contacto-preg" *ngIf="miPortfolio">{{fracon.frase_contacto}}</p>
     </div>
 
-    <div class="iconos-contacto" *ngFor="let cont of miContacto">
+    <div class="container iconos-contacto" *ngFor="let cont of miContacto">
       <!-- Boton de "Editar Contacto" -->
       <label class="cv" for="tfcontact" routerLink="/contacto/editar/{{cont.id}}">Editar <i class="fa-solid fa-pen"></i></label>
 

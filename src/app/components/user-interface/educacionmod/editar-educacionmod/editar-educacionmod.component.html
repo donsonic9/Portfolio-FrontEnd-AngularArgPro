@@ -1,25 +1,27 @@
 
-<!-- Formulario de edicion -->
-<form class="formulario-edicion" id="edu-form" [formGroup]="formEdu" (ngSubmit)="onSubmitEdu()">
-  <div class="mod-form-div">
-    <label for="inst-name-id">Nombre de la institución : </label>
-    <input type="text" formControlName="institucion" name="inst-name-id" id="inst-name-id" placeholder="Universidad de Buenos Aires">
-  </div>
-  <div class="new-certificate" >
+<div class="container">
+  <!-- Formulario de edicion -->
+  <form class="formulario-edicion" id="edu-form" [formGroup]="formEdu" (ngSubmit)="onSubmitEdu()">
     <div class="mod-form-div">
-      <label for="certi-id">Titulo del Certificado y periodo de tiempo : </label>
-      <input type="text" formControlName="tituloYTiempo" name="certi-id" id="certi-id" placeholder="JavaScript Basics - Noviembre 2021">
+      <label for="inst-name-id">Nombre de la institución : </label>
+      <input type="text" formControlName="institucion" name="inst-name-id" id="inst-name-id" placeholder="Universidad de Buenos Aires">
     </div>
-    <div class="mod-form-div">
-      <label for="img-certi">Imagen del certificado : </label>
-      <input type="text" formControlName="img_url" id="img-certi" name="img-certi" placeholder="https://myimage.com/certificado.image">
+    <div class="new-certificate" >
+      <div class="mod-form-div">
+        <label for="certi-id">Titulo del Certificado y periodo de tiempo : </label>
+        <input type="text" formControlName="tituloYTiempo" name="certi-id" id="certi-id" placeholder="JavaScript Basics - Noviembre 2021">
+      </div>
+      <div class="mod-form-div">
+        <label for="img-certi">Imagen del certificado : </label>
+        <input type="text" formControlName="img_url" id="img-certi" name="img-certi" placeholder="https://myimage.com/certificado.image">
+      </div>
+      <div class="mod-form-div">
+        <label for="desc-certi-id">Descripcion del certificado : </label>
+        <textarea formControlName="description" name="desc-certi-id" id="desc-certi-id" cols="30" rows="5" placeholder="Aqui puedes comentar los contenidos del curso o la carrera, conceptos vistos, etc." ></textarea>
+      </div>
     </div>
-    <div class="mod-form-div">
-      <label for="desc-certi-id">Descripcion del certificado : </label>
-      <textarea formControlName="description" name="desc-certi-id" id="desc-certi-id" cols="30" rows="5" placeholder="Aqui puedes comentar los contenidos del curso o la carrera, conceptos vistos, etc." ></textarea>
+    <div class="send-button-div">
+      <input type="submit" value="Aceptar">
     </div>
-  </div>
-  <div class="send-button-div">
-    <input type="submit" value="Aceptar">
-  </div>
-</form>
+  </form>
+</div>

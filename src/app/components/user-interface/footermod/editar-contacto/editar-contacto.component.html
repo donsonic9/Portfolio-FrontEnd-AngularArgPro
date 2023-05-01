@@ -1,27 +1,32 @@
-
-<!-- Formulario de edicion -->
-<form class="formulario-edicion" id="contact-form" [formGroup]="formCont" (ngSubmit)="onSubmitCont()">
-  <div class="mod-form-div">
-    <label for="url-fb">Perfil Facebook (URL) : </label>
-    <input type="text" formControlName="url_facebook" name="url-fb" id="url-fb" placeholder="https://www.facebook.com/tuperfil">
-  </div>
-  <div class="mod-form-div">
-    <label for="url-gh">Perfil Github (URL) : </label>
-    <input type="text" formControlName="url_github" name="url-gh" id="url-gh" placeholder="https://www.github.com/tuperfil">
-  </div>
-  <div class="mod-form-div">
-    <label for="url-li">Perfil Linkedin (URL) : </label>
-    <input type="text" formControlName="url_linkedin" name="url-li" id="url-li" placeholder="https://www.linkedin.com/tuperfil">
-  </div>
-  <div class="mod-form-div">
-    <label for="url-ig">Perfil Instagram (URL): </label>
-    <input type="text" formControlName="url_instagram" name="url-ig" id="url-ig" placeholder="https://www.instagram.com/tuperfil">
-  </div>
-  <div class="mod-form-div">
-    <label for="url-em">E-mail : </label>
-    <input type="email" formControlName="email" name="url-em" id="url-em" placeholder="pepito.97@tudominio.com">
-  </div>
-  <div class="send-button-div">
-    <input type="submit" value="Aceptar">
-  </div>
-</form>
+<div class="container">
+  <!-- Formulario de edicion -->
+  <form class="formulario-edicion" id="contact-form" [formGroup]="formCont" (ngSubmit)="onSubmitCont()">
+    <div class="mod-form-div">
+      <label for="url-fb">Perfil Facebook (URL) : </label>
+      <input type="text" formControlName="url_facebook" name="url-fb" id="url-fb"
+        placeholder="https://www.facebook.com/tuperfil">
+    </div>
+    <div class="mod-form-div">
+      <label for="url-gh">Perfil Github (URL) : </label>
+      <input type="text" formControlName="url_github" name="url-gh" id="url-gh"
+        placeholder="https://www.github.com/tuperfil">
+    </div>
+    <div class="mod-form-div">
+      <label for="url-li">Perfil Linkedin (URL) : </label>
+      <input type="text" formControlName="url_linkedin" name="url-li" id="url-li"
+        placeholder="https://www.linkedin.com/tuperfil">
+    </div>
+    <div class="mod-form-div">
+      <label for="url-ig">Perfil Instagram (URL): </label>
+      <input type="text" formControlName="url_instagram" name="url-ig" id="url-ig"
+        placeholder="https://www.instagram.com/tuperfil">
+    </div>
+    <div class="mod-form-div">
+      <label for="url-em">E-mail : </label>
+      <input type="email" formControlName="email" name="url-em" id="url-em" placeholder="pepito.97@tudominio.com">
+    </div>
+    <div class="send-button-div">
+      <input type="submit" value="Aceptar">
+    </div>
+  </form>
+</div>

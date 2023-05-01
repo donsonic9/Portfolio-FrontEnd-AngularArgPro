@@ -1,9 +1,16 @@
-
 /* Footer / Contacto */
 
 footer {
   padding-top: 120px;
   margin-top: 140px;
+}
+
+.container {
+  /* height: 90vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .contacto-lema {
@@ -171,7 +178,7 @@ textarea {
   text-decoration: none;
   max-width: 200px;
   padding: 10px;
-  margin: 10px 0;
+  margin: 10px auto;
   color: var(--white);
   background-color: rgb(17, 187, 25);
   border-radius: 10px;

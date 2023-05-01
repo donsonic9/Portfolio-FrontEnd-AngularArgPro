@@ -1,28 +1,31 @@
+<div class="container d-flex column justify-content-center">
+  <!-- Formulario de creacion -->
+  <form class="formulario-edicion" id="expe-form" [formGroup]="formExpe" (ngSubmit)="onSubmitExpe()">
+    <div class="mod-form-div">
+      <label for="img-profile">Logo de la empresa/ otro logo: </label>
+      <label for="img-profile"><i>Se recomienda que el logo sea cuadrado (ancho = altura)</i></label>
+      <input formControlName="logo_url" type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
+    </div>
+    <!-- <div *ngIf="Logo?.errors && Logo?.touched" >
+      <p *ngIf="Logo?.hasError('required')" class="dangermsg">Debe incluir la URL de la imagen</p>
+    </div> -->
+    <div class="mod-form-div">
+      <label for="">Titulo del puesto y periodo de tiempo : </label>
+      <input formControlName="posicionYTiempo" type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
+    </div>
+    <!-- <div *ngIf="posYtiempo?.errors && posYtiempo?.touched" >
+      <p *ngIf="posYtiempo?.hasError('required')" class="dangermsg">Debe incluir titulo del cargo.</p>
+    </div> -->
+    <div class="mod-form-div">
+      <label for="text-area-id">Descripcion : </label>
+      <textarea formControlName="description" name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
+    </div>
+    <!-- <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
+      <p *ngIf="Descripcion?.hasError('required')" class="dangermsg">Debe incluir una descripcion.</p>
+    </div> -->
+    <div class="send-button-div">
+      <button type="submit">Aceptar</button>
+    </div>
+  </form>
 
-<!-- Formulario de creacion -->
-<form class="formulario-edicion" id="expe-form" [formGroup]="formExpe" (ngSubmit)="onSubmitExpe()">
-  <div class="mod-form-div">
-    <label for="img-profile">Logo de la empresa/ otro logo: </label>
-    <input formControlName="logo_url" type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">Se recomienda que el logo sea cuadrado (ancho = altura)
-  </div>
-  <!-- <div *ngIf="Logo?.errors && Logo?.touched" >
-    <p *ngIf="Logo?.hasError('required')" class="dangermsg">Debe incluir la URL de la imagen</p>
-  </div> -->
-  <div class="mod-form-div">
-    <label for="">Titulo del puesto y periodo de tiempo : </label>
-    <input formControlName="posicionYTiempo" type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
-  </div>
-  <!-- <div *ngIf="posYtiempo?.errors && posYtiempo?.touched" >
-    <p *ngIf="posYtiempo?.hasError('required')" class="dangermsg">Debe incluir titulo del cargo.</p>
-  </div> -->
-  <div class="mod-form-div">
-    <label for="text-area-id">Descripcion : </label>
-    <textarea formControlName="description" name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
-  </div>
-  <!-- <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
-    <p *ngIf="Descripcion?.hasError('required')" class="dangermsg">Debe incluir una descripcion.</p>
-  </div> -->
-  <div class="send-button-div">
-    <button type="submit">Aceptar</button>
-  </div>
-</form>
+</div>

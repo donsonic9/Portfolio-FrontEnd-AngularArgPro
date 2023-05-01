@@ -4,7 +4,9 @@
       <h2 class="exp-title text-center ">Experiencia </h2>
       
       <!-- Añadir nueva experiencia -->
-      <label class="cv" for="tfexp" routerLink="/experiencia/crear">Nueva experiencia <i class="fa-solid fa-plus"></i></label>
+      <div class="container d-flex row justify-content-center">
+        <label class="cv" for="tfexp" routerLink="/experiencia/crear">Nueva experiencia <i class="fa-solid fa-plus"></i></label>
+      </div>
 
       <!-- A partir de aca, empieza cada experiencia individual -->
       <div *ngFor="let exp of miPortfolio" class="exp-cont row seccion-glass seccion-glass-h d-flex justify-content-center">

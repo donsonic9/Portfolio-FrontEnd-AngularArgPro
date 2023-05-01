@@ -1,10 +1,22 @@
+.container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Formulario de edicion */
 
 .formulario-edicion {
   padding: 20px;
-  background-color: var(--shadow-3);
+  background-color: var(--shadow-6);
   border-radius: 5px;
   width: 80%;
+  box-shadow: 4px 4px 8px 2px var(--shadow-6), 0 4px 30px var(--shadow-1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  
 }
 
 .mod-form-div {

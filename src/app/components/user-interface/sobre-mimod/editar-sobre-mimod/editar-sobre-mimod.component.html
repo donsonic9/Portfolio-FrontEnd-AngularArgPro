@@ -1,15 +1,18 @@
-<p>editar-sobre-mimod works!</p>
-<!-- Formulario de edicion -->
-<form class="formulario-edicion" id="sobre-mi-form" [formGroup]="formSobreMi" (ngSubmit)="onSubmitSobreMi()">
-  <div class="mod-form-div">
-    <label for="img-profile">Imagen Secundaria (URL) : </label>
-    <input type="text" id="img-profile" name="img-profile" formControlName="second_img" placeholder="https://myimage.com/profile.image">
-  </div>
-  <div class="mod-form-div">
-    <label for="text-area-idd">Descripcion : </label>
-      <textarea name="text-area-idd" id="text-area-idd" cols="30" rows="5" formControlName="description" placeholder="Cuenta un poco sobre ti, aficiones, pequeña historia, etc." ></textarea>
-  </div>
-  <div class="send-button-div">
-    <input type="submit" value="Aceptar">
-  </div>
-</form>
+<div class="container d-flex align-items-center justify-content-center">
+  <!-- Formulario de edicion -->
+  <form class="formulario-edicion" [formGroup]="formSobreMi" (ngSubmit)="onSubmitSobreMi()" id="sobre-mi-form">
+    <div class="mod-form-div">
+      <label for="img-profile">Imagen Secundaria (URL) : </label>
+      <input type="text" id="img-profile" name="img-profile" formControlName="second_img"
+        placeholder="https://myimage.com/profile.image" />
+    </div>
+    <div class="mod-form-div">
+      <label for="text-area-idd">Descripcion : </label>
+      <textarea name="text-area-idd" id="text-area-idd" cols="30" rows="5" formControlName="description"
+        placeholder="Cuenta un poco sobre ti, aficiones, pequeña historia, etc."></textarea>
+    </div>
+    <div class="send-button-div">
+      <input type="submit" value="Aceptar" />
+    </div>
+  </form>
+</div>

@@ -5,7 +5,7 @@
       <h2 class="sobre-mi-title">Educación</h2>
 
 
-      <div *ngFor="let descedu of miDescEdu" class="d-flex flex-column justify-content-center">
+      <div *ngFor="let descedu of miDescEdu" class="container d-flex flex-column justify-content-center">
         <!-- Boton de "Editar Descripcion" -->
         <label class="cv desc" for="tfeduc" routerLink="/descripcioneducacion/editar/{{descedu.id}}">Editar descripcion <i class="fa-solid fa-pen"></i></label>
         <p class="sobre-mi-description text-center" *ngIf="miDescEdu">{{descedu.description}}</p>
