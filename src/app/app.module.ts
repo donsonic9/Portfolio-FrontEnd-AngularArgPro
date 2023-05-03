@@ -56,6 +56,9 @@ import { EditarProyectosmodComponent } from './components/user-interface/proyect
 import { CrearProyectosmodComponent } from './components/user-interface/proyectosmod/crear-proyectosmod/crear-proyectosmod.component';
 import { EditarFrasecontactoComponent } from './components/user-interface/footermod/editar-frasecontacto/editar-frasecontacto.component';
 import { EditarContactoComponent } from './components/user-interface/footermod/editar-contacto/editar-contacto.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth,getAuth } from '@angular/fire/auth';
 
 
 
@@ -104,7 +107,9 @@ import { EditarContactoComponent } from './components/user-interface/footermod/e
     AppRoutingModule, //Para que funcione el routing
     HttpClientModule,  //Para habilitar las llamadas al servidor
     FormsModule,
-    ReactiveFormsModule   //Para usar formularios reactivos de Angular
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth())   //Para usar formularios reactivos de Angular
   ],
   providers: [],
   bootstrap: [AppComponent]

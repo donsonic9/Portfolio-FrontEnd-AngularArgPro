@@ -5,7 +5,7 @@
     <h1> Log In </h1>
     <p>Enter your credentials to access your account.</p>
 
-    <form [formGroup]="form" autocomplete="off" (ngSubmit)="onEnviar($event)">
+    <form [formGroup]="form" autocomplete="off" (ngSubmit)="onSubmitLogin()">
       <!-- User email -->
       <div class="container d-flex flex-column text-start">
         <label for="useremail">Email Address</label>
@@ -17,6 +17,11 @@
         </p>
         <p *ngIf="Mail?.hasError('email')" class="error">
           El formato del email es invalido.
+        </p>
+      </div>
+      <div *ngIf="Mail?.valid && Mail?.touched">
+        <p class="correct">
+          Formato de email valido
         </p>
       </div>
 
@@ -31,6 +36,11 @@
         </p>
         <p *ngIf="Password?.errors?.['minlength']" class="error">
           La contraseña debe tener al menos 8 caracteres.
+        </p>
+      </div>
+      <div *ngIf="Password?.valid && Password?.touched">
+        <p class="correct">
+          Formato de password valido
         </p>
       </div>
 

@@ -5,7 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 // Cargamos los componentes correspondientes a las vistas
 import { InicioComponent } from '../components/inicio/inicio.component';
 import { LoginComponent } from '../components/login/login.component';
-//import { SignUpComponent } from '../components/sign-up/sign-up.component';
+import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { UserInterfaceComponent } from '../components/user-interface/user-interface.component';
 //Cargamos los distintos formularios.
 import { EditarHeromodComponent } from '../components/user-interface/heromod/editar-heromod/editar-heromod.component';
@@ -21,6 +21,8 @@ import { CrearProyectosmodComponent } from '../components/user-interface/proyect
 import { EditarProyectosmodComponent } from '../components/user-interface/proyectosmod/editar-proyectosmod/editar-proyectosmod.component';
 import { EditarFrasecontactoComponent } from '../components/user-interface/footermod/editar-frasecontacto/editar-frasecontacto.component';
 import { EditarContactoComponent } from '../components/user-interface/footermod/editar-contacto/editar-contacto.component';
+//protegemos las url para gnt no autorizada
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 // array que contiene las rutas
 const routes: Routes = [
@@ -28,20 +30,21 @@ const routes: Routes = [
   {path: "", redirectTo: '/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'userInterface', component: UserInterfaceComponent},
-  {path: 'hero/editar/:id', component: EditarHeromodComponent},
-  {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent},
-  {path: 'experiencia/crear', component: CrearExperienciaComponent},
-  {path: 'experiencia/editar/:id', component: EditarExperienciaComponent},
-  {path: 'educacion/crear', component: CrearEducacionmodComponent},
-  {path: 'educacion/editar/:id', component: EditarEducacionmodComponent},
-  {path: 'descripcioneducacion/editar/:id', component: EditarDescripcioneducacionComponent},
-  {path: 'habilidadtecnica/crear', component: CrearHabilidadesmodComponent},
-  {path: 'habilidadtecnica/editar/:id', component: EditarHabilidadesmodComponent},
-  {path: 'proyectos/crear', component: CrearProyectosmodComponent},
-  {path: 'proyectos/editar/:id', component: EditarProyectosmodComponent},
-  {path: 'frasecontacto/editar/:id', component: EditarFrasecontactoComponent},
-  {path: 'contacto/editar/:id', component: EditarContactoComponent}
+  {path: 'signUp', component: SignUpComponent},
+  {path: 'userInterface', component: UserInterfaceComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'hero/editar/:id', component: EditarHeromodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'experiencia/crear', component: CrearExperienciaComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'experiencia/editar/:id', component: EditarExperienciaComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'educacion/crear', component: CrearEducacionmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'educacion/editar/:id', component: EditarEducacionmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'descripcioneducacion/editar/:id', component: EditarDescripcioneducacionComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'habilidadtecnica/crear', component: CrearHabilidadesmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'habilidadtecnica/editar/:id', component: EditarHabilidadesmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'proyectos/crear', component: CrearProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'proyectos/editar/:id', component: EditarProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'frasecontacto/editar/:id', component: EditarFrasecontactoComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'contacto/editar/:id', component: EditarContactoComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))}
 ];
 //{path: 'signUp', component: SignUpComponent} path eliminado, posible futura implementacion.
 
