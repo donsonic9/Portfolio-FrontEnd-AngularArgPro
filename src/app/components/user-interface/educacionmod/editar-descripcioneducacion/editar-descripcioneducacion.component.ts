@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DescripcionEducacion } from 'src/app/models/descripcioneducacion';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,7 +20,7 @@ export class EditarDescripcioneducacionComponent implements OnInit{
               private router: Router) {
     this.formDescEdu = this.fb.group({
       id: [''],
-      description: [''],
+      description: ['',[Validators.required, Validators.maxLength(500)]],
     })
   }
 
@@ -35,6 +35,16 @@ export class EditarDescripcioneducacionComponent implements OnInit{
         description: element?.description
       });
     });
+  }
+
+  // creamos los metodos para usarlos en el html:
+  get Description() {
+    return this.formDescEdu.get("description");
+  }
+
+  // validamos los campos para los validators
+  get DescriptionValid() {
+    return this.Description?.touched && !this.Description?.valid;
   }
 
   onSubmitDescEdu() {

@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth.service';
-import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
+
 
 @Component({
   selector: 'app-logform',

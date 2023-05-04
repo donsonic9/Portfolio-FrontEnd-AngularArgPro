@@ -1,17 +1,46 @@
 <div class="container d-flex align-items-center justify-content-center">
   <!-- Formulario de edicion -->
   <form class="formulario-edicion" [formGroup]="formSobreMi" (ngSubmit)="onSubmitSobreMi()" id="sobre-mi-form">
+
     <div class="mod-form-div">
       <label for="img-profile">Imagen Secundaria (URL) : </label>
       <input type="text" id="img-profile" name="img-profile" formControlName="second_img"
         placeholder="https://myimage.com/profile.image" />
     </div>
+    <div *ngIf="Second_img?.errors && Second_img?.touched" >
+      <p *ngIf="Second_img?.hasError('required')" class="error" >
+        La imagen es requerida.
+      </p>
+      <p *ngIf="Second_img?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres, intente con otra imagen.
+      </p>
+    </div>
+    <div *ngIf="Second_img?.valid && Second_img?.touched">
+      <p class="correct">
+        Formato de imagen valido
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="text-area-idd">Descripcion : </label>
       <textarea name="text-area-idd" id="text-area-idd" cols="30" rows="5" formControlName="description"
         placeholder="Cuenta un poco sobre ti, aficiones, pequeña historia, etc."></textarea>
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Description?.errors && Description?.touched" >
+      <p *ngIf="Description?.hasError('required')" class="error" >
+        El texto es requerido.
+      </p>
+      <p *ngIf="Description?.errors?.['maxlength']" class="error">
+        El texto no puede tener mas de 700 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Description?.valid && Description?.touched">
+      <p class="correct">
+        Formato de texto valido
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Second_img?.valid && Description?.valid">
       <input type="submit" value="Aceptar" />
     </div>
   </form>

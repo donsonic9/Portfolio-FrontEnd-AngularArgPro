@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FraseContacto } from 'src/app/models/frasecontacto';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,8 +20,8 @@ export class EditarFrasecontactoComponent implements OnInit{
               private router: Router) {
     this.formFraCon = this.fb.group({
       id: [''],
-      frase_descriptiva: [''],
-      frase_contacto: [''],
+      frase_descriptiva: ['',[Validators.required, Validators.maxLength(84)]],
+      frase_contacto: ['',[Validators.required, Validators.maxLength(84)]],
     })
   }
 
@@ -38,6 +38,24 @@ export class EditarFrasecontactoComponent implements OnInit{
         frase_contacto: element?.frase_contacto
       });
     });
+  }
+
+  // creamos los metodos para usarlos en el html:
+  get Frase_descriptiva() {
+    return this.formFraCon.get("frase_descriptiva");
+  }
+  
+  get Frase_contacto() {
+    return this.formFraCon.get("frase_contacto");
+  }
+
+  // validamos los campos para los validators
+  get Frase_descriptivaValid() {
+    return this.Frase_descriptiva?.touched && !this.Frase_descriptiva?.valid;
+  }
+
+  get Frase_contactoValid() {
+    return this.Frase_contacto?.touched && !this.Frase_contacto?.valid;
   }
 
   onSubmitFraCon() {

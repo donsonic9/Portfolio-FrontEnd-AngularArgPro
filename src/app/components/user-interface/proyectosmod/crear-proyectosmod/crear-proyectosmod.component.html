@@ -1,32 +1,103 @@
 <div class="container">
   <!-- Formulario de edicion -->
   <form class="formulario-edicion" id="proy-form" [formGroup]="formProy" (ngSubmit)="onSubmitProy()">
+
     <div class="mod-form-div">
       <label for="img-proy">Imagen del proyecto (URL): </label>
       <label for="img-proy"><i>Se recomienda que la imagen sea rectangular, puede ser una screenshot</i></label>
       <input type="text" formControlName="url_imagen" id="img-proy" name="img-proy"
         placeholder="https://myimage.com/html.image">
     </div>
+    <div *ngIf="Url_imagen?.errors && Url_imagen?.touched" >
+      <p *ngIf="Url_imagen?.hasError('required')" class="error" >
+        La imagen es requerida.
+      </p>
+      <p *ngIf="Url_imagen?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_imagen?.valid && Url_imagen?.touched">
+      <p class="correct">
+        Formato de imagen valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="titulo-proy">Título del proyecto : </label>
       <input type="text" formControlName="nombre" name="titulo-ptoy" id="titulo-proy"
         placeholder="Página de ventas online en...">
     </div>
+    <div *ngIf="Nombre?.errors && Nombre?.touched" >
+      <p *ngIf="Nombre?.hasError('required')" class="error" >
+        El nombre es requerido.
+      </p>
+      <p *ngIf="Nombre?.errors?.['maxlength']" class="error">
+        El nombre no puede tener mas de 50 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Nombre?.valid && Nombre?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="url-proy">URL del proyecto : </label>
       <input type="url" formControlName="url_website" name="url-proy" id="url-proy" placeholder="https://proyecto.com">
     </div>
+    <div *ngIf="Url_website?.errors && Url_website?.touched" >
+      <p *ngIf="Url_website?.hasError('required')" class="error" >
+        La url del proyecto es requerida.
+      </p>
+      <p *ngIf="Url_website?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_website?.valid && Url_website?.touched">
+      <p class="correct">
+        Formato de URL valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="url-github-proy">URL repositorio Github : </label>
       <input type="url" formControlName="url_github" name="url-github-proy" id="url-github-proy"
         placeholder="https://github.com/...">
     </div>
+    <div *ngIf="Url_github?.errors && Url_github?.touched" >
+      <p *ngIf="Url_github?.hasError('required')" class="error" >
+        La url del repositorio es requerida.
+      </p>
+      <p *ngIf="Url_github?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_github?.valid && Url_github?.touched">
+      <p class="correct">
+        Formato de URL valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="desc-proy-id">Descripcion del proyecto : </label>
       <textarea name="desc-proy-id" formControlName="descripcion" id="desc-proy-id" cols="30" rows="5"
         placeholder="Aqui puedes comentar de que se trata el proyecto, y como fue tu participacion en el mimso."></textarea>
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
+      <p *ngIf="Descripcion?.hasError('required')" class="error" >
+        La descripcion del proyecto es requerida.
+      </p>
+      <p *ngIf="Descripcion?.errors?.['maxlength']" class="error">
+        La descripcion no puede tener mas de 200 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Descripcion?.valid && Descripcion?.touched">
+      <p class="correct">
+        Formato de descripcion valido.
+      </p>
+    </div>
+    
+    <div class="send-button-div" *ngIf="Url_imagen?.valid && Url_website?.valid && Url_github?.valid && Nombre?.valid && Descripcion?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

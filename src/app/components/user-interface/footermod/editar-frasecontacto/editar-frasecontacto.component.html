@@ -6,11 +6,39 @@
       <label for="frase-footer">Frase descriptiva : </label>
       <input type="text" formControlName="frase_descriptiva" name="frase-footer" id="frase-footer" placeholder="Cambiaste un Ferrari por un Twingo...">
     </div>
+    <div *ngIf="Frase_descriptiva?.errors && Frase_descriptiva?.touched" >
+      <p *ngIf="Frase_descriptiva?.hasError('required')" class="error" >
+        La frase es requerida.
+      </p>
+      <p *ngIf="Frase_descriptiva?.errors?.['maxlength']" class="error">
+        La frase no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Frase_descriptiva?.valid && Frase_descriptiva?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="frase-contacto">Frase de Contacto : </label>
       <input type="text" formControlName="frase_contacto" name="frase-contacto" id="frase-contacto" placeholder="Hagamos realidad ese proyecto que tanto deseas!">
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Frase_contacto?.errors && Frase_contacto?.touched" >
+      <p *ngIf="Frase_contacto?.hasError('required')" class="error" >
+        La frase es requerida.
+      </p>
+      <p *ngIf="Frase_contacto?.errors?.['maxlength']" class="error">
+        La frase no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Frase_contacto?.valid && Frase_contacto?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Frase_contacto?.valid && Frase_descriptiva?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

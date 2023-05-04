@@ -6,24 +6,57 @@
       <label for="img-profile"><i>Se recomienda que el logo sea cuadrado (ancho = altura)</i></label>
       <input formControlName="logo_url" type="text" id="img-profile" name="img-profile" placeholder="https://myimage.com/profile.image">
     </div>
-    <!-- <div *ngIf="Logo?.errors && Logo?.touched" >
-      <p *ngIf="Logo?.hasError('required')" class="dangermsg">Debe incluir la URL de la imagen</p>
-    </div> -->
+    <div *ngIf="Logo_url?.errors && Logo_url?.touched" >
+      <p *ngIf="Logo_url?.hasError('required')" class="error" >
+        La imagen es requerida.
+      </p>
+      <p *ngIf="Logo_url?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Logo_url?.valid && Logo_url?.touched">
+      <p class="correct">
+        Formato de imagen valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="">Titulo del puesto y periodo de tiempo : </label>
       <input formControlName="posicionYTiempo" type="text" placeholder="Front-end Developer en Mozilla (2020 - 2021)">
     </div>
-    <!-- <div *ngIf="posYtiempo?.errors && posYtiempo?.touched" >
-      <p *ngIf="posYtiempo?.hasError('required')" class="dangermsg">Debe incluir titulo del cargo.</p>
-    </div> -->
+    <div *ngIf="PosicionYTiempo?.errors && PosicionYTiempo?.touched" >
+      <p *ngIf="PosicionYTiempo?.hasError('required')" class="error" >
+        El texto es requerido.
+      </p>
+      <p *ngIf="PosicionYTiempo?.errors?.['maxlength']" class="error">
+        El texto no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="PosicionYTiempo?.valid && PosicionYTiempo?.touched">
+      <p class="correct">
+        Formato de texto valido
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="text-area-id">Descripcion : </label>
       <textarea formControlName="description" name="text-area-id" id="text-area-id" cols="30" rows="8" placeholder="Cuenta un poco sobre el cargo que tuviste, tareas a realizar, etc." ></textarea>
     </div>
-    <!-- <div *ngIf="Descripcion?.errors && Descripcion?.touched" >
-      <p *ngIf="Descripcion?.hasError('required')" class="dangermsg">Debe incluir una descripcion.</p>
-    </div> -->
-    <div class="send-button-div">
+    <div *ngIf="Description?.errors && Description?.touched" >
+      <p *ngIf="Description?.hasError('required')" class="error" >
+        El texto es requerido.
+      </p>
+      <p *ngIf="Description?.errors?.['maxlength']" class="error">
+        El texto no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Description?.valid && Description?.touched">
+      <p class="correct">
+        Formato de texto valido
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Logo_url?.valid && PosicionYTiempo?.valid && Description?.valid">
       <button type="submit">Aceptar</button>
     </div>
   </form>

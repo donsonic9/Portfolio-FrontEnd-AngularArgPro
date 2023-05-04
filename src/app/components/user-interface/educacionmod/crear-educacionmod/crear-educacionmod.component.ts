@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Educacion } from 'src/app/models/educacion';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,15 +20,49 @@ export class CrearEducacionmodComponent {
               private router: Router) {
     this.formEdu = this.fb.group({
       //id: [''],
-      img_url: [''],
-      institucion: [''],
-      tituloYTiempo: [''],
-      description: [''],
+      img_url: ['',[Validators.required, Validators.maxLength(500)]],
+      institucion: ['',[Validators.required, Validators.maxLength(84)]],
+      tituloYTiempo: ['',[Validators.required, Validators.maxLength(90)]],
+      description: ['',[Validators.required, Validators.maxLength(300)]],
     })
   }
 
   ngOnInit(): void {
     
+  }
+
+  // creamos los metodos para usarlos en el html:
+  get Img_url() {
+    return this.formEdu.get("img_url");
+  }
+
+  get TituloYTiempo() {
+    return this.formEdu.get("tituloYTiempo");
+  }
+
+  get Institucion() {
+    return this.formEdu.get("institucion");
+  }
+
+  get Description() {
+    return this.formEdu.get("description");
+  }
+
+  // validamos los campos para los validators
+  get Img_urlValid() {
+    return this.Img_url?.touched && !this.Img_url?.valid;
+  }
+
+  get TituloYTiempoValid() {
+    return this.TituloYTiempo?.touched && !this.TituloYTiempo?.valid;
+  }
+
+  get InstitucionValid() {
+    return this.Institucion?.touched && !this.Institucion?.valid;
+  }
+
+  get DescriptionValid() {
+    return this.Description?.touched && !this.Description?.valid;
   }
 
   onSubmitEdu() {

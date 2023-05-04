@@ -2,15 +2,44 @@
 <div class="container">
   <!-- Formulario de edicion -->
   <form class="formulario-edicion" id="hab-form" [formGroup]="formHabTec" (ngSubmit)="onSubmitHabTec()">
+
     <div class="mod-form-div">
       <label for="img-logo-tecnologia">Logo (URL): </label>
       <label for="img-logo-tecnologia"><i>Se recomienda que el logo sea cuadrado (ancho = altura)</i></label>
       <input type="text" formControlName="logo_url" id="img-logo-tecnologia" name="img-logo-tecnologia" placeholder="https://myimage.com/html.image">
     </div>
+    <div *ngIf="Logo_url?.errors && Logo_url?.touched" >
+      <p *ngIf="Logo_url?.hasError('required')" class="error" >
+        La imagen es requerida.
+      </p>
+      <p *ngIf="Logo_url?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Logo_url?.valid && Logo_url?.touched">
+      <p class="correct">
+        Formato de imagen valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="">Nombre de habilidad : </label>
       <input type="text" formControlName="nombre" placeholder="TypeScript">
     </div>
+    <div *ngIf="Nombre?.errors && Nombre?.touched" >
+      <p *ngIf="Nombre?.hasError('required')" class="error" >
+        El nombre es requerido.
+      </p>
+      <p *ngIf="Nombre?.errors?.['maxlength']" class="error">
+        El nombre no puede tener mas de 24 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Nombre?.valid && Nombre?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="select-id">Nivel/Idioma : </label>
       <select name="select-id" formControlName="nivel_o_idioma" id="select-id">
@@ -20,7 +49,18 @@
         <option value="idioma">Idioma</option>
       </select>
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Nivel_o_idioma?.errors && Nivel_o_idioma?.touched" >
+      <p *ngIf="Nivel_o_idioma?.hasError('required')" class="error" >
+        El nivel/idioma es requerido.
+      </p>
+    </div>
+    <div *ngIf="Nivel_o_idioma?.valid && Nivel_o_idioma?.touched">
+      <p class="correct">
+        Formato valido.
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Logo_url?.valid && Nombre?.valid && Nivel_o_idioma?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

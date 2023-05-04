@@ -5,21 +5,79 @@
       <label for="inst-name-id">Nombre de la institución : </label>
       <input type="text" formControlName="institucion" name="inst-name-id" id="inst-name-id" placeholder="Universidad de Buenos Aires">
     </div>
+    <div *ngIf="Institucion?.errors && Institucion?.touched" >
+      <p *ngIf="Institucion?.hasError('required')" class="error" >
+        La institucion es requerida.
+      </p>
+      <p *ngIf="Institucion?.errors?.['maxlength']" class="error">
+        La institucion no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Institucion?.valid && Institucion?.touched">
+      <p class="correct">
+        Formato de institucion valido.
+      </p>
+    </div>
+
     <div class="new-certificate" >
+
       <div class="mod-form-div">
         <label for="certi-id">Titulo del Certificado y periodo de tiempo : </label>
         <input type="text" formControlName="tituloYTiempo" name="certi-id" id="certi-id" placeholder="JavaScript Basics - Noviembre 2021">
       </div>
+      <div *ngIf="TituloYTiempo?.errors && TituloYTiempo?.touched" >
+        <p *ngIf="TituloYTiempo?.hasError('required')" class="error" >
+          El texto es requerido.
+        </p>
+        <p *ngIf="TituloYTiempo?.errors?.['maxlength']" class="error">
+          El texto no puede tener mas de 90 caracteres.
+        </p>
+      </div>
+      <div *ngIf="TituloYTiempo?.valid && TituloYTiempo?.touched">
+        <p class="correct">
+          Formato de texto valido.
+        </p>
+      </div>
+
       <div class="mod-form-div">
         <label for="img-certi">Imagen del certificado : </label>
         <input type="text" formControlName="img_url" id="img-certi" name="img-certi" placeholder="https://myimage.com/certificado.image">
       </div>
+      <div *ngIf="Img_url?.errors && Img_url?.touched" >
+        <p *ngIf="Img_url?.hasError('required')" class="error" >
+          La imagen es requerida.
+        </p>
+        <p *ngIf="Img_url?.errors?.['maxlength']" class="error">
+          La URL no puede tener mas de 500 caracteres.
+        </p>
+      </div>
+      <div *ngIf="Img_url?.valid && Img_url?.touched">
+        <p class="correct">
+          Formato de imagen valido.
+        </p>
+      </div>
+      
       <div class="mod-form-div">
         <label for="desc-certi-id">Descripcion del certificado : </label>
         <textarea formControlName="description" name="desc-certi-id" id="desc-certi-id" cols="30" rows="5" placeholder="Aqui puedes comentar los contenidos del curso o la carrera, conceptos vistos, etc." ></textarea>
       </div>
+      <div *ngIf="Description?.errors && Description?.touched" >
+        <p *ngIf="Description?.hasError('required')" class="error" >
+          La descripcion es requerida.
+        </p>
+        <p *ngIf="Description?.errors?.['maxlength']" class="error">
+          La descripcion no puede tener mas de 300 caracteres.
+        </p>
+      </div>
+      <div *ngIf="Description?.valid && Description?.touched">
+        <p class="correct">
+          Formato de texto valido.
+        </p>
+      </div>
+
     </div>
-    <div class="send-button-div">
+
+    <div class="send-button-div" *ngIf="Img_url?.valid && TituloYTiempo?.valid && Institucion?.valid && Description?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

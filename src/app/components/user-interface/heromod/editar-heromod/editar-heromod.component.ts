@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Hero } from 'src/app/models/hero';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -22,9 +22,9 @@ export class EditarHeromodComponent implements OnInit {
     //creamos los grupos de control para el formulario.
     this.formHero = this.fb.group({
       id: [''],
-      img_profile: [''],
-      saludo: [''],
-      profesion: ['']
+      img_profile: ['',[Validators.required, Validators.maxLength(500)]],
+      saludo: ['',[Validators.required, Validators.maxLength(84)]],
+      profesion: ['',[Validators.required, Validators.maxLength(84)]]
     });
   }
 
@@ -46,6 +46,33 @@ export class EditarHeromodComponent implements OnInit {
     });
   }
 
+  // creamos los metodos para usarlos en el html:
+  get Img_profile() {
+    return this.formHero.get("img_profile");
+  }
+
+  get Saludo() {
+    return this.formHero.get("saludo");
+  }
+
+  get Profesion() {
+    return this.formHero.get("profesion");
+  }
+
+  // validamos los campos para los validators
+  get Img_profileValid() {
+    return this.Img_profile?.touched && !this.Img_profile?.valid;
+  }
+
+  get SaludoValid() {
+    return this.Saludo?.touched && !this.Saludo?.valid;
+  }
+
+  get ProfesionValid() {
+    return this.Profesion?.touched && !this.Profesion?.valid;
+  }
+
+  //enviamos el formulario.
   onSubmitHero() {
     
     const hero: Hero = {

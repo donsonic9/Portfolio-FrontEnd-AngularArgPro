@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Experiencia } from 'src/app/models/experiencia';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,14 +20,41 @@ export class CrearExperienciaComponent implements OnInit {
               private router: Router) {
     this.formExpe = this.fb.group({
       // id: [''],
-      logo_url: [''],
-      posicionYTiempo: [''],
-      description: [''],
+      logo_url: ['',[Validators.required, Validators.maxLength(500)]],
+      posicionYTiempo: ['',[Validators.required, Validators.maxLength(84)]],
+      description: ['',[Validators.required, Validators.maxLength(500)]],
     })
   }
 
   ngOnInit(): void {
     
+  }
+
+
+  // creamos los metodos para usarlos en el html:
+  get Logo_url() {
+    return this.formExpe.get("logo_url");
+  }
+
+  get PosicionYTiempo() {
+    return this.formExpe.get("posicionYTiempo");
+  }
+
+  get Description() {
+    return this.formExpe.get("description");
+  }
+
+  // validamos los campos para los validators
+  get Logo_urlValid() {
+    return this.Logo_url?.touched && !this.Logo_url?.valid;
+  }
+
+  get PosicionYTiempoValid() {
+    return this.PosicionYTiempo?.touched && !this.PosicionYTiempo?.valid;
+  }
+
+  get DescriptionValid() {
+    return this.Description?.touched && !this.Description?.valid;
   }
 
   onSubmitExpe() {

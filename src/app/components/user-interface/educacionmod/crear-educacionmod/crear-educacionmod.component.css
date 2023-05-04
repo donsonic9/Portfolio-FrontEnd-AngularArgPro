@@ -74,3 +74,23 @@ textarea {
 .nuevo-certi-label {
   color: var(--almost-white);
 }
+
+/* Para cuando los campos tienen errores o son validos (validators)*/
+
+.error {
+  padding: 2px 0;
+  font-weight: 300;
+  color: rgb(255, 103, 103);
+  background-color: var(--shadow-6);
+  /* border: 1px solid #333; */
+  border-radius: 5px;
+}
+
+.correct {
+  padding: 2px 0;
+  font-weight: 300;
+  color: rgb(79, 255, 79);
+  background-color: var(--shadow-6);
+  /* border: 1px solid #333; */
+  border-radius: 5px;
+}

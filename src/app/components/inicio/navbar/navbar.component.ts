@@ -8,6 +8,11 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class NavbarComponent {
 
+  onReload() {
+    document.getElementById("upp")?.scrollIntoView({behavior: 'smooth'});
+    location.reload()
+  }
+
   // las funciones "to" son para linkear los botones de la navbar a las secciones de la pagina.
   toSobreMi() {
     document.getElementById("sobre-mi-id")?.scrollIntoView({behavior: 'smooth'});

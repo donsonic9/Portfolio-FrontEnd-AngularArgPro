@@ -2,19 +2,62 @@
   <!-- Formulario de edicion -->
   <!-- Formulario Original -->
   <form [formGroup]="formHero" (ngSubmit)="onSubmitHero()" class="formulario-edicion" id="hero-form">
+    
     <div class="mod-form-div">
       <label for="img-profile">Imagen de perfil (URL) : </label>
       <input type="text" id="img_profile" formControlName="img_profile" placeholder="https://myimage.com/profile.image">
     </div>
+    <div *ngIf="Img_profile?.errors && Img_profile?.touched" >
+      <p *ngIf="Img_profile?.hasError('required')" class="error" >
+        La imagen es requerida.
+      </p>
+      <p *ngIf="Img_profile?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres, intente con otra imagen.
+      </p>
+    </div>
+    <div *ngIf="Img_profile?.valid && Img_profile?.touched">
+      <p class="correct">
+        Formato de imagen valido
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="saludo">Saludo principal : </label>
       <input type="text" id="saludo" formControlName="saludo" placeholder="Hola! Soy *nombre de usuario*" >
     </div>
+    <div *ngIf="Saludo?.errors && Saludo?.touched" >
+      <p *ngIf="Saludo?.hasError('required')" class="error" >
+        El saludo es requerido.
+      </p>
+      <p *ngIf="Saludo?.errors?.['maxlength']" class="error">
+        El texto no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Saludo?.valid && Saludo?.touched">
+      <p class="correct">
+        Formato de saludo valido
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="profesion">Descripcion (profesion) : </label>
       <input type="text" id="profesion" formControlName="profesion" placeholder="Desarrollador en Python" >
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Profesion?.errors && Profesion?.touched" >
+      <p *ngIf="Profesion?.hasError('required')" class="error" >
+        La profesion es requerida.
+      </p>
+      <p *ngIf="Profesion?.errors?.['maxlength']" class="error">
+        El texto no puede tener mas de 84 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Profesion?.valid && Profesion?.touched">
+      <p class="correct">
+        Formato de profesion valido.
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Img_profile?.valid && Saludo?.valid && Profesion?.valid">
       <input type="submit" value="Aceptar" >
     </div>
   </form>

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HabTec } from 'src/app/models/habilidadtecnica';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,15 +20,42 @@ export class CrearHabilidadesmodComponent {
               private router: Router) {
     this.formHabTec = this.fb.group({
         //id: [''],
-        logo_url: [''],
-        nombre: [''],
-        nivel_o_idioma: ['']
+        logo_url: ['',[Validators.required, Validators.maxLength(500)]],
+        nombre: ['',[Validators.required, Validators.maxLength(24)]],
+        nivel_o_idioma: ['',[Validators.required]]
     })
   }
 
   ngOnInit(): void {
 
   }
+
+  //getters
+  get Logo_url() {
+    return this.formHabTec.get("logo_url")
+  }
+
+  get Nombre() {
+    return this.formHabTec.get("nombre")
+  }
+
+  get Nivel_o_idioma() {
+    return this.formHabTec.get("nivel_o_idioma")
+  }
+
+  //validar los campos
+  get Logo_urlValid() {
+    return this.Logo_url?.touched && !this.Logo_url?.valid;
+  }
+
+  get NombreValid() {
+    return this.Nombre?.touched && !this.Nombre?.valid;
+  }
+
+  get Nivel_o_idiomaValid() {
+    return this.Nivel_o_idioma?.touched && !this.Nivel_o_idioma?.valid;
+  }
+
 
   onSubmitHabTec() {
     const hab: HabTec = {

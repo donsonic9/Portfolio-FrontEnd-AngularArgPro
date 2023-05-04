@@ -122,6 +122,8 @@
   
   width: 320px;
   /* height: 390px; */
+  overflow:hidden;
+  word-wrap:break-word;
   margin: 10px;
   border-radius: 10px;
   background-color: var(--shadow-1);
@@ -163,6 +165,11 @@
   text-align: center;
   margin: 10px 5px;
   transform:skewX(-10deg);
+}
+
+.desc-container {
+  max-height: 140px;
+  overflow-y: scroll;
 }
 
 .certi-body p {

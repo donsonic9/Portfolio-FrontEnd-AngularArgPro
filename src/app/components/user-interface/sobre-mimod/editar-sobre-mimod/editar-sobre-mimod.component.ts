@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SobreMi } from 'src/app/models/sobremi';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -21,8 +21,8 @@ export class EditarSobreMimodComponent implements OnInit {
       //creamos los grupos de control para el formulario.
       this.formSobreMi = this.fb.group({
         id: [''],
-        second_img: [''],
-        description: ['']
+        second_img: ['',[Validators.required, Validators.maxLength(500)]],
+        description: ['',[Validators.required, Validators.maxLength(700)]]
       });
   }
 
@@ -41,6 +41,26 @@ export class EditarSobreMimodComponent implements OnInit {
       });
     });
   }
+
+
+  // creamos los metodos para usarlos en el html:
+  get Second_img() {
+    return this.formSobreMi.get("second_img");
+  }
+
+  get Description() {
+    return this.formSobreMi.get("description");
+  }
+
+  // validamos los campos para los validators
+  get Second_imgValid() {
+    return this.Second_img?.touched && !this.Second_img?.valid;
+  }
+
+  get DescriptionValid() {
+    return this.Description?.touched && !this.Description?.valid;
+  }
+
 
   onSubmitSobreMi() {
     

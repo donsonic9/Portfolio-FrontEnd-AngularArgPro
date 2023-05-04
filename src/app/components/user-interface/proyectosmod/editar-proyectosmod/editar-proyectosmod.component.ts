@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Proyectos } from 'src/app/models/proyectos';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,11 +20,11 @@ export class EditarProyectosmodComponent implements OnInit{
               private router: Router) {
     this.formProy = this.fb.group({
       id: [''],
-      nombre: [''],
-      descripcion: [''],
-      url_imagen: [''],
-      url_website: [''],
-      url_github: [''],
+      nombre: ['',[Validators.required, Validators.maxLength(50)]],
+      descripcion: ['',[Validators.required, Validators.maxLength(200)]],
+      url_imagen: ['',[Validators.required, Validators.maxLength(500)]],
+      url_website: ['',[Validators.required, Validators.maxLength(500)]],
+      url_github: ['',[Validators.required, Validators.maxLength(500)]],
     })
   }
 
@@ -44,6 +44,49 @@ export class EditarProyectosmodComponent implements OnInit{
         url_github: element?.url_github,
       });
     });
+  }
+
+
+  // creamos los metodos para usarlos en el html:
+  get Nombre() {
+    return this.formProy.get("nombre");
+  }
+  
+  get Descripcion() {
+    return this.formProy.get("descripcion");
+  }
+
+  get Url_imagen() {
+    return this.formProy.get("url_imagen");
+  }
+
+  get Url_website() {
+    return this.formProy.get("url_website");
+  }
+
+  get Url_github() {
+    return this.formProy.get("url_github");
+  }
+
+  // validamos los campos para los validators
+  get NombreValid() {
+    return this.Nombre?.touched && !this.Nombre?.valid;
+  }
+
+  get DescripcionValid() {
+    return this.Descripcion?.touched && !this.Descripcion?.valid;
+  }
+
+  get Url_imagenValid() {
+    return this.Url_imagen?.touched && !this.Url_imagen?.valid;
+  }
+
+  get Url_websiteValid() {
+    return this.Url_website?.touched && !this.Url_website?.valid;
+  }
+
+  get Url_githubValid() {
+    return this.Url_github?.touched && !this.Url_github?.valid;
   }
 
   onSubmitProy() {

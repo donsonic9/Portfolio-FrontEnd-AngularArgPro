@@ -1,31 +1,102 @@
 <div class="container">
   <!-- Formulario de edicion -->
   <form class="formulario-edicion" id="contact-form" [formGroup]="formCont" (ngSubmit)="onSubmitCont()">
+    
     <div class="mod-form-div">
       <label for="url-fb">Perfil Facebook (URL) : </label>
       <input type="text" formControlName="url_facebook" name="url-fb" id="url-fb"
         placeholder="https://www.facebook.com/tuperfil">
     </div>
+    <div *ngIf="Url_facebook?.errors && Url_facebook?.touched" >
+      <p *ngIf="Url_facebook?.hasError('required')" class="error" >
+        La URL es requerida.
+      </p>
+      <p *ngIf="Url_facebook?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_facebook?.valid && Url_facebook?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
     <div class="mod-form-div">
       <label for="url-gh">Perfil Github (URL) : </label>
       <input type="text" formControlName="url_github" name="url-gh" id="url-gh"
         placeholder="https://www.github.com/tuperfil">
     </div>
+    <div *ngIf="Url_github?.errors && Url_github?.touched" >
+      <p *ngIf="Url_github?.hasError('required')" class="error" >
+        La URL es requerida.
+      </p>
+      <p *ngIf="Url_github?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_github?.valid && Url_github?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+    
     <div class="mod-form-div">
       <label for="url-li">Perfil Linkedin (URL) : </label>
       <input type="text" formControlName="url_linkedin" name="url-li" id="url-li"
         placeholder="https://www.linkedin.com/tuperfil">
     </div>
+    <div *ngIf="Url_linkedin?.errors && Url_linkedin?.touched" >
+      <p *ngIf="Url_linkedin?.hasError('required')" class="error" >
+        La URL es requerida.
+      </p>
+      <p *ngIf="Url_linkedin?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_linkedin?.valid && Url_linkedin?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+    
     <div class="mod-form-div">
       <label for="url-ig">Perfil Instagram (URL): </label>
       <input type="text" formControlName="url_instagram" name="url-ig" id="url-ig"
         placeholder="https://www.instagram.com/tuperfil">
     </div>
+    <div *ngIf="Url_instagram?.errors && Url_instagram?.touched" >
+      <p *ngIf="Url_instagram?.hasError('required')" class="error" >
+        La URL es requerida.
+      </p>
+      <p *ngIf="Url_instagram?.errors?.['maxlength']" class="error">
+        La URL no puede tener mas de 500 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Url_instagram?.valid && Url_instagram?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+    
     <div class="mod-form-div">
       <label for="url-em">E-mail : </label>
       <input type="email" formControlName="email" name="url-em" id="url-em" placeholder="pepito.97@tudominio.com">
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Email?.errors && Email?.touched" >
+      <p *ngIf="Email?.hasError('required')" class="error" >
+        El email es requerido.
+      </p>
+      <p *ngIf="Email?.hasError('email')" class="error">
+        Formato de email incorrecto.
+      </p>
+    </div>
+    <div *ngIf="Email?.valid && Email?.touched">
+      <p class="correct">
+        Formato de email valido.
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Url_facebook?.valid && Url_instagram?.valid && Url_github?.valid && Url_linkedin?.valid && Email?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

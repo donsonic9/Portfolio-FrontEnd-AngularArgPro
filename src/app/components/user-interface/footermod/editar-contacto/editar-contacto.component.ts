@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Contacto } from 'src/app/models/contacto';
 import { DataPortfolioService } from 'src/app/services/data-portfolio.service';
@@ -20,11 +20,11 @@ export class EditarContactoComponent implements OnInit{
               private router: Router) {
     this.formCont = this.fb.group({
       id: [''],
-      url_facebook: [''],
-      url_github: [''],
-      url_instagram: [''],
-      url_linkedin: [''],
-      email: [''],
+      url_facebook: ['',[Validators.required, Validators.maxLength(500)]],
+      url_github: ['',[Validators.required, Validators.maxLength(500)]],
+      url_instagram: ['',[Validators.required, Validators.maxLength(500)]],
+      url_linkedin: ['',[Validators.required, Validators.maxLength(500)]],
+      email: ['',[Validators.required, Validators.email]],
     })
   }
 
@@ -44,6 +44,48 @@ export class EditarContactoComponent implements OnInit{
         email: element?.email
       });
     });
+  }
+
+  // creamos los metodos para usarlos en el html:
+  get Email() {
+    return this.formCont.get("email");
+  }
+  
+  get Url_instagram() {
+    return this.formCont.get("url_instagram");
+  }
+
+  get Url_facebook() {
+    return this.formCont.get("url_facebook");
+  }
+
+  get Url_linkedin() {
+    return this.formCont.get("url_linkedin");
+  }
+
+  get Url_github() {
+    return this.formCont.get("url_github");
+  }
+
+  // validamos los campos para los validators
+  get EmailValid() {
+    return this.Email?.touched && !this.Email?.valid;
+  }
+
+  get Url_instagramValid() {
+    return this.Url_instagram?.touched && !this.Url_instagram?.valid;
+  }
+
+  get Url_facebookValid() {
+    return this.Url_facebook?.touched && !this.Url_facebook?.valid;
+  }
+
+  get Url_linkedinValid() {
+    return this.Url_linkedin?.touched && !this.Url_linkedin?.valid;
+  }
+
+  get Url_githubValid() {
+    return this.Url_github?.touched && !this.Url_github?.valid;
   }
 
   onSubmitCont() {

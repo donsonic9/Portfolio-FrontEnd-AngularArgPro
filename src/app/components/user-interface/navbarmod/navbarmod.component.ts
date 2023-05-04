@@ -20,6 +20,11 @@ export class NavbarmodComponent {
     })
   }
 
+  onReload() {
+    location.reload()
+    document.getElementById("upp")?.scrollIntoView({behavior: 'smooth'});
+  }
+
 
   // las funciones "to" son para linkear los botones de la navbar a las secciones de la pagina.
   toSobreMi() {

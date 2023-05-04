@@ -2,11 +2,26 @@
 <div class="container">
   <!-- Formulario de edicion -->
   <form class="formulario-edicion" id="edu-form-desc" [formGroup]="formDescEdu" (ngSubmit)="onSubmitDescEdu()">
+
     <div class="mod-form-div">
       <label for="desc-edu-id">Descripcion : </label>
       <textarea name="desc-edu-id" formControlName="description" id="desc-edu-id" cols="30" rows="5" placeholder="Resumida historia sobre tus estudios" ></textarea>
     </div>
-    <div class="send-button-div">
+    <div *ngIf="Description?.errors && Description?.touched" >
+      <p *ngIf="Description?.hasError('required')" class="error" >
+        La descripcion es requerida.
+      </p>
+      <p *ngIf="Description?.errors?.['maxlength']" class="error">
+        La descripcion no puede tener mas de 300 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Description?.valid && Description?.touched">
+      <p class="correct">
+        Formato de texto valido.
+      </p>
+    </div>
+
+    <div class="send-button-div" *ngIf="Description?.valid">
       <input type="submit" value="Aceptar">
     </div>
   </form>

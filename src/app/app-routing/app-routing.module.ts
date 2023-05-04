@@ -30,7 +30,6 @@ const routes: Routes = [
   {path: "", redirectTo: '/inicio', pathMatch: 'full'},
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'signUp', component: SignUpComponent},
   {path: 'userInterface', component: UserInterfaceComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
   {path: 'hero/editar/:id', component: EditarHeromodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
   {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
