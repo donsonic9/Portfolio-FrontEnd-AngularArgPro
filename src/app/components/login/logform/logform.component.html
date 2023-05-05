@@ -48,9 +48,14 @@
       <div *ngIf="Password?.valid && Mail?.valid" class="container d-flex flex-column justify-content-center align-items-center">
         <input type="submit" value="Log In">
       </div>
+      
     </form>
 
-    <!-- <a routerLink="/signUp" aria-current="page">Don't have an account? <b>Sign Up</b>.</a> -->
+    <div class="container d-flex flex-column justify-content-center align-items-center text-align-center">
+      <p> or you can</p>
+      <button class="google-btn" (click)="onGoogleClick()"></button>
+    </div>
+
   </div>
 </section>
 

@@ -7,7 +7,7 @@
   min-height: 66vh;
   max-width: 99.9vw;
   text-align: center;
-  margin-top: 18vh;
+  margin-top: 16vh;
   margin-left: 0.1vw;
 }
 
@@ -17,8 +17,8 @@
 }
 
 .login-principal h1 {
-  font-size: 3rem;
-  margin: 25px 0;
+  font-size: 2.2rem;
+  margin: 20px 0;
 }
 
 .login.principal p {
@@ -26,7 +26,7 @@
 }
 
 .login-principal .container {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 .login-principal form {
@@ -64,10 +64,11 @@ input[type="submit"] {
   background-color: var(--lighter-color);
   color: var(--darker-color);
   font-weight: 600;
-  width: 100%;
-  margin: 10px;
-  padding: 10px;
-  border-radius: 10px;
+  width: 191px;
+  height: 46px;
+  /* margin: 10px; */
+  /* padding: 10px; */
+  border-radius: 4px;
 }
 
 input[type="submit"]:hover {
@@ -84,6 +85,26 @@ input[type="submit"]:hover {
 
 .login-principal a:hover {
   text-decoration: underline;
+}
+
+/* Google btn */
+.google-btn {
+  background-image: url("/assets/images/btn_google_signin_light_normal_web.png");
+  width: 191px;
+  height: 46px;
+  border: none;
+  
+  border-radius: 4px;
+  transition: all 0.2s ease-in-out;
+}
+
+.google-btn:hover {
+  background-image: url("/assets/images/btn_google_signin_dark_normal_web.png");
+  width: 191px;
+  height: 46px;
+  border: none;
+  
+  border-radius: 4px;
 }
 
 

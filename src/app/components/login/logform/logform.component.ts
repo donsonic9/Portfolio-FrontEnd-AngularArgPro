@@ -47,6 +47,20 @@ export class LogformComponent implements OnInit {
     return this.Mail?.touched && !this.Mail?.valid;
   }
 
+
+  onGoogleClick() {
+    this.authService.loginWithGoogle()
+      .then(response => {
+        console.log(response);
+        this.authService.autoLogoutAfterInactivity();
+        this.router.navigate(['userInterface']);
+      })
+      .catch(err => {
+        console.log(err);
+      })
+  }
+
+
   onSubmitLogin() {
     const user: User = {
       email: this.form.value.email,
