@@ -1,0 +1,104 @@
+
+/* Experiencia */
+
+/* Mismos estilos que experiencia. */
+
+.exp {
+  min-height: 450px;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  
+}
+
+.exp .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0px;
+}
+
+
+.exp-title {
+  font-size: 3rem;
+  font-weight: 400;
+  color: var(--almost-white);
+  margin: 40px 0;
+  padding: 20px;
+}
+
+/* Container de cada mensaje */
+
+.mensaje-container {
+  background-color: var(--shadow-4);
+  width: 90%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  border-radius: 8px;
+}
+
+.nombre-fecha {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.nombre-fecha h4 {
+  font-size: 1em;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.nombre-fecha h6 {
+  margin: 0 16px;
+  filter: brightness(65%);
+}
+
+.img-box {
+  padding-right: 10px;
+}
+
+.img-user {
+  /* margin: 10px; */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.mensaje-box p {
+  margin: 10px 0 5px 10px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  /* font-weight: 100; */
+  filter: brightness(86%);
+}
+
+.edit-delete ul {
+  background-color: var(--shadow-6);
+}
+
+button {
+  color: var(--almost-white);
+}
+
+button:hover {
+  color: var(--dark-color);
+}
+
+.seccion-glass-h {
+  color: var(--almost-white);
+}
+
+@media screen and (max-width: 500px) {
+  .mensaje-container {
+    scale: 0.9;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mensaje-container {
+    scale: 0.8;
+  }
+}

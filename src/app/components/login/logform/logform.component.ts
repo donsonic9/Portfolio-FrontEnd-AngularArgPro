@@ -53,7 +53,7 @@ export class LogformComponent implements OnInit {
       .then(response => {
         console.log(response);
         this.authService.autoLogoutAfterInactivity();
-        this.router.navigate(['userInterface']);
+        this.router.navigate(['userInicio']);
       })
       .catch(err => {
         console.log(err);

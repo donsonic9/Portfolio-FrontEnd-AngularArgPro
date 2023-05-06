@@ -7,6 +7,7 @@ import { InicioComponent } from '../components/inicio/inicio.component';
 import { LoginComponent } from '../components/login/login.component';
 import { SignUpComponent } from '../components/sign-up/sign-up.component';
 import { UserInterfaceComponent } from '../components/user-interface/user-interface.component';
+import { UserInicioComponent } from '../components/user-inicio/user-inicio.component';
 //Cargamos los distintos formularios.
 import { EditarHeromodComponent } from '../components/user-interface/heromod/editar-heromod/editar-heromod.component';
 import { EditarSobreMimodComponent } from '../components/user-interface/sobre-mimod/editar-sobre-mimod/editar-sobre-mimod.component';
@@ -31,6 +32,7 @@ const routes: Routes = [
   {path: 'inicio', component: InicioComponent},
   {path: 'login', component: LoginComponent},
   {path: 'userInterface', component: UserInterfaceComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
+  {path: 'userInicio', component: UserInicioComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
   {path: 'hero/editar/:id', component: EditarHeromodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
   {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},
   {path: 'experiencia/crear', component: CrearExperienciaComponent, ...canActivate(() => redirectUnauthorizedTo(['inicio']))},

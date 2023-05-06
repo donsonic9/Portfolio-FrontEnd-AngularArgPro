@@ -45,6 +45,11 @@ export class AuthService {
       }
     });
   }
+
+  //get info from user logged.
+  getUserLogged() {
+    return this.auth.currentUser;
+  }
   
   
 }

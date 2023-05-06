@@ -59,6 +59,11 @@ import { EditarContactoComponent } from './components/user-interface/footermod/e
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
+import { UserInicioComponent } from './components/user-inicio/user-inicio.component';
+import { SpecialNavbarComponent } from './components/user-inicio/special-navbar/special-navbar.component';
+import { SpecialHeroComponent } from './components/user-inicio/special-hero/special-hero.component';
+import { SpecialMessageComponent } from './components/user-inicio/special-message/special-message.component';
+import { MessageComponent } from './components/inicio/message/message.component';
 
 
 
@@ -100,7 +105,12 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
     EditarProyectosmodComponent,
     CrearProyectosmodComponent,
     EditarFrasecontactoComponent,
-    EditarContactoComponent
+    EditarContactoComponent,
+    UserInicioComponent,
+    SpecialNavbarComponent,
+    SpecialHeroComponent,
+    SpecialMessageComponent,
+    MessageComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,237 @@
+/* Navbar */
+
+.navbar {
+  /* From https://css.glass */
+  background: var(--shadow-2);
+  border-radius: 0px 0px 5px 5px;
+  box-shadow: 2px 0px 4px 3px var(--shadow-1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+
+.navbar-brand {
+  color: var(--almost-white);
+  margin: 0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar-brand:hover {
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+
+.nav-link {
+  color: var(--almost-white);
+  margin: 2px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.nav-item:hover .nav-link, .nav-item-drop:hover .btn {
+  color: var(--white);
+  background-color:var(--shadow-1);
+  box-shadow: 0 0 2px 2px var(--shadow-1);
+  border-radius: 5px;
+  transform: translateY(-2px);
+  border-bottom: 1px solid var(--white);
+}
+
+.nav-item-drop .nav-link {
+  font-size: 1.5rem;
+  padding:0 30px;
+  
+}
+
+.nav-item-drop .btn {
+  color: var(--almost-white);
+  font-size: 1.5rem;
+  outline: none;
+}
+
+.dropdown-item {
+  color: var(--almost-white);
+  border-radius: 0px;
+  outline: none;
+}
+
+.dropdown-item:hover {
+  color: var(--white);
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  background-color:var(--shadow-4);
+  outline: none;
+}
+
+.btn-group .btn {
+  border: none;
+  outline: none;
+}
+
+.hero-image-profile-small {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+/* icon-tog es el toggler para que aparezca y desaparezca el menu */
+
+.icon-tog {
+  width: 38px;
+  height: 38px;
+  position: relative;
+  border: 2px solid var(--almost-white);
+  opacity: 0.6; 
+  appearance: none;
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+
+.icon-tog:checked::before {
+  content:'';
+  position: absolute;
+  transform: rotateZ(45deg);
+  top: 5px;
+  left: 9px;
+  border-radius: 1px;
+  width: 4px;
+  height: 20px;
+  background-color: var(--almost-white);
+  animation: rotateBadge 0.8s ease 1;
+}
+
+.icon-tog:checked::after {
+  content:'';
+  position: absolute;
+  transform: rotateZ(-45deg);
+  top: 5px;
+  left: 21px;
+  border-radius: 1px;
+  width: 4px;
+  height: 20px;
+  background-color: var(--almost-white);
+  animation: rotateBadgeR 0.8s ease 1;
+}
+
+.icon-tog::before {
+  content:'';
+  position: absolute;
+  transform: rotateZ(-45deg);
+  top: 8px;
+  left: 9px;
+  border-radius: 1px;
+  width: 4px;
+  height: 20px;
+  background-color: var(--almost-white);
+  animation: rotateBadgeR 0.8s ease 1;
+}
+
+.icon-tog::after {
+  content:'';
+  position: absolute;
+  transform: rotateZ(45deg);
+  top: 8px;
+  left: 21px;
+  border-radius: 1px;
+  width: 4px;
+  height: 20px;
+  background-color: var(--almost-white);
+  animation: rotateBadge 0.8s ease 1;
+}
+
+
+
+/* Navbar cuando se clikea el checkbox (visible) */
+.icon-tog:checked ~ div.navbar-collapse {
+  visibility: visible;
+  height: 200px;
+}
+
+.icon-tog:checked ~ .navbar-collapse .nav-link {
+  font-size: 1rem;
+}
+
+
+
+/* Animaciones */
+
+@keyframes rotateBadge {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  40% {
+    transform: rotateZ(45deg);
+  }
+  100% {
+    transform: rotateZ(45deg);
+  }
+}
+
+@keyframes rotateBadgeR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  40% {
+    transform: rotateZ(-45deg);
+  }
+  100% {
+    transform: rotateZ(-45deg);
+  }
+}
+
+
+
+/* Adaptable (responsive) ..........................................................................*/
+
+/* resizing logo navbar for screen size less than 357px */
+@media screen and (max-width: 357px) {
+  .logo-img-navbar {
+    transform: scale(0.8);
+  }
+
+  .texto-logo-nav {
+    font-size: 0.8rem;
+  }
+}
+
+/* resizing logo navbar & profile image for screen size less than 311px */
+@media screen and (max-width: 311px) {
+  .logo-img-navbar {
+    transform: scale(0.6);
+  }
+
+  .texto-logo-nav {
+    font-size: 0.6rem;
+  }
+}
+
+/* hacer aparecer los items en la navbar con el checkbox */
+/* centrar los navbar items for screen size less than 767px */
+@media screen and (max-width: 767px) {
+  .div-ul-nav {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* Navbar en posicion oculta (hidden) */
+  .navbar-collapse {
+    visibility: hidden;
+    height: 0;
+    transition: all 0.2s ease-in-out;
+  }
+
+  .navbar-collapse .nav-link {
+    font-size: 0rem;
+  }
+}

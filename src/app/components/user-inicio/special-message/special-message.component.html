@@ -1,0 +1,48 @@
+<!-- Comentarios -->
+<div id="message"></div>
+<section class="exp">
+  <div class="container d-flex flex-column seccion-glass">
+    <h2 class="exp-title text-center ">Comentarios</h2>
+    <div class="container" *ngFor="let men of miPortfolio">
+      <!-- A partir de aca, empieza cada comentario individual -->
+
+      <!-- En esta parte va la estructura de los comentarios. -->
+      <div class="mensaje-container d-flex flex-row">
+        <div class="img-box">
+          <img class="img-user" *ngIf="men.img_photo" [src]="men.img_photo" alt="">
+        </div>
+        <div class="text-box">
+          <div class="nombre-fecha d-flex justify-content-left">
+            <h4>{{men.username}}</h4>
+            <h6><i>{{men.fecha}}</i></h6>
+          </div>
+          <div class="mensaje-box">
+            <p>{{men.mensaje}}</p>
+          </div>
+        </div>
+        <div class="edit-delete">
+          <div *ngIf="isEditable(men)" class="btn-group">
+            <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end seccion-glass">
+              <!-- Con el routerLink, le decimos que componente cargar -->
+              <li>
+                <a aria-current="page" class="dropdown-item seccion-glass-h">
+                  <i class="fa-regular fa-trash-can"></i> Eliminar
+                </a>
+              </li>
+              <li>
+                <a  aria-current="page" class="dropdown-item seccion-glass-h">
+                  <i class="fa-solid fa-pen"></i> Editar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  
+</section>

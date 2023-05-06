@@ -11,6 +11,7 @@ import { Proyectos } from '../models/proyectos';
 import { FraseContacto } from '../models/frasecontacto';
 import { Contacto } from '../models/contacto';
 import { User } from '../models/user';
+import { Mensaje } from '../models/mensaje';
 
 // Este servicio sera el encargado de manejar la data del portfolio
 
@@ -140,6 +141,24 @@ export class DataPortfolioService {
 
   public borrarProyectos(id: number): Observable<any> {
     return this.http.delete<any>(this.bakcendDS9 +"/proyectos/borrar" + id.toString());
+  }
+
+  //------------------------------------- COMENTARIOS ------------------------------------------
+
+  public obtenerDatosMensaje(): Observable<Mensaje[]> {
+    return this.http.get<Mensaje[]>(this.bakcendDS9 +"/mensaje/ver")
+  }
+
+  public crearMensaje(men: Mensaje): Observable<Mensaje> {
+    return this.http.post<Mensaje>(this.bakcendDS9 + `/mensaje/crear/`, men, this.httpOptions)
+  }
+
+  public editarMensaje(men: Mensaje): Observable<Mensaje> {
+    return this.http.put<Mensaje>(this.bakcendDS9 + `/mensaje/editar/`, men, this.httpOptions)
+  }
+
+  public borrarMensaje(id: number): Observable<any> {
+    return this.http.delete<any>(this.bakcendDS9 +"/mensaje/borrar" + id.toString());
   }
 
 
