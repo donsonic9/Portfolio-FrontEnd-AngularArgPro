@@ -64,6 +64,8 @@ import { SpecialNavbarComponent } from './components/user-inicio/special-navbar/
 import { SpecialHeroComponent } from './components/user-inicio/special-hero/special-hero.component';
 import { SpecialMessageComponent } from './components/user-inicio/special-message/special-message.component';
 import { MessageComponent } from './components/inicio/message/message.component';
+import { EditarMessageComponent } from './components/user-inicio/special-message/editar-message/editar-message.component';
+import { CrearMessageComponent } from './components/user-inicio/special-message/crear-message/crear-message.component';
 
 
 
@@ -110,7 +112,9 @@ import { MessageComponent } from './components/inicio/message/message.component'
     SpecialNavbarComponent,
     SpecialHeroComponent,
     SpecialMessageComponent,
-    MessageComponent
+    MessageComponent,
+    EditarMessageComponent,
+    CrearMessageComponent
   ],
   imports: [
     BrowserModule,

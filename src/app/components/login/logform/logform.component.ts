@@ -48,17 +48,31 @@ export class LogformComponent implements OnInit {
   }
 
 
+  // onGoogleClick() {
+  //   this.authService.loginWithGoogle()
+  //     .then(response => {
+  //       console.log(response);
+  //       this.authService.autoLogoutAfterInactivity();
+  //       this.router.navigate(['userInicio']);
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     })
+  // }
+
   onGoogleClick() {
     this.authService.loginWithGoogle()
-      .then(response => {
-        console.log(response);
+      .then(token => {
+        // Set token to user's authentication state to renew it
+        this.authService.setToken(token);
         this.authService.autoLogoutAfterInactivity();
         this.router.navigate(['userInicio']);
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
+
 
 
   onSubmitLogin() {

@@ -28,6 +28,29 @@
   padding: 20px;
 }
 
+/* boton de editar */
+
+.cv {
+  text-decoration: none;
+  max-width: 200px;
+  padding: 10px;
+  margin: 10px auto;
+  color: var(--white);
+  background-color: rgb(49, 121, 255);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.cv:hover {
+  background-color: rgb(69, 193, 255);
+  color: var(--dark-color);
+}
+
+.cv i {
+  padding: 0px 10px;
+}
+
 /* Container de cada mensaje */
 
 .mensaje-container {
@@ -68,6 +91,10 @@
   border-radius: 50%;
 }
 
+.text-box {
+  width: 100%;
+}
+
 .mensaje-box p {
   margin: 10px 0 5px 10px;
   font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -89,7 +116,10 @@ button:hover {
 
 .seccion-glass-h {
   color: var(--almost-white);
+  cursor: pointer;
 }
+
+
 
 @media screen and (max-width: 500px) {
   .mensaje-container {

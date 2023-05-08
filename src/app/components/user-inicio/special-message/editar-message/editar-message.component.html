@@ -1,0 +1,30 @@
+
+<div class="container">
+  <!-- Formulario de edicion -->
+  <form class="formulario-edicion" id="proy-form" [formGroup]="formMen" (ngSubmit)="onSubmitMen()">
+
+    <div class="mod-form-div">
+      <label for="desc-proy-id">Comentario : </label>
+      <textarea name="desc-proy-id" formControlName="mensaje" id="desc-proy-id" cols="30" rows="5">
+
+      </textarea>
+    </div>
+    <div *ngIf="Mensaje?.errors && Mensaje?.touched" >
+      <p *ngIf="Mensaje?.hasError('required')" class="error" >
+        El comentario no puede estar vacio.
+      </p>
+      <p *ngIf="Mensaje?.errors?.['maxlength']" class="error">
+        El comentario no puede tener mas de 255 caracteres.
+      </p>
+    </div>
+    <div *ngIf="Mensaje?.valid && Mensaje?.touched">
+      <p class="correct">
+        Formato de comentario valido.
+      </p>
+    </div>
+    
+    <div class="send-button-div" *ngIf="Mensaje?.valid">
+      <input type="submit" value="Aceptar">
+    </div>
+  </form>
+</div>

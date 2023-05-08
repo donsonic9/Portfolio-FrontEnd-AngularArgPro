@@ -1,0 +1,84 @@
+.container {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Formulario de edicion */
+
+.formulario-edicion {
+  padding: 20px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  background-color: var(--shadow-6);
+  border-radius: 5px;
+  width: 80%;
+  box-shadow: 4px 4px 8px 2px var(--shadow-6), 0 4px 30px var(--shadow-1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.mod-form-div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 16px 0;
+}
+
+.mod-form-div label {
+  color: var(--almost-white);
+}
+
+.mod-form-div input[type="text"] {
+  margin-top: 5px;
+  border-radius: 5px;
+  
+  border: none;
+  outline: none;
+}
+
+textarea {
+  resize: none;
+}
+
+.send-button-div {
+  display: flex;
+  justify-content: center;
+}
+
+.send-button-div input[type="submit"] {
+  margin: 10px;
+  padding: 8px 38px;
+  border: none;
+  border-radius: 4px;
+  color: var(--almost-white);
+  background-color: var(--light-color);
+  transition: all 0.2s ease;
+}
+
+.send-button-div input[type="submit"]:hover {
+  background-color: var(--almost-white);
+  color: var(--light-color);
+}
+
+/* Para cuando los campos tienen errores o son validos (validators)*/
+
+.error {
+  padding: 2px 0;
+  font-weight: 300;
+  color: rgb(255, 103, 103);
+  background-color: var(--shadow-6);
+  /* border: 1px solid #333; */
+  border-radius: 5px;
+}
+
+.correct {
+  padding: 2px 0;
+  font-weight: 300;
+  color: rgb(79, 255, 79);
+  background-color: var(--shadow-6);
+  /* border: 1px solid #333; */
+  border-radius: 5px;
+}

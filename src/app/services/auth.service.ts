@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, signInWithPopup, GoogleAuthProvider } from '@angular/fire/auth';
+import { getIdTokenResult } from '@firebase/auth';
+
 
 @Injectable({
   providedIn: 'root'
@@ -16,10 +18,30 @@ export class AuthService {
     return signInWithEmailAndPassword(this.auth, email, password);
   }
 
-  loginWithGoogle() {
-    return signInWithPopup(this.auth, new GoogleAuthProvider());
+  setToken(token: string) {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || '{}');
+    currentUser.token = token;
+    localStorage.setItem('currentUser', JSON.stringify(currentUser));
   }
+  
 
+  loginWithGoogle() {
+    return signInWithPopup(this.auth, new GoogleAuthProvider())
+      .then((result) => {
+        // Refresh the user's token
+        return result.user.getIdToken(true)
+          .then((token) => {
+            // Update user's authentication state with new token
+            this.auth.currentUser?.getIdTokenResult()
+              .then((idTokenResult) => {
+                idTokenResult.token = token;
+                localStorage.setItem('currentUser', JSON.stringify(idTokenResult));
+              });
+            return token;
+          });
+      });
+  }
+  
   logout() {
     return signOut(this.auth);
   }
@@ -46,10 +68,17 @@ export class AuthService {
     });
   }
 
+  isUserLoggedInWithEmailAndPassword(): boolean {
+    return !!(this.auth.currentUser?.email === "alexrepollo@outlook.com");
+  }
+
+  isUserLoggedInWithGoogle(): boolean {
+    return !!(this.auth.currentUser?.email !== "alexrepollo@outlook.com");
+  }
+  
+
   //get info from user logged.
   getUserLogged() {
     return this.auth.currentUser;
   }
-  
-  
 }

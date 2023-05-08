@@ -3,11 +3,16 @@
 <section class="exp">
   <div class="container d-flex flex-column seccion-glass">
     <h2 class="exp-title text-center ">Comentarios</h2>
+    <!-- Boton de "Nuevo Comentario" -->
+    <div *ngIf="!(pepe)">
+      <label class="cv" for="tfproy" routerLink="/mensaje/crear">Nuevo Comentario <i class="fa-solid fa-plus"></i></label>
+    </div>
+    
     <div class="container" *ngFor="let men of miPortfolio">
       <!-- A partir de aca, empieza cada comentario individual -->
-
+      
       <!-- En esta parte va la estructura de los comentarios. -->
-      <div class="mensaje-container d-flex flex-row">
+      <div class="mensaje-container d-flex flex-row" id="message-{{men.id}}">
         <div class="img-box">
           <img class="img-user" *ngIf="men.img_photo" [src]="men.img_photo" alt="">
         </div>
@@ -21,6 +26,7 @@
           </div>
         </div>
         <div class="edit-delete">
+
           <div *ngIf="isEditable(men)" class="btn-group">
             <button type="button" class="btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
               <i class="fa-solid fa-ellipsis-vertical"></i>
@@ -28,17 +34,18 @@
             <ul class="dropdown-menu dropdown-menu-end seccion-glass">
               <!-- Con el routerLink, le decimos que componente cargar -->
               <li>
-                <a aria-current="page" class="dropdown-item seccion-glass-h">
+                <a aria-current="page" class="dropdown-item seccion-glass-h" (click)="onDelete(men.id)">
                   <i class="fa-regular fa-trash-can"></i> Eliminar
                 </a>
               </li>
               <li>
-                <a  aria-current="page" class="dropdown-item seccion-glass-h">
+                <a  aria-current="page" class="dropdown-item seccion-glass-h" routerLink="/mensaje/editar/{{men.id}}">
                   <i class="fa-solid fa-pen"></i> Editar
                 </a>
               </li>
             </ul>
           </div>
+
         </div>
       </div>
 
