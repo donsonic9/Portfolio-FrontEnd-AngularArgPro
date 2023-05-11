@@ -20,7 +20,7 @@ export class EditarDescripcioneducacionComponent implements OnInit{
               private router: Router) {
     this.formDescEdu = this.fb.group({
       id: [''],
-      description: ['',[Validators.required, Validators.maxLength(500)]],
+      description: ['',[Validators.required, Validators.maxLength(255)]],
     })
   }
 

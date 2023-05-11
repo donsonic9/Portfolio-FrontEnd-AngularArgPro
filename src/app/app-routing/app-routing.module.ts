@@ -24,34 +24,30 @@ import { EditarFrasecontactoComponent } from '../components/user-interface/foote
 import { EditarContactoComponent } from '../components/user-interface/footermod/editar-contacto/editar-contacto.component';
 //protegemos las url para gnt no autorizada
 import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
-import { CrearMessageComponent } from '../components/user-inicio/special-message/crear-message/crear-message.component';
-import { EditarMessageComponent } from '../components/user-inicio/special-message/editar-message/editar-message.component';
 import { AuthGuardService } from '../services/authA-guard.service';
 import { AuthBGuardService } from '../services/auth-b-guard.service';
 
 // array que contiene las rutas
 const routes: Routes = [
   // 1er path carga la vista por defecto
-  {path: "", redirectTo: '/inicio', pathMatch: 'full'},
-  {path: 'inicio', component: InicioComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'userInterface', component: UserInterfaceComponent, canActivate: [AuthGuardService]},
-  {path: 'userInicio', component: UserInicioComponent, canActivate: [AuthBGuardService]},
-  {path: 'hero/editar/:id', component: EditarHeromodComponent, canActivate: [AuthGuardService]},
-  {path: 'sobremi/editar/:id', component: EditarSobreMimodComponent, canActivate: [AuthGuardService]},
-  {path: 'experiencia/crear', component: CrearExperienciaComponent, canActivate: [AuthGuardService]},
-  {path: 'experiencia/editar/:id', component: EditarExperienciaComponent, canActivate: [AuthGuardService]},
-  {path: 'educacion/crear', component: CrearEducacionmodComponent, canActivate: [AuthGuardService]},
-  {path: 'educacion/editar/:id', component: EditarEducacionmodComponent, canActivate: [AuthGuardService]},
-  {path: 'descripcioneducacion/editar/:id', component: EditarDescripcioneducacionComponent, canActivate: [AuthGuardService]},
-  {path: 'habilidadtecnica/crear', component: CrearHabilidadesmodComponent, canActivate: [AuthGuardService]},
-  {path: 'habilidadtecnica/editar/:id', component: EditarHabilidadesmodComponent, canActivate: [AuthGuardService]},
-  {path: 'proyectos/crear', component: CrearProyectosmodComponent, canActivate: [AuthGuardService]},
-  {path: 'proyectos/editar/:id', component: EditarProyectosmodComponent, canActivate: [AuthGuardService]},
-  // {path: 'mensaje/crear', component: CrearMessageComponent, canActivate: [AuthBGuardService]},
-  // {path: 'mensaje/editar/:id', component: EditarMessageComponent, canActivate: [AuthBGuardService]},
-  {path: 'frasecontacto/editar/:id', component: EditarFrasecontactoComponent, canActivate: [AuthGuardService]},
-  {path: 'contacto/editar/:id', component: EditarContactoComponent, canActivate: [AuthGuardService]}
+  { path: "", redirectTo: '/inicio', pathMatch: 'full' },
+  { path: 'inicio', component: InicioComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'userInterface', component: UserInterfaceComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'userInicio', component: UserInicioComponent },
+  { path: 'hero/editar/:id', component: EditarHeromodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'sobremi/editar/:id', component: EditarSobreMimodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'experiencia/crear', component: CrearExperienciaComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'experiencia/editar/:id', component: EditarExperienciaComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'educacion/crear', component: CrearEducacionmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'educacion/editar/:id', component: EditarEducacionmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'descripcioneducacion/editar/:id', component: EditarDescripcioneducacionComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'habilidadtecnica/crear', component: CrearHabilidadesmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'habilidadtecnica/editar/:id', component: EditarHabilidadesmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'proyectos/crear', component: CrearProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'proyectos/editar/:id', component: EditarProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'frasecontacto/editar/:id', component: EditarFrasecontactoComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: 'contacto/editar/:id', component: EditarContactoComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] }
 ];
 //{path: 'signUp', component: SignUpComponent} path eliminado, posible futura implementacion.
 

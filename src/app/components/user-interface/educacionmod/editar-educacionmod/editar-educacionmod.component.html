@@ -50,7 +50,7 @@
           La imagen es requerida.
         </p>
         <p *ngIf="Img_url?.errors?.['maxlength']" class="error">
-          La URL no puede tener mas de 500 caracteres.
+          La URL no puede tener mas de 255 caracteres.
         </p>
       </div>
       <div *ngIf="Img_url?.valid && Img_url?.touched">
@@ -68,7 +68,7 @@
           La descripcion es requerida.
         </p>
         <p *ngIf="Description?.errors?.['maxlength']" class="error">
-          La descripcion no puede tener mas de 300 caracteres.
+          La descripcion no puede tener mas de 255 caracteres.
         </p>
       </div>
       <div *ngIf="Description?.valid && Description?.touched">

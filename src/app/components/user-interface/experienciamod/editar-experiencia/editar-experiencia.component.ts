@@ -20,9 +20,9 @@ export class EditarExperienciaComponent implements OnInit{
               private router: Router) {
     this.formExpe = this.fb.group({
       id: [''],
-      logo_url: ['',[Validators.required, Validators.maxLength(500)]],
+      logo_url: ['',[Validators.required, Validators.maxLength(255)]],
       posicionYTiempo: ['',[Validators.required, Validators.maxLength(84)]],
-      description: ['',[Validators.required, Validators.maxLength(500)]],
+      description: ['',[Validators.required, Validators.maxLength(255)]],
     })
   }
 

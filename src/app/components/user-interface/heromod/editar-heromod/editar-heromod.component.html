@@ -12,7 +12,7 @@
         La imagen es requerida.
       </p>
       <p *ngIf="Img_profile?.errors?.['maxlength']" class="error">
-        La URL no puede tener mas de 500 caracteres, intente con otra imagen.
+        La URL no puede tener mas de 255 caracteres, intente con otra imagen.
       </p>
     </div>
     <div *ngIf="Img_profile?.valid && Img_profile?.touched">

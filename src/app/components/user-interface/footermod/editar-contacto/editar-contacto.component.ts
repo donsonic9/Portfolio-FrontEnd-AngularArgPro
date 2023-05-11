@@ -20,10 +20,10 @@ export class EditarContactoComponent implements OnInit{
               private router: Router) {
     this.formCont = this.fb.group({
       id: [''],
-      url_facebook: ['',[Validators.required, Validators.maxLength(500)]],
-      url_github: ['',[Validators.required, Validators.maxLength(500)]],
-      url_instagram: ['',[Validators.required, Validators.maxLength(500)]],
-      url_linkedin: ['',[Validators.required, Validators.maxLength(500)]],
+      url_facebook: ['',[Validators.required, Validators.maxLength(255)]],
+      url_github: ['',[Validators.required, Validators.maxLength(255)]],
+      url_instagram: ['',[Validators.required, Validators.maxLength(255)]],
+      url_linkedin: ['',[Validators.required, Validators.maxLength(255)]],
       email: ['',[Validators.required, Validators.email]],
     })
   }

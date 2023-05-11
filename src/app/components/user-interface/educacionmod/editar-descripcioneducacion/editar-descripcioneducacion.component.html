@@ -12,7 +12,7 @@
         La descripcion es requerida.
       </p>
       <p *ngIf="Description?.errors?.['maxlength']" class="error">
-        La descripcion no puede tener mas de 300 caracteres.
+        La descripcion no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Description?.valid && Description?.touched">

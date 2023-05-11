@@ -18,13 +18,8 @@ export class AuthGuardService implements CanActivate{
     if (this.auth.isUserLoggedInWithEmailAndPassword()) {
       return true;
     } else {
-      if(this.auth.isUserLoggedInWithGoogle()) {
-        this.router.navigate(['inicio']);
-        return false;
-      } else {
-        this.router.navigate(['login']);
-        return false;
-      }
+      this.router.navigate(['login']);
+      return false;
     }
   }
 }

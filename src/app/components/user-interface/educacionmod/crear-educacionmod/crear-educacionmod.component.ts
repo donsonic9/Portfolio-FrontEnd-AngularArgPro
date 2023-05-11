@@ -20,10 +20,10 @@ export class CrearEducacionmodComponent {
               private router: Router) {
     this.formEdu = this.fb.group({
       //id: [''],
-      img_url: ['',[Validators.required, Validators.maxLength(500)]],
+      img_url: ['',[Validators.required, Validators.maxLength(255)]],
       institucion: ['',[Validators.required, Validators.maxLength(84)]],
       tituloYTiempo: ['',[Validators.required, Validators.maxLength(90)]],
-      description: ['',[Validators.required, Validators.maxLength(300)]],
+      description: ['',[Validators.required, Validators.maxLength(255)]],
     })
   }
 

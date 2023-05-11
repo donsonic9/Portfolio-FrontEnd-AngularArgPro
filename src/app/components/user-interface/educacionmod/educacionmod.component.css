@@ -169,7 +169,7 @@
 
 .desc-container {
   max-height: 140px;
-  overflow-y: scroll;
+  overflow: auto;
 }
 
 .certi-body p {

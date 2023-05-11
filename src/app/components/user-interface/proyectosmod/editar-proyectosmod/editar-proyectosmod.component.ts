@@ -22,9 +22,9 @@ export class EditarProyectosmodComponent implements OnInit{
       id: [''],
       nombre: ['',[Validators.required, Validators.maxLength(50)]],
       descripcion: ['',[Validators.required, Validators.maxLength(200)]],
-      url_imagen: ['',[Validators.required, Validators.maxLength(500)]],
-      url_website: ['',[Validators.required, Validators.maxLength(500)]],
-      url_github: ['',[Validators.required, Validators.maxLength(500)]],
+      url_imagen: ['',[Validators.required, Validators.maxLength(255)]],
+      url_website: ['',[Validators.required, Validators.maxLength(255)]],
+      url_github: ['',[Validators.required, Validators.maxLength(255)]],
     })
   }
 

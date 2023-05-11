@@ -22,7 +22,7 @@ export class EditarHeromodComponent implements OnInit {
     //creamos los grupos de control para el formulario.
     this.formHero = this.fb.group({
       id: [''],
-      img_profile: ['',[Validators.required, Validators.maxLength(500)]],
+      img_profile: ['',[Validators.required, Validators.maxLength(255)]],
       saludo: ['',[Validators.required, Validators.maxLength(84)]],
       profesion: ['',[Validators.required, Validators.maxLength(84)]]
     });

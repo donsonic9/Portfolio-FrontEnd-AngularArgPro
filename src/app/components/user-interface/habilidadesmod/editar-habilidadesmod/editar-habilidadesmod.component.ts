@@ -20,7 +20,7 @@ export class EditarHabilidadesmodComponent implements OnInit{
               private router: Router) {
     this.formHabTec = this.fb.group({
         id: [''],
-        logo_url: ['',[Validators.required, Validators.maxLength(500)]],
+        logo_url: ['',[Validators.required, Validators.maxLength(255)]],
         nombre: ['',[Validators.required, Validators.maxLength(24)]],
         nivel_o_idioma: ['',[Validators.required]]
     })

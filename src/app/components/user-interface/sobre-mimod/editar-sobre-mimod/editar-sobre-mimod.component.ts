@@ -21,8 +21,8 @@ export class EditarSobreMimodComponent implements OnInit {
       //creamos los grupos de control para el formulario.
       this.formSobreMi = this.fb.group({
         id: [''],
-        second_img: ['',[Validators.required, Validators.maxLength(500)]],
-        description: ['',[Validators.required, Validators.maxLength(700)]]
+        second_img: ['',[Validators.required, Validators.maxLength(255)]],
+        description: ['',[Validators.required, Validators.maxLength(255)]]
       });
   }
 

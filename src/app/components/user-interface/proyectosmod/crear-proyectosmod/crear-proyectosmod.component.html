@@ -13,7 +13,7 @@
         La imagen es requerida.
       </p>
       <p *ngIf="Url_imagen?.errors?.['maxlength']" class="error">
-        La URL no puede tener mas de 500 caracteres.
+        La URL no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Url_imagen?.valid && Url_imagen?.touched">
@@ -50,7 +50,7 @@
         La url del proyecto es requerida.
       </p>
       <p *ngIf="Url_website?.errors?.['maxlength']" class="error">
-        La URL no puede tener mas de 500 caracteres.
+        La URL no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Url_website?.valid && Url_website?.touched">
@@ -69,7 +69,7 @@
         La url del repositorio es requerida.
       </p>
       <p *ngIf="Url_github?.errors?.['maxlength']" class="error">
-        La URL no puede tener mas de 500 caracteres.
+        La URL no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Url_github?.valid && Url_github?.touched">

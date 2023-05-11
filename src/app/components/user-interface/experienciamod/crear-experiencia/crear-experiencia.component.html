@@ -11,7 +11,7 @@
         La imagen es requerida.
       </p>
       <p *ngIf="Logo_url?.errors?.['maxlength']" class="error">
-        La URL no puede tener mas de 500 caracteres.
+        La URL no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Logo_url?.valid && Logo_url?.touched">
@@ -47,7 +47,7 @@
         El texto es requerido.
       </p>
       <p *ngIf="Description?.errors?.['maxlength']" class="error">
-        El texto no puede tener mas de 500 caracteres.
+        El texto no puede tener mas de 255 caracteres.
       </p>
     </div>
     <div *ngIf="Description?.valid && Description?.touched">
