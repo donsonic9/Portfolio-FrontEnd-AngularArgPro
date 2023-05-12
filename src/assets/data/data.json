@@ -163,7 +163,7 @@
     "proyecto": [
       {
         "nombre": "Portfolio Web AR Programa de Alexander Repollo",
-        "descripcion": "Aplicación Web que incluye Portfolio Web de Alexander Repollo, y la opción de crearse un usuario para crear tu propio portfolio, a partir del mio. Proyecto realizado integramente por mi (Alexander Repollo) durante la 2da etapa de Argentina Programa denominada #YoProgramo.",
+        "descripcion": "Aplicación Web que incluye Portfolio Web propio. Proyecto realizado integramente por mi (Alexander Repollo) durante la 2da etapa de Argentina Programa denominada #YoProgramo.",
         "imagen": "./assets/images/proyectos/ARprograma-portfolio-app-web.png",
         "paginaURL": "index.html",
         "githubURL": "https://github.com/donsonic9/donsonic9.github.io"

@@ -30,7 +30,7 @@ import { AuthBGuardService } from '../services/auth-b-guard.service';
 // array que contiene las rutas
 const routes: Routes = [
   // 1er path carga la vista por defecto
-  { path: "", redirectTo: '/inicio', pathMatch: 'full' },
+  { path: "", component: InicioComponent },
   { path: 'inicio', component: InicioComponent },
   { path: 'login', component: LoginComponent },
   { path: 'userInterface', component: UserInterfaceComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
@@ -47,7 +47,8 @@ const routes: Routes = [
   { path: 'proyectos/crear', component: CrearProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
   { path: 'proyectos/editar/:id', component: EditarProyectosmodComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
   { path: 'frasecontacto/editar/:id', component: EditarFrasecontactoComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
-  { path: 'contacto/editar/:id', component: EditarContactoComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] }
+  { path: 'contacto/editar/:id', component: EditarContactoComponent, ...canActivate(() => redirectUnauthorizedTo(['login'])), canActivate: [AuthGuardService] },
+  { path: "**", redirectTo: '', pathMatch: 'full' }
 ];
 //{path: 'signUp', component: SignUpComponent} path eliminado, posible futura implementacion.
 
