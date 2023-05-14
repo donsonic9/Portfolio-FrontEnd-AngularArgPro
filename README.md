@@ -49,12 +49,7 @@ Secciones:
  - Proyectos       -> CRUD
  - Footer/Contacto -> RU
 
-
- LOGIN WITH GOOGLE ACCOUNT:
-
-Tambien se puede hacer LogIn con su cuenta de Google, para ello, ir al apartado de Login en la barra de navegación, tal cuál se explico previamente, y hacer click en el boton "Sign in with Google", se abrira la pantalla para seleccionar la cuenta que desea utilizar, clik en la cuenta, y listo! Una vez logeado con Google, usted podra observar su imagen y su nombre de cuenta de google en le seccion del inicio, a modo de muestra. 
-
-De igual forma, es posible cerrar sesion y volver a la página de inicio, haciendo click en el mismo boton que nos lleva a la parte del login, arriba a la derecha de la navbar, click en cerrar sesion.
+De igual forma, es posible cerrar sesion y volver a la página de inicio, haciendo click en el mismo boton que nos lleva a la parte del login, arriba a la derecha de la navbar.
 
 Sin mas, espero que sea de su agrado, y cualquier sugerencia/comentario es mas que bienvenido!
 
